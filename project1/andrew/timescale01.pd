@@ -1,33 +1,78 @@
-#N canvas 2120 206 681 657 10;
-#X obj 66 338 metro;
-#X floatatom 247 281 5 0 0 0 - - -, f 5;
-#X text 285 282 Tempo in BPM.;
-#X text 302 379 Current time (ms since t=0).;
-#X obj 66 366 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X msg 60 175 1;
-#X msg 24 175 0;
-#X text 60 149 On;
-#X text 24 149 Off;
-#X obj 63 249 t b b b;
-#X msg 77 279 60000;
-#X obj 86 309 /;
-#X obj 155 362 timer;
-#X text -16 13 The purpose of this patch is to keep track of the time
+#N canvas 2124 192 681 657 10;
+#X obj 82 426 metro;
+#X floatatom 256 369 5 0 0 0 - - -, f 5;
+#X text 294 370 Tempo in BPM.;
+#X text 122 575 Current time (ms since t=0).;
+#X msg 82 263 1;
+#X msg 5 263 0;
+#X obj 82 337 t b b b;
+#X msg 105 367 60000;
+#X obj 105 397 /;
+#X obj 82 506 timer;
+#X text -59 -6 The purpose of this patch is to keep track of the time
 scale of the playing environment. It has a metronome that keeps a steady
 pulse \, and a timer that keeps track of the current time value as
 the backing track is playing \, and as the user playes notes.;
-#X obj 169 136 loadbang;
-#X msg 247 251 60;
-#X text 282 253 Default tempo in BPM.;
-#X connect 0 0 4 0;
-#X connect 1 0 11 1;
-#X connect 5 0 9 0;
+#X obj 158 201 loadbang;
+#X msg 256 339 60;
+#X text 291 341 Default tempo in BPM.;
+#X obj 99 301 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 34 456 timer;
+#X msg 82 193 Metronome On;
+#X msg 5 193 Metronome Off;
+#X obj 82 235 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 5 236 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 10 93 Start!;
+#X obj 75 159 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 5 158 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 67 93 Stop!;
+#X obj 82 481 t b b;
+#X obj -89 363 metro 1 60000 permin;
+#X floatatom 82 543 5 0 0 0 - - -, f 5;
+#X floatatom 82 574 5 0 0 0 - - -, f 5;
+#X text 115 95 (t=0ms at start);
+#X text 122 543 Metronome Ts in ms.;
+#X obj 82 455 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 59 300 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg -23 332 1;
+#X msg -49 293 0;
+#X connect 0 0 30 0;
+#X connect 1 0 8 1;
+#X connect 1 0 6 0;
+#X connect 4 0 6 0;
+#X connect 4 0 14 0;
+#X connect 5 0 0 0;
 #X connect 6 0 0 0;
-#X connect 9 0 0 0;
-#X connect 9 1 10 0;
-#X connect 9 2 1 0;
-#X connect 10 0 11 0;
-#X connect 11 0 0 1;
-#X connect 14 0 15 0;
-#X connect 15 0 1 0;
+#X connect 6 1 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 0 1;
+#X connect 9 0 26 0;
+#X connect 11 0 12 0;
+#X connect 12 0 1 0;
+#X connect 14 0 1 0;
+#X connect 15 0 27 0;
+#X connect 16 0 18 0;
+#X connect 17 0 19 0;
+#X connect 18 0 4 0;
+#X connect 19 0 5 0;
+#X connect 20 0 21 0;
+#X connect 21 0 16 0;
+#X connect 21 0 31 0;
+#X connect 22 0 17 0;
+#X connect 22 0 33 0;
+#X connect 23 0 22 0;
+#X connect 24 0 9 0;
+#X connect 24 1 9 1;
+#X connect 25 0 15 1;
+#X connect 30 0 24 0;
+#X connect 31 0 15 0;
+#X connect 31 0 32 0;
+#X connect 32 0 25 0;
+#X connect 33 0 25 0;
