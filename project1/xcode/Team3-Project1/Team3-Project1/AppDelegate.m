@@ -16,6 +16,22 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // Initialize the audio controller for Core Audio integration
+    _audioController = [PdAudioController new];
+    if ([_audioController configureAmbientWithSampleRate:44100
+                                          numberChannels:2
+                                           mixingEnabled:YES] != PdAudioOK) {
+        NSLog(@"Could not initialize Audio Controller");
+    }
+    
+    // Dispatcher listens for messages from Pure Data
+    PdDispatcher *dispatcher = [PdDispatcher new];
+    [PdBase setDelegate:dispatcher];
+    
+    _patch = [PdBase openFile:@"song_clock.pd"
+                         path:[[NSBundle mainBundle] resourcePath]];
+    
     // Override point for customization after application launch.
     return YES;
 }
