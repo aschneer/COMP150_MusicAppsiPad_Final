@@ -14,11 +14,11 @@
 		<string>https://github.com/tuftsdev/comp150isw-spring2015-team3.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Team3-Project1/Team3-Project1.xcodeproj</string>
+	<string>project1/xcode/Team3-Project1/Team3-Project1.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>14A47CD38193A6EEB3883CA1B452BDB9FE4442E2</key>
-		<string>../../..</string>
+		<string>../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/tuftsdev/comp150isw-spring2015-team3.git</string>
