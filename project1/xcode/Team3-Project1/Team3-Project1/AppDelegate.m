@@ -29,9 +29,12 @@
     PdDispatcher *dispatcher = [PdDispatcher new];
     [PdBase setDelegate:dispatcher];
     
-    _patch = [PdBase openFile:@"song_clock.pd"
+    _patch = [PdBase openFile:@"../../../puredata/song_clock.pd"
                          path:[[NSBundle mainBundle] resourcePath]];
     
+    if (!_patch) {
+        NSLog(@"Patch didn't open");
+    }
     // Override point for customization after application launch.
     return YES;
 }
