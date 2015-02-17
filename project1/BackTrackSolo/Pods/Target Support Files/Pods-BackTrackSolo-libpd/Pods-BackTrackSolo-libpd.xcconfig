@@ -1,0 +1,1 @@
+PODS_BACKTRACKSOLO_LIBPD_OTHER_LDFLAGS = -framework "Foundation"
