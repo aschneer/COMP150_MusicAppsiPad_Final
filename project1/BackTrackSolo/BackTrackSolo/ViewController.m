@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    PdDispatcher *dispatcher = (PdDispatcher *)[PdBase delegate];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -24,4 +25,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (IBAction)sendVolume:(UISlider *)sender {
+    [PdBase sendFloat:self.volumeSlider.value toReceiver:@"$0-volume"];
+}
+- (IBAction)sendTempo:(UISlider *)sender {
+    [PdBase sendFloat:self.tempoSlider.value toReceiver:@"$0-metro"];
+}
 @end

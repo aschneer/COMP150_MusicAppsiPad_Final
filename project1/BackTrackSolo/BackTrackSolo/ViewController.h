@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PdDispatcher.h"
+
 
 @interface ViewController : UIViewController
 
+- (IBAction)sendVolume:(UISlider *)sender;
+@property (weak, nonatomic) IBOutlet UISlider *volumeSlider;
+
+- (IBAction)sendTempo:(UISlider *)sender;
+@property (weak, nonatomic) IBOutlet UISlider *tempoSlider;
 
 @end
 
