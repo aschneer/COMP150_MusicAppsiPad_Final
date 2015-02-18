@@ -29,7 +29,7 @@
     PdDispatcher *dispatcher = [PdDispatcher new];
     [PdBase setDelegate:dispatcher];
     
-    _patch = [PdBase openFile:@"../../puredata/demo.pd"
+    _patch = [PdBase openFile:@"demo.pd"
                          path:[[NSBundle mainBundle] resourcePath]];
     
     if (!_patch) {
