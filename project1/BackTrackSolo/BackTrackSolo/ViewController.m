@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "BackTrackSolo-Swift.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    PdDispatcher *dispatcher = (PdDispatcher *)[PdBase delegate];
+    // dispatcher is for receiving messages from PD
+    //PdDispatcher *dispatcher = (PdDispatcher *)[PdBase delegate];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -27,6 +29,7 @@
 
 
 - (IBAction)sendVolume:(UISlider *)sender {
+    NSLog(@"%f", self.volumeSlider.value);
     [PdBase sendFloat:self.volumeSlider.value toReceiver:@"$0-volume"];
 }
 - (IBAction)sendTempo:(UISlider *)sender {
