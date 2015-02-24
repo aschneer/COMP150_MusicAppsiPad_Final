@@ -21,7 +21,7 @@ class SwiftViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var patch = PdBase.openFile("demo.pd", path: NSBundle.mainBundle().resourcePath)
+        var patch = PdBase.openFile("piano_01.pd", path: NSBundle.mainBundle().resourcePath)
         patchID = PdBase.dollarZeroForFile(patch)
         
         // Initialize volume and tempo
