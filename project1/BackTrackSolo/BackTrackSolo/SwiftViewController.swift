@@ -23,7 +23,17 @@ class SwiftViewController: UIViewController {
         super.viewDidLoad()
         var patch = PdBase.openFile("demo.pd", path: NSBundle.mainBundle().resourcePath)
         patchID = PdBase.dollarZeroForFile(patch)
-        // Do any additional setup after loading the view.
+        
+        // Initialize volume and tempo
+        var midiNote : String = String(patchID) + "-midinote"
+        PdBase.sendFloat(60, toReceiver: midiNote)
+        var beatsPerMeasure : String = String(patchID) + "-beatsPerMeasure"
+        PdBase.sendFloat(4, toReceiver: beatsPerMeasure)
+        
+        var volumeSend : String = String(patchID) + "-volume"
+        PdBase.sendFloat(0.5, toReceiver: volumeSend)
+        var tempoSend : String = String(patchID) + "-tempo"
+        PdBase.sendFloat(120, toReceiver: tempoSend)
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,9 +53,11 @@ class SwiftViewController: UIViewController {
     @IBAction func changeTempo(sender: UISlider) {
         var ID : String = String(patchID)
         ID += "-tempo"
+        var tempoBPM : Int = 0
+        tempoBPM = 50 + (Int(sender.value) * 250)
         
         println("\(ID)")
-        PdBase.sendFloat(sender.value, toReceiver: ID)
+        PdBase.sendFloat(Float(tempoBPM), toReceiver: ID)
     }
     
     /*

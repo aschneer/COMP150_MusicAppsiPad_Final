@@ -35,13 +35,13 @@
                                 </connections>
                             </containerView>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="iWb-Ap-xeR">
-                                <rect key="frame" x="762" y="657" width="118" height="31"/>
+                                <rect key="frame" x="305" y="657" width="118" height="31"/>
                                 <connections>
                                     <action selector="changeTempo:" destination="BYZ-38-t0r" eventType="valueChanged" id="juB-0j-e3P"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tempo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUK-ob-AgK">
-                                <rect key="frame" x="800" y="615" width="52" height="21"/>
+                                <rect key="frame" x="343" y="615" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
