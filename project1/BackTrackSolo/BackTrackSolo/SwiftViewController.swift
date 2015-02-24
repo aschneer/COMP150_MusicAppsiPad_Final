@@ -25,6 +25,11 @@ class SwiftViewController: UIViewController {
         patchID = PdBase.dollarZeroForFile(patch)
         
         // Initialize volume and tempo
+        var midiNote : String = String(patchID) + "-midinote"
+        PdBase.sendFloat(60, toReceiver: midiNote)
+        var beatsPerMeasure : String = String(patchID) + "-beatsPerMeasure"
+        PdBase.sendFloat(4, toReceiver: beatsPerMeasure)
+        
         var volumeSend : String = String(patchID) + "-volume"
         PdBase.sendFloat(0.5, toReceiver: volumeSend)
         var tempoSend : String = String(patchID) + "-tempo"
