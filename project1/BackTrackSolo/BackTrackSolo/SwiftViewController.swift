@@ -60,6 +60,14 @@ class SwiftViewController: UIViewController {
         PdBase.sendFloat(Float(tempoBPM), toReceiver: ID)
     }
     
+    @IBAction func Play(sender: UIButton) {
+    }
+
+    @IBAction func Stop(sender: UIButton) {
+    }
+    
+    @IBOutlet var ChordProgPicker: [UIPickerView]!
+    
     /*
     // MARK: - Navigation
 

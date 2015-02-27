@@ -18,5 +18,8 @@
 - (IBAction)sendTempo:(UISlider *)sender;
 @property (weak, nonatomic) IBOutlet UISlider *tempoSlider;
 
+
+
+
 @end
 
