@@ -10,7 +10,6 @@
 		77F4AFB21A9C3BC600C10DCE /* piano_01.pd in Resources */ = {isa = PBXBuildFile; fileRef = 77F4AFB11A9C3BC600C10DCE /* piano_01.pd */; };
 		9DBE8D850440AE54BF735471 /* libPods-BackTrackSolo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6148DC7A36343B3730FDD837 /* libPods-BackTrackSolo.a */; };
 		EC5C3C661A9C2240005EC068 /* demo.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC5C3C651A9C2240005EC068 /* demo.pd */; };
-		EC7621BF1A9A7A53006E64E7 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7621BE1A9A7A53006E64E7 /* SwiftViewController.swift */; };
 		ECE963361A92C3CE00F629C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE963351A92C3CE00F629C2 /* main.m */; };
 		ECE963391A92C3CE00F629C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE963381A92C3CE00F629C2 /* AppDelegate.m */; };
 		ECE9633C1A92C3CE00F629C2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE9633B1A92C3CE00F629C2 /* ViewController.m */; };
@@ -291,7 +290,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC7621BF1A9A7A53006E64E7 /* SwiftViewController.swift in Sources */,
 				ECE9633C1A92C3CE00F629C2 /* ViewController.m in Sources */,
 				ECE963391A92C3CE00F629C2 /* AppDelegate.m in Sources */,
 				ECE963361A92C3CE00F629C2 /* main.m in Sources */,

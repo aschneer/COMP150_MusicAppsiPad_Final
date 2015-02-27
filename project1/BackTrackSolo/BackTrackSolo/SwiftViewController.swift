@@ -61,12 +61,16 @@ class SwiftViewController: UIViewController {
     }
     
     @IBAction func Play(sender: UIButton) {
+        var playSend : String = String(patchID) + "-backingTrackStatus"
+        PdBase.sendFloat(1, toReceiver: playSend)
     }
 
     @IBAction func Stop(sender: UIButton) {
+        var stopSend : String = String(patchID) + "-backingTrackStatus"
+        PdBase.sendFloat(0, toReceiver: stopSend)
     }
     
-    @IBOutlet var ChordProgPicker: [UIPickerView]!
+
     
     /*
     // MARK: - Navigation
