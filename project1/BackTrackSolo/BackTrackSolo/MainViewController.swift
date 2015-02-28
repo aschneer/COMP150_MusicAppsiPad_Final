@@ -1,16 +1,16 @@
 //
-//  SwiftViewController.swift
+//  MainViewController.swift
 //  BackTrackSolo
 //
-//  Created by Jacob Apkon on 2/22/15.
+//  Created by Jacob Apkon on 2/28/15.
 //  Copyright (c) 2015 COMP150. All rights reserved.
 //
 
 import UIKit
 
-class SwiftViewController: UIViewController {
+class MainViewController: UIViewController {
 
-    
+    @IBOutlet weak var volumeSlider: UISlider!
     @IBOutlet weak var tempoSlider: UISlider!
     var patchID : Int32 = 0
     
@@ -40,7 +40,6 @@ class SwiftViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     @IBAction func changeVolume(sender: UISlider) {
         var ID : String = String(patchID)
         ID += "-volume"
@@ -63,13 +62,11 @@ class SwiftViewController: UIViewController {
         var playSend : String = String(patchID) + "-backingTrackStatus"
         PdBase.sendFloat(1, toReceiver: playSend)
     }
-
+    
     @IBAction func Stop(sender: UIButton) {
         var stopSend : String = String(patchID) + "-backingTrackStatus"
         PdBase.sendFloat(0, toReceiver: stopSend)
     }
-    
-
     
     /*
     // MARK: - Navigation
