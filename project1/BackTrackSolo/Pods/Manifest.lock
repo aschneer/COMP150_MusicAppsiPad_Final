@@ -1,10 +1,13 @@
 PODS:
   - libpd (0.7.0)
+  - XYPieChart (0.2)
 
 DEPENDENCIES:
   - libpd (~> 0.7)
+  - XYPieChart (~> 0.2)
 
 SPEC CHECKSUMS:
   libpd: f9e63d090e284438826f9b2fdc0810dbb9889e6f
+  XYPieChart: 94f89331038feb5b4e6372ba07c7a89e74899d32
 
 COCOAPODS: 0.35.0
