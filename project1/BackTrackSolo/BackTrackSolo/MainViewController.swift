@@ -68,6 +68,15 @@ class MainViewController: UIViewController {
         PdBase.sendFloat(0, toReceiver: stopSend)
     }
     
+    @IBAction func selectNotes(sender: UIButton) {
+        var noteSelection = NoteSelectionViewController(nibName: "noteSelection", bundle: nil)
+        var noteController = UIPopoverController(contentViewController: noteSelection)
+        
+        noteController.popoverContentSize = CGSize(width: 250, height: 500)
+        
+        noteController.presentPopoverFromRect(sender.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Down, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

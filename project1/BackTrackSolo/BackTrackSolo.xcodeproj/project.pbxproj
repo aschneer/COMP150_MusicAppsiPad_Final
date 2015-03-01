@@ -11,6 +11,8 @@
 		9DBE8D850440AE54BF735471 /* libPods-BackTrackSolo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6148DC7A36343B3730FDD837 /* libPods-BackTrackSolo.a */; };
 		EC5C3C661A9C2240005EC068 /* demo.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC5C3C651A9C2240005EC068 /* demo.pd */; };
 		ECE66C431AA281D00059B4F5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE66C421AA281D00059B4F5 /* MainViewController.swift */; };
+		ECE66C451AA28A180059B4F5 /* noteSelection.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECE66C441AA28A180059B4F5 /* noteSelection.xib */; };
+		ECE66C471AA28A640059B4F5 /* NoteSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE66C461AA28A640059B4F5 /* NoteSelectionViewController.swift */; };
 		ECE963361A92C3CE00F629C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE963351A92C3CE00F629C2 /* main.m */; };
 		ECE963391A92C3CE00F629C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE963381A92C3CE00F629C2 /* AppDelegate.m */; };
 		ECE9633C1A92C3CE00F629C2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE9633B1A92C3CE00F629C2 /* ViewController.m */; };
@@ -37,8 +39,9 @@
 		96DC4E7C4960CAEB69DA6257 /* Pods-BackTrackSolo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackTrackSolo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BackTrackSolo/Pods-BackTrackSolo.release.xcconfig"; sourceTree = "<group>"; };
 		EC5C3C651A9C2240005EC068 /* demo.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = demo.pd; sourceTree = "<group>"; };
 		EC7621BD1A9A7A53006E64E7 /* BackTrackSolo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BackTrackSolo-Bridging-Header.h"; sourceTree = "<group>"; };
-		EC7621BE1A9A7A53006E64E7 /* SwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftViewController.swift; sourceTree = "<group>"; };
 		ECE66C421AA281D00059B4F5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		ECE66C441AA28A180059B4F5 /* noteSelection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = noteSelection.xib; sourceTree = "<group>"; };
+		ECE66C461AA28A640059B4F5 /* NoteSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteSelectionViewController.swift; sourceTree = "<group>"; };
 		ECE963301A92C3CE00F629C2 /* BackTrackSolo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackTrackSolo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECE963341A92C3CE00F629C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECE963351A92C3CE00F629C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -120,8 +123,9 @@
 				ECE9633A1A92C3CE00F629C2 /* ViewController.h */,
 				ECE9633B1A92C3CE00F629C2 /* ViewController.m */,
 				ECE9633D1A92C3CE00F629C2 /* Main.storyboard */,
+				ECE66C441AA28A180059B4F5 /* noteSelection.xib */,
+				ECE66C461AA28A640059B4F5 /* NoteSelectionViewController.swift */,
 				ECE66C421AA281D00059B4F5 /* MainViewController.swift */,
-				EC7621BE1A9A7A53006E64E7 /* SwiftViewController.swift */,
 				ECE963401A92C3CE00F629C2 /* Images.xcassets */,
 				ECE963421A92C3CE00F629C2 /* LaunchScreen.xib */,
 				ECE963331A92C3CE00F629C2 /* Supporting Files */,
@@ -238,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECE66C451AA28A180059B4F5 /* noteSelection.xib in Resources */,
 				ECE9633F1A92C3CE00F629C2 /* Main.storyboard in Resources */,
 				ECE963441A92C3CE00F629C2 /* LaunchScreen.xib in Resources */,
 				77F4AFB21A9C3BC600C10DCE /* piano_01.pd in Resources */,
@@ -294,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECE9633C1A92C3CE00F629C2 /* ViewController.m in Sources */,
+				ECE66C471AA28A640059B4F5 /* NoteSelectionViewController.swift in Sources */,
 				ECE963391A92C3CE00F629C2 /* AppDelegate.m in Sources */,
 				ECE963361A92C3CE00F629C2 /* main.m in Sources */,
 				ECE66C431AA281D00059B4F5 /* MainViewController.swift in Sources */,
