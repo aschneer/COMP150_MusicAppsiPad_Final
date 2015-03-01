@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		77F4AFB21A9C3BC600C10DCE /* piano_01.pd in Resources */ = {isa = PBXBuildFile; fileRef = 77F4AFB11A9C3BC600C10DCE /* piano_01.pd */; };
 		9DBE8D850440AE54BF735471 /* libPods-BackTrackSolo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6148DC7A36343B3730FDD837 /* libPods-BackTrackSolo.a */; };
 		EC5C3C661A9C2240005EC068 /* demo.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC5C3C651A9C2240005EC068 /* demo.pd */; };
 		ECE66C431AA281D00059B4F5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE66C421AA281D00059B4F5 /* MainViewController.swift */; };
@@ -34,7 +33,6 @@
 
 /* Begin PBXFileReference section */
 		6148DC7A36343B3730FDD837 /* libPods-BackTrackSolo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BackTrackSolo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		77F4AFB11A9C3BC600C10DCE /* piano_01.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = piano_01.pd; path = ../../puredata/piano_01.pd; sourceTree = "<group>"; };
 		881FD646926097B3D4BEFAF6 /* Pods-BackTrackSolo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackTrackSolo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BackTrackSolo/Pods-BackTrackSolo.debug.xcconfig"; sourceTree = "<group>"; };
 		96DC4E7C4960CAEB69DA6257 /* Pods-BackTrackSolo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackTrackSolo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BackTrackSolo/Pods-BackTrackSolo.release.xcconfig"; sourceTree = "<group>"; };
 		EC5C3C651A9C2240005EC068 /* demo.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = demo.pd; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 		ECE963321A92C3CE00F629C2 /* BackTrackSolo */ = {
 			isa = PBXGroup;
 			children = (
-				77F4AFB11A9C3BC600C10DCE /* piano_01.pd */,
 				EC5C3C651A9C2240005EC068 /* demo.pd */,
 				ECE963371A92C3CE00F629C2 /* AppDelegate.h */,
 				ECE963381A92C3CE00F629C2 /* AppDelegate.m */,
@@ -245,7 +242,6 @@
 				ECE66C451AA28A180059B4F5 /* noteSelection.xib in Resources */,
 				ECE9633F1A92C3CE00F629C2 /* Main.storyboard in Resources */,
 				ECE963441A92C3CE00F629C2 /* LaunchScreen.xib in Resources */,
-				77F4AFB21A9C3BC600C10DCE /* piano_01.pd in Resources */,
 				EC5C3C661A9C2240005EC068 /* demo.pd in Resources */,
 				ECE963411A92C3CE00F629C2 /* Images.xcassets in Resources */,
 			);
