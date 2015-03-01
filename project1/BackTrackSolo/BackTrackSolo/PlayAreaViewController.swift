@@ -10,6 +10,11 @@ import UIKit
 
 class PlayAreaViewController: UIViewController {
 
+    struct notes {
+        var midiValue : Int
+        
+    }
+    var noteArray : [notes] = []
     var numNotes : Int = 0
     
     @IBOutlet var noteArea: XYPieChart!
@@ -30,10 +35,13 @@ class PlayAreaViewController: UIViewController {
         if let info = notification.userInfo as? Dictionary<String, [Int]> {
             var noteArray = info["notes"]
             numNotes = noteArray!.count
-            //noteArea
             println(numNotes)
             println(noteArray!)
         }
+    }
+    
+    func numberOfSlicesInPieChart(pieChart: XYPieChart) -> UInt {
+        return UInt(noteArray.count)
     }
     
     override func didReceiveMemoryWarning() {
