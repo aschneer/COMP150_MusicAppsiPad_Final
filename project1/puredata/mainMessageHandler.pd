@@ -1,4 +1,4 @@
-#N canvas 2 59 1364 685 10;
+#N canvas 54 97 649 685 10;
 #X obj -41 47 inlet;
 #X obj 8 48 inlet;
 #X obj 81 48 inlet;
@@ -15,7 +15,7 @@
 #X obj 457 29 loadbang;
 #X msg 457 56 \; pd dsp 1 \;;
 #X text 37 280 Play sound., f 19;
-#X text 424 99 Enable DSP by default.;
+#X text 422 99 Enable DSP by default.;
 #X obj 274 192 * 0.75;
 #X obj 53 229 generateSound;
 #X obj 205 226 backTrack;
