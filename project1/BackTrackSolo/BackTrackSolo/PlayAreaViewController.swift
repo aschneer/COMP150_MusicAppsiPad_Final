@@ -17,7 +17,7 @@ class PlayAreaViewController: UIViewController {
     var noteArray : [notes] = []
     var numNotes : Int = 0
     
-    @IBOutlet var noteArea: XYPieChart!
+//    @IBOutlet var noteArea: XYPieChart!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,9 +40,9 @@ class PlayAreaViewController: UIViewController {
         }
     }
     
-    func numberOfSlicesInPieChart(pieChart: XYPieChart) -> UInt {
-        return UInt(noteArray.count)
-    }
+//    func numberOfSlicesInPieChart(pieChart: XYPieChart) -> UInt {
+//        return UInt(noteArray.count)
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

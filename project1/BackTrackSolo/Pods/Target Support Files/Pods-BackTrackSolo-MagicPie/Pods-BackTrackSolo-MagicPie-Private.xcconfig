@@ -1,0 +1,5 @@
+#include "Pods-BackTrackSolo-MagicPie.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/MagicPie" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/MagicPie" "${PODS_ROOT}/Headers/Public/XYPieChart" "${PODS_ROOT}/Headers/Public/libpd"
+OTHER_LDFLAGS = -ObjC
+PODS_ROOT = ${SRCROOT}
