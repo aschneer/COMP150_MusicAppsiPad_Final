@@ -1,0 +1,33 @@
+#N canvas 679 81 680 657 10;
+#X obj -2198 34 inlet;
+#X text -2432 9 Progression (name as string \, like "C-Blues");
+#X obj -2113 31 inlet;
+#X text -2120 7 Volume;
+#X obj -2410 313 readsf~;
+#X obj -2584 327 env~;
+#X msg -2414 260 1;
+#X msg -2369 261 0;
+#X msg -2323 111 start;
+#X msg -2252 111 stop;
+#X obj -2323 139 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -2252 139 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -2590 29 loadbang;
+#X obj -2590 64 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -2410 476 outlet~;
+#X text -2504 500 Audio output directly to dac~ object.;
+#X obj -2410 388 *~ 1;
+#X msg -2590 172 open ./12BarBlues_C_Slow.wav;
+#X connect 4 0 16 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;
+#X connect 8 0 10 0;
+#X connect 9 0 11 0;
+#X connect 10 0 6 0;
+#X connect 11 0 7 0;
+#X connect 12 0 13 0;
+#X connect 13 0 17 0;
+#X connect 16 0 14 0;
+#X connect 17 0 4 0;

@@ -1,0 +1,28 @@
+#N canvas 47 166 529 330 10;
+#X obj 99 94 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X floatatom 27 188 5 0 0 0 - - -, f 5;
+#X floatatom 151 187 5 0 0 0 - - -, f 5;
+#X floatatom 261 187 5 0 0 0 - - -, f 5;
+#X floatatom 396 189 5 0 0 0 - - -, f 5;
+#X floatatom 207 94 5 0 0 0 - - -, f 5;
+#X floatatom 313 94 5 0 0 0 - - -, f 5;
+#X text 86 73 On/Off;
+#X text 167 73 Beats Per Measure;
+#X text 299 74 Tempo BPM;
+#X text 1 205 Abs. Time (s);
+#X text 123 205 Beat Ts (ms);
+#X text 246 205 Measure #;
+#X text 351 205 Measure Beat Count;
+#X text 37 -38 The purpose of this patch is to keep track of the time
+scale of the playing environment. It has a metronome that keeps a steady
+pulse \, and a timer that keeps track of the current time value as
+the backing track is playing \, and as the user playes notes.;
+#X obj 170 140 songClock_02;
+#X connect 0 0 15 0;
+#X connect 5 0 15 1;
+#X connect 6 0 15 2;
+#X connect 15 0 1 0;
+#X connect 15 1 2 0;
+#X connect 15 2 3 0;
+#X connect 15 3 4 0;

@@ -1,5 +1,4 @@
-#N canvas 1273 232 450 300 10;
-#N canvas 114 120 1010 705 piano_01 1;
+#N canvas 3 60 680 657 10;
 #X obj 241 507 osc~;
 #X obj 241 428 mtof;
 #X obj 241 543 *~ 1;
@@ -213,4 +212,3 @@ the backing track is playing \, and as the user playes notes.;
 #X connect 33 2 23 0;
 #X connect 34 0 22 0;
 #X connect 35 0 1 0;
-#X restore 164 117 pd piano_01;

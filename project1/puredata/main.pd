@@ -1,0 +1,14 @@
+#N canvas 129 68 680 657 10;
+#X obj 85 41 r volume;
+#X obj 162 41 r tempo;
+#X obj 231 41 r MIDI_pitch;
+#X obj 330 41 r MIDI_vel;
+#X obj 416 42 r progression;
+#X obj 521 41 r play;
+#X obj 264 162 mainMessageHandler;
+#X connect 0 0 6 0;
+#X connect 1 0 6 1;
+#X connect 2 0 6 2;
+#X connect 3 0 6 3;
+#X connect 4 0 6 4;
+#X connect 5 0 6 5;
