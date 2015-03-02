@@ -3,6 +3,7 @@
 
 target 'BackTrackSolo' do
 	pod 'libpd', '~> 0.7'
+	pod 'XYPieChart', '~> 0.2'
 end
 
 target 'BackTrackSoloTests' do

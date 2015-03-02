@@ -1,0 +1,5 @@
+#include "Pods-BackTrackSolo-XYPieChart.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/XYPieChart" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/XYPieChart" "${PODS_ROOT}/Headers/Public/libpd"
+OTHER_LDFLAGS = ${PODS_BACKTRACKSOLO_XYPIECHART_OTHER_LDFLAGS} -ObjC
+PODS_ROOT = ${SRCROOT}

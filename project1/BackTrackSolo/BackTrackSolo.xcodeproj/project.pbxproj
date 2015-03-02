@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		77F4AFB21A9C3BC600C10DCE /* piano_01.pd in Resources */ = {isa = PBXBuildFile; fileRef = 77F4AFB11A9C3BC600C10DCE /* piano_01.pd */; };
 		9DBE8D850440AE54BF735471 /* libPods-BackTrackSolo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6148DC7A36343B3730FDD837 /* libPods-BackTrackSolo.a */; };
+		EC5269EE1AA290F000A4D009 /* piano_test.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC5269ED1AA290F000A4D009 /* piano_test.pd */; };
+		EC5269F01AA292E200A4D009 /* PlayAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5269EF1AA292E200A4D009 /* PlayAreaViewController.swift */; };
 		EC5C3C661A9C2240005EC068 /* demo.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC5C3C651A9C2240005EC068 /* demo.pd */; };
 		ECE66C431AA281D00059B4F5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE66C421AA281D00059B4F5 /* MainViewController.swift */; };
 		ECE66C451AA28A180059B4F5 /* noteSelection.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECE66C441AA28A180059B4F5 /* noteSelection.xib */; };
@@ -34,9 +35,10 @@
 
 /* Begin PBXFileReference section */
 		6148DC7A36343B3730FDD837 /* libPods-BackTrackSolo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BackTrackSolo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		77F4AFB11A9C3BC600C10DCE /* piano_01.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = piano_01.pd; path = ../../puredata/piano_01.pd; sourceTree = "<group>"; };
 		881FD646926097B3D4BEFAF6 /* Pods-BackTrackSolo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackTrackSolo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BackTrackSolo/Pods-BackTrackSolo.debug.xcconfig"; sourceTree = "<group>"; };
 		96DC4E7C4960CAEB69DA6257 /* Pods-BackTrackSolo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackTrackSolo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BackTrackSolo/Pods-BackTrackSolo.release.xcconfig"; sourceTree = "<group>"; };
+		EC5269ED1AA290F000A4D009 /* piano_test.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = piano_test.pd; sourceTree = "<group>"; };
+		EC5269EF1AA292E200A4D009 /* PlayAreaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayAreaViewController.swift; sourceTree = "<group>"; };
 		EC5C3C651A9C2240005EC068 /* demo.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = demo.pd; sourceTree = "<group>"; };
 		EC7621BD1A9A7A53006E64E7 /* BackTrackSolo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BackTrackSolo-Bridging-Header.h"; sourceTree = "<group>"; };
 		ECE66C421AA281D00059B4F5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +118,7 @@
 		ECE963321A92C3CE00F629C2 /* BackTrackSolo */ = {
 			isa = PBXGroup;
 			children = (
-				77F4AFB11A9C3BC600C10DCE /* piano_01.pd */,
+				EC5269ED1AA290F000A4D009 /* piano_test.pd */,
 				EC5C3C651A9C2240005EC068 /* demo.pd */,
 				ECE963371A92C3CE00F629C2 /* AppDelegate.h */,
 				ECE963381A92C3CE00F629C2 /* AppDelegate.m */,
@@ -124,6 +126,7 @@
 				ECE9633B1A92C3CE00F629C2 /* ViewController.m */,
 				ECE9633D1A92C3CE00F629C2 /* Main.storyboard */,
 				ECE66C441AA28A180059B4F5 /* noteSelection.xib */,
+				EC5269EF1AA292E200A4D009 /* PlayAreaViewController.swift */,
 				ECE66C461AA28A640059B4F5 /* NoteSelectionViewController.swift */,
 				ECE66C421AA281D00059B4F5 /* MainViewController.swift */,
 				ECE963401A92C3CE00F629C2 /* Images.xcassets */,
@@ -243,9 +246,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECE66C451AA28A180059B4F5 /* noteSelection.xib in Resources */,
+				EC5269EE1AA290F000A4D009 /* piano_test.pd in Resources */,
 				ECE9633F1A92C3CE00F629C2 /* Main.storyboard in Resources */,
 				ECE963441A92C3CE00F629C2 /* LaunchScreen.xib in Resources */,
-				77F4AFB21A9C3BC600C10DCE /* piano_01.pd in Resources */,
 				EC5C3C661A9C2240005EC068 /* demo.pd in Resources */,
 				ECE963411A92C3CE00F629C2 /* Images.xcassets in Resources */,
 			);
@@ -299,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECE9633C1A92C3CE00F629C2 /* ViewController.m in Sources */,
+				EC5269F01AA292E200A4D009 /* PlayAreaViewController.swift in Sources */,
 				ECE66C471AA28A640059B4F5 /* NoteSelectionViewController.swift in Sources */,
 				ECE963391A92C3CE00F629C2 /* AppDelegate.m in Sources */,
 				ECE963361A92C3CE00F629C2 /* main.m in Sources */,

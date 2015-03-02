@@ -6,6 +6,12 @@
 // project.
 
 
+// XYPieChart
+#define COCOAPODS_POD_AVAILABLE_XYPieChart
+#define COCOAPODS_VERSION_MAJOR_XYPieChart 0
+#define COCOAPODS_VERSION_MINOR_XYPieChart 2
+#define COCOAPODS_VERSION_PATCH_XYPieChart 0
+
 // libpd
 #define COCOAPODS_POD_AVAILABLE_libpd
 #define COCOAPODS_VERSION_MAJOR_libpd 0

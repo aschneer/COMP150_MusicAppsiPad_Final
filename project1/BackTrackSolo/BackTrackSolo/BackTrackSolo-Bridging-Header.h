@@ -3,3 +3,5 @@
 //
 
 #import "PdDispatcher.h"
+#import "XYPieChart.h"
+#import <QuartzCore/QuartzCore.h>

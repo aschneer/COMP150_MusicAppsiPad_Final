@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var patch = PdBase.openFile("piano_01.pd", path: NSBundle.mainBundle().resourcePath)
+        var patch = PdBase.openFile("piano_test.pd", path: NSBundle.mainBundle().resourcePath)
         patchID = PdBase.dollarZeroForFile(patch)
         
         // Initialize volume and tempo
@@ -72,19 +72,8 @@ class MainViewController: UIViewController {
         var noteSelection = NoteSelectionViewController(nibName: "noteSelection", bundle: nil)
         var noteController = UIPopoverController(contentViewController: noteSelection)
         
-        noteController.popoverContentSize = CGSize(width: 250, height: 500)
+        noteController.popoverContentSize = CGSize(width: 980, height: 500)
         
         noteController.presentPopoverFromRect(sender.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Down, animated: true)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

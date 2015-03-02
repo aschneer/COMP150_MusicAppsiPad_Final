@@ -10,6 +10,12 @@ import UIKit
 
 class NoteSelectionViewController: UIViewController {
 
+    @IBOutlet weak var sendNotes: UIButton!
+    
+    
+    //var notes = [Int]()
+    var notes : [Int] = [60, 62, 64, 65, 67, 69, 71, 72]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +27,11 @@ class NoteSelectionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    
+    @IBAction func sendNotes(sender: UIButton) {
+        var center = NSNotificationCenter.defaultCenter()
+        center.postNotificationName("playableNotes", object: nil, userInfo: ["notes": notes])
     }
-    */
 
 }
