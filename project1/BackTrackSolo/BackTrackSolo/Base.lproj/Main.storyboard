@@ -149,15 +149,12 @@
         <scene sceneID="46R-wh-RzH">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="PBg-uc-AyS" customClass="PlayAreaViewController" customModule="BackTrackSolo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xx6-tj-m8R" customClass="XYPieChart">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xx6-tj-m8R">
                         <rect key="frame" x="0.0" y="0.0" width="406" height="424"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
-                    <connections>
-                        <outlet property="noteArea" destination="xx6-tj-m8R" id="h7g-bW-BfB"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bw-HL-DjM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
