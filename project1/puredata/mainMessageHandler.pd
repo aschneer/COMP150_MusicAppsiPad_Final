@@ -1,32 +1,73 @@
-#N canvas 54 97 649 685 10;
-#X obj -41 47 inlet;
-#X obj 8 48 inlet;
+#N canvas 1 81 680 657 10;
+#X obj -49 47 inlet;
+#X obj 4 48 inlet;
 #X obj 81 48 inlet;
 #X obj 171 48 inlet;
-#X text -47 22 Volume;
-#X text 8 23 Tempo;
+#X text -55 22 Volume;
 #X text 123 26 MIDI Velocity;
 #X obj 253 48 inlet;
-#X obj 335 48 inlet;
+#X obj 297 48 inlet;
 #X text 217 26 Progression;
-#X text 299 26 Play Status;
 #X text 51 25 MIDI Pitch;
-#X obj 118 279 dac~;
-#X obj 457 29 loadbang;
-#X msg 457 56 \; pd dsp 1 \;;
-#X text 37 280 Play sound., f 19;
-#X text 422 99 Enable DSP by default.;
-#X obj 274 192 * 0.75;
+#X obj 143 415 dac~;
+#X obj 567 28 loadbang;
+#X msg 567 55 \; pd dsp 1 \;;
+#X text 62 416 Play sound., f 19;
+#X text 532 98 Enable DSP by default.;
 #X obj 53 229 generateSound;
-#X obj 205 226 backTrack;
-#X connect 0 0 17 0;
-#X connect 0 0 18 2;
-#X connect 2 0 18 0;
-#X connect 3 0 18 1;
-#X connect 7 0 19 0;
-#X connect 13 0 14 0;
-#X connect 17 0 19 1;
-#X connect 18 0 12 0;
-#X connect 18 0 12 1;
-#X connect 19 0 12 0;
-#X connect 19 0 12 1;
+#X obj 253 226 backTrack_v02, f 21;
+#X text 298 27 Play;
+#X obj 338 48 inlet;
+#X text 337 27 Pause;
+#X obj 379 48 inlet;
+#X text 381 27 Stop;
+#X obj 437 48 inlet;
+#X text 419 27 Reset Tempo;
+#X obj 376 420 outlet;
+#X text 338 441 Current Tempo (BPM);
+#X text -9 23 Tempo In;
+#X obj 268 79 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 4 74 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 89 76 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 171 82 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 309 78 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 348 77 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 386 77 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 437 77 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj -49 85 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 270 201 * 1;
+#X connect 0 0 15 2;
+#X connect 0 0 35 0;
+#X connect 0 0 36 0;
+#X connect 1 0 16 7;
+#X connect 1 0 28 0;
+#X connect 2 0 15 0;
+#X connect 2 0 29 0;
+#X connect 3 0 15 1;
+#X connect 3 0 30 0;
+#X connect 6 0 16 0;
+#X connect 6 0 27 0;
+#X connect 7 0 16 3;
+#X connect 7 0 31 0;
+#X connect 11 0 12 0;
+#X connect 15 0 10 0;
+#X connect 15 0 10 1;
+#X connect 16 0 10 0;
+#X connect 16 0 10 1;
+#X connect 16 1 24 0;
+#X connect 18 0 16 4;
+#X connect 18 0 32 0;
+#X connect 20 0 16 5;
+#X connect 20 0 33 0;
+#X connect 22 0 16 6;
+#X connect 22 0 34 0;
+#X connect 36 0 16 1;

@@ -1,8 +1,0 @@
-#N canvas 3 60 717 785 10;
-#X text 66 13 This patch will calculate the pitch shift;
-#X text 60 32 corresponding to a tempo shift in order to;
-#X text 30 51 shift the tempo without shifting the frequency.;
-#X obj 36 149 inlet;
-#X text 34 126 Tempo Change (+/- BPM);
-#X obj 217 149 inlet;
-#X text 214 126 Original Sampling Rate for Audio;

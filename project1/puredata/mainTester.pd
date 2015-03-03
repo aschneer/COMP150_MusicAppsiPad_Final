@@ -1,25 +1,50 @@
-#N canvas 3 60 680 657 10;
+#N canvas 685 60 680 657 10;
 #X obj 25 37 hsl 128 15 0 1 0 0 empty empty Volume -2 -8 0 10 -262144
 -1 -1 12700 1;
-#X obj 181 37 hsl 128 15 50 300 0 0 empty empty Tempo -2 -8 0 10 -262144
--1 -1 7000 1;
+#X obj 181 37 hsl 128 15 -20000 20000 0 0 empty empty Tempo_In -2 -8
+0 10 -262144 -1 -1 6350 1;
 #X floatatom 22 63 5 0 0 0 - - -, f 5;
-#X floatatom 178 63 5 0 0 0 - - -, f 5;
-#X obj 22 89 s volume;
-#X obj 178 89 s tempo;
+#X floatatom 178 63 10 0 0 0 - - -, f 10;
 #X obj 336 37 hsl 128 15 0 127 0 0 empty empty MIDI_Pitch -2 -8 0 10
--262144 -1 -1 7000 1;
+-262144 -1 -1 0 1;
 #X floatatom 333 63 5 0 0 0 - - -, f 5;
 #X obj 491 37 hsl 128 15 0 10 0 0 empty empty MIDI_Velocity -2 -8 0
 10 -262144 -1 -1 0 1;
 #X floatatom 488 63 5 0 0 0 - - -, f 5;
+#X obj 244 170 bng 15 250 50 0 empty empty Play 17 7 0 10 -262144 -1
+-1;
+#X obj 317 170 bng 15 250 50 0 empty empty Pause 17 7 0 10 -262144
+-1 -1;
+#X obj 395 170 bng 15 250 50 0 empty empty Stop 17 7 0 10 -262144 -1
+-1;
+#X msg 178 -6 0;
+#X floatatom 252 300 5 0 0 0 - - -, f 5;
+#X text 290 300 BPM;
+#X obj 22 89 s volume;
+#X obj 178 89 s tempo_in;
 #X obj 333 89 s MIDI_pitch;
 #X obj 488 89 s MIDI_vel;
+#X obj 22 255 s progression;
+#X obj 244 195 s play;
+#X obj 317 195 s pause;
+#X obj 395 195 s stop;
+#X obj 252 272 r tempo_out;
+#X msg 22 168 [dummy] C-Blues-Slow;
+#X msg 31 192 [dummy] C-Blues-Medium;
+#X msg 43 216 [dummy] C-Blues-Fast;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
-#X connect 2 0 4 0;
-#X connect 3 0 5 0;
+#X connect 2 0 14 0;
+#X connect 3 0 15 0;
+#X connect 4 0 5 0;
+#X connect 5 0 16 0;
 #X connect 6 0 7 0;
-#X connect 7 0 10 0;
-#X connect 8 0 9 0;
-#X connect 9 0 11 0;
+#X connect 7 0 17 0;
+#X connect 8 0 19 0;
+#X connect 9 0 20 0;
+#X connect 10 0 21 0;
+#X connect 11 0 1 0;
+#X connect 22 0 12 0;
+#X connect 23 0 18 0;
+#X connect 24 0 18 0;
+#X connect 25 0 18 0;
