@@ -1,20 +1,15 @@
-#N canvas 1 88 680 657 10;
-#X obj -49 47 inlet;
-#X obj 4 48 inlet;
-#X obj 81 48 inlet;
-#X obj 171 48 inlet;
-#X text -55 22 Volume;
-#X text 123 26 MIDI Velocity;
+#N canvas 1 118 680 657 10;
+#X obj -7 47 inlet;
+#X obj 46 48 inlet;
+#X text -13 22 Volume;
 #X obj 253 48 inlet;
 #X obj 297 48 inlet;
 #X text 217 26 Progression;
-#X text 51 25 MIDI Pitch;
 #X obj 143 415 dac~;
-#X obj 567 28 loadbang;
-#X msg 567 55 \; pd dsp 1 \;;
+#X obj 518 24 loadbang;
+#X msg 518 51 \; pd dsp 1 \;;
 #X text 62 416 Play sound., f 19;
-#X text 532 98 Enable DSP by default.;
-#X obj 53 229 generateSound;
+#X text 483 94 Enable DSP by default.;
 #X text 298 27 Play;
 #X obj 338 48 inlet;
 #X text 337 27 Pause;
@@ -24,14 +19,10 @@
 #X text 419 27 Reset Tempo;
 #X obj 376 420 outlet;
 #X text 338 441 Current Tempo (BPM);
-#X text -9 23 Tempo In;
+#X text 33 23 Tempo In;
 #X obj 268 79 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 4 74 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 89 76 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 171 82 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 46 74 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 309 78 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -41,33 +32,38 @@
 -1;
 #X obj 437 77 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj -49 85 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 28 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 270 201 * 1;
 #X obj 253 226 backTrack_v03, f 21;
-#X connect 0 0 15 2;
+#X obj 270 201 * 2;
+#X obj 132 47 inlet;
+#X text 93 26 MIDI Message (list);
+#X obj 53 228 midiMessageHandler;
+#X obj 147 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom -7 92 5 0 0 0 - - -, f 5;
+#X connect 0 0 27 0;
+#X connect 0 0 29 0;
 #X connect 0 0 34 0;
-#X connect 0 0 35 0;
-#X connect 1 0 27 0;
-#X connect 1 0 36 7;
-#X connect 2 0 15 0;
-#X connect 2 0 28 0;
-#X connect 3 0 15 1;
-#X connect 3 0 29 0;
-#X connect 6 0 26 0;
-#X connect 6 0 36 0;
-#X connect 7 0 30 0;
-#X connect 7 0 36 3;
-#X connect 11 0 12 0;
-#X connect 15 0 10 0;
-#X connect 15 0 10 1;
-#X connect 17 0 31 0;
-#X connect 17 0 36 4;
-#X connect 19 0 32 0;
-#X connect 19 0 36 5;
-#X connect 21 0 33 0;
-#X connect 21 0 36 6;
-#X connect 35 0 36 1;
-#X connect 36 0 10 0;
-#X connect 36 0 10 1;
-#X connect 36 1 23 0;
+#X connect 0 0 32 1;
+#X connect 1 0 22 0;
+#X connect 1 0 28 7;
+#X connect 3 0 21 0;
+#X connect 3 0 28 0;
+#X connect 4 0 23 0;
+#X connect 4 0 28 3;
+#X connect 7 0 8 0;
+#X connect 12 0 24 0;
+#X connect 12 0 28 4;
+#X connect 14 0 25 0;
+#X connect 14 0 28 5;
+#X connect 16 0 26 0;
+#X connect 16 0 28 6;
+#X connect 28 0 6 0;
+#X connect 28 0 6 1;
+#X connect 28 1 18 0;
+#X connect 29 0 28 1;
+#X connect 30 0 32 0;
+#X connect 30 0 33 0;
+#X connect 32 0 6 0;
+#X connect 32 0 6 1;

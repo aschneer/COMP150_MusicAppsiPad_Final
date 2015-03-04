@@ -1,22 +1,18 @@
-#N canvas 1 74 680 657 10;
-#X obj 43 41 inlet;
-#X obj 145 42 inlet;
-#X text 13 18 MIDI Pitch;
-#X text 97 18 MIDI Velocity;
-#X text 128 515 Audio Signal to be sent directly to a dac~.;
-#X obj 91 244 mtof;
-#X obj 52 121 moses 1;
-#X obj 52 155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#N canvas 75 154 680 657 10;
+#X obj 76 38 inlet;
+#X text 128 665 Audio Signal to be sent directly to a dac~.;
+#X obj 91 394 mtof;
+#X obj 52 271 moses 1;
+#X obj 52 305 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X msg 52 186 0;
-#X obj 91 155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X msg 52 336 0;
+#X obj 91 305 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 91 186 float 0;
-#X floatatom 130 122 5 0 0 0 - - -, f 5;
-#X floatatom 91 215 5 0 0 0 - - -, f 5;
-#X obj 90 334 tabread4~ waveform;
-#X obj 91 274 phasor~;
-#X obj 91 304 *~ 2048;
+#X obj 91 336 float 0;
+#X floatatom 130 272 5 0 0 0 - - -, f 5;
+#X floatatom 91 365 5 0 0 0 - - -, f 5;
+#X obj 90 484 tabread4~ waveform;
+#X obj 91 424 phasor~;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array waveform 2051 float 3;
 #A 0 -0.00803159 0 0.00803159 0.0160626 0.0240925 0.0321207 0.0401466
@@ -81,7 +77,7 @@
 0.4529 0.452222 0.451564 0.450926 0.450307 0.449708 0.449127 0.448566
 0.448024 0.4475 0.446995 0.446508 0.44604 0.44559 0.445158 0.444744
 0.444347 0.443967 0.443605 0.443261 0.442933 0.442621 0.442326 0.442048
-0.441786 0.44154 0.441309 0.441094 0.440895 0.440711 0.440541 0.440387
+0.441786 0.44154 0.441309 0.441094 0.440895 -0.302857 0.440541 0.440387
 0.440247 0.440121 0.44001 0.439912 0.439828 0.439758 0.439701 0.439657
 0.439626 0.439607 0.439601 0.439607 0.439625 0.439655 0.439696 0.439748
 0.439812 0.439886 0.439971 0.440066 0.440171 0.440286 0.44041 0.440544
@@ -313,27 +309,33 @@
 #X obj 354 15 loadbang;
 #X obj 245 42 inlet;
 #X text 201 18 Volume (range [0 \, 1]);
-#X obj 224 390 *~ 1;
-#X floatatom 245 338 5 0 0 0 - - -, f 5;
-#X obj 223 484 outlet~;
-#X connect 0 0 11 0;
-#X connect 1 0 6 0;
-#X connect 5 0 14 0;
+#X obj 224 540 *~ 1;
+#X floatatom 245 488 5 0 0 0 - - -, f 5;
+#X obj 223 634 outlet~;
+#X text 40 18 MIDI Message (list);
+#X floatatom 52 243 5 0 0 0 - - -, f 5;
+#X obj 76 122 unpack f f;
+#X obj 91 454 *~ 2051;
+#X connect 0 0 26 0;
+#X connect 2 0 11 0;
+#X connect 3 0 4 0;
+#X connect 3 1 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 11 0;
 #X connect 6 0 7 0;
-#X connect 6 1 9 0;
-#X connect 7 0 8 0;
-#X connect 8 0 14 0;
-#X connect 9 0 10 0;
-#X connect 10 0 12 0;
-#X connect 11 0 10 1;
-#X connect 12 0 5 0;
-#X connect 13 0 25 0;
-#X connect 14 0 15 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 1;
+#X connect 9 0 2 0;
+#X connect 10 0 21 0;
+#X connect 11 0 27 0;
 #X connect 15 0 13 0;
-#X connect 19 0 17 0;
-#X connect 19 1 18 0;
-#X connect 20 0 19 0;
-#X connect 22 0 20 0;
-#X connect 23 0 26 0;
-#X connect 25 0 27 0;
-#X connect 26 0 25 1;
+#X connect 15 1 14 0;
+#X connect 16 0 15 0;
+#X connect 18 0 16 0;
+#X connect 19 0 22 0;
+#X connect 21 0 23 0;
+#X connect 22 0 21 1;
+#X connect 25 0 3 0;
+#X connect 26 0 8 0;
+#X connect 26 1 25 0;
+#X connect 27 0 10 0;
