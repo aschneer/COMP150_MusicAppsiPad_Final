@@ -19,44 +19,53 @@ class MainViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        volumeSlider.value = 1
         super.viewDidLoad()
         var patch = PdBase.openFile("main.pd", path: NSBundle.mainBundle().resourcePath)
         patchID = PdBase.dollarZeroForFile(patch)
-        
-        // Initialize volume and tempo
-        //var midiNote : String = String(patchID) + "-midinote"
-        //PdBase.sendFloat(60, toReceiver: midiNote)
-        //var beatsPerMeasure : String = String(patchID) + "-beatsPerMeasure"
-        //PdBase.sendFloat(4, toReceiver: beatsPerMeasure)
-        
-        //var volumeSend : String = String(patchID) + "-volume"
-        //PdBase.sendFloat(0.5, toReceiver: volumeSend)
-        //var tempoSend : String = String(patchID) + "-tempo"
-        //PdBase.sendFloat(120, toReceiver: tempoSend)
-        
         PdBase.sendFloat(1, toReceiver: "progression")
+        
+        var center = NSNotificationCenter.defaultCenter()
+        center.addObserver(self, selector: "receiveNote:", name: "noteToPlay", object: nil)
+        center.addObserver(self, selector: "noteToStop", name: "stopNote", object: nil)
+    }
+    
+    deinit {
+        var center = NSNotificationCenter.defaultCenter()
+        center.removeObserver(self)
     }
 
+    func receiveNote(notification: NSNotification){
+        if let info = notification.userInfo as? Dictionary<String, Float> {
+            var note = info["play"]
+            
+            PdBase.sendFloat(note!, toReceiver: "MIDI_pitch")
+            PdBase.sendFloat(1, toReceiver: "MIDI_vel")
+        }
+    }
+    
+    func noteToStop(notification: NSNotification){
+        if let info = notification.userInfo as? Dictionary<String, Float> {
+            var note = info["stop"]
+            
+            PdBase.sendFloat(0, toReceiver: "MIDI_vel")
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func changeVolume(sender: UISlider) {
-        //var ID : String = String(patchID)
-        //ID += "-volume"
-        
         PdBase.sendFloat(sender.value, toReceiver: "volume")
     }
     
     @IBAction func changeTempo(sender: UISlider) {
         var tempo : Float = (sender.value - 0.5) * 40000
-        //var ID : String = String(patchID)
-        //ID += "-tempo"
-        //var tempoBPM : Int = 0
-        //tempoBPM = 50 + (Int(sender.value) * 250)
-        
+        println(tempo)
         PdBase.sendFloat(tempo, toReceiver: "tempo")
+        
     }
     
     @IBAction func Play(sender: UIButton) {
@@ -65,8 +74,12 @@ class MainViewController: UIViewController {
     
     @IBAction func Pause(sender: UIButton) {
         PdBase.sendBangToReceiver("pause")
+        PdBase.sendFloat(60, toReceiver: "MIDI_pitch")
+        PdBase.sendFloat(1, toReceiver: "MIDI_vel")
     }
+    
     @IBAction func Stop(sender: UIButton) {
+        PdBase.sendFloat(0, toReceiver: "MIDI_vel")
         PdBase.sendBangToReceiver("stop")
     }
     

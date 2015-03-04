@@ -47,7 +47,7 @@ class PlayAreaViewController: UIViewController, UIGestureRecognizerDelegate {
             var noteArray = info["notes"]
             numNotes = noteArray!.count
             
-            pieLayer.frame = CGRectMake(0, 0, 200, 200)
+            pieLayer.frame = CGRectMake(0, 0, 490, 604)
             view.layer.addSublayer(pieLayer)
             
             for var i = 0; i < numNotes; i++ {
@@ -63,14 +63,29 @@ class PlayAreaViewController: UIViewController, UIGestureRecognizerDelegate {
         
         var randomBlue:CGFloat = CGFloat(blue) / 100
         
-        return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
+        return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 0.75)
     }
     
     func handleTap(tap: UITapGestureRecognizer) {
-        println("tap")
+        var center = NSNotificationCenter.defaultCenter()
+        
         var pos: CGPoint = tap.locationInView(tap.view)
         var tappedSlice: PieElement = self.pieLayer.pieElemInPoint(pos)
-        println(tappedSlice.color)
+        
+        /*if tappedSlice == nil {
+                return
+        }*/
+        
+        var midinote = CGColorGetComponents(tappedSlice.color.CGColor)[2] * 100
+        var slice_color = CGColorGetComponents(tappedSlice.color.CGColor)
+        tappedSlice.color = UIColor(red: slice_color[0], green: slice_color[1], blue: slice_color[2], alpha: 1)
+        
+        center.postNotificationName("noteToPlay", object: nil, userInfo: ["play": midinote])
+        
+        if tap.state != UIGestureRecognizerState.Ended {
+            tappedSlice.color = UIColor(red: slice_color[0], green: slice_color[1], blue: slice_color[2], alpha: 0.75)
+            center.postNotificationName("stopNote", object: nil, userInfo: ["stop": midinote])
+        }
     }
     
     override func didReceiveMemoryWarning() {

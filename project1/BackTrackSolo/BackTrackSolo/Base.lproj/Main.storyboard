@@ -23,7 +23,7 @@
                                 <rect key="frame" x="564" y="168" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="changeTempo:" destination="BYZ-38-t0r" eventType="valueChanged" id="juB-0j-e3P"/>
+                                    <action selector="changeTempo:" destination="BYZ-38-t0r" eventType="valueChanged" id="Khj-b3-n9t"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tempo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UUK-ob-AgK">
@@ -46,6 +46,9 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="WJS-nj-b5F">
                                 <rect key="frame" x="128" y="168" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="changeVolume:" destination="BYZ-38-t0r" eventType="valueChanged" id="pNV-Jz-1Pb"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fQz-Ew-Uxp">
                                 <rect key="frame" x="169" y="40" width="37" height="30"/>
@@ -81,7 +84,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C45-y9-NXx"/>
+                                    <action selector="Pause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EDz-X2-mGa"/>
                                 </connections>
                             </button>
                         </subviews>
