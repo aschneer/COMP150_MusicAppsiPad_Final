@@ -34,8 +34,7 @@ class MainViewController: UIViewController {
         //var tempoSend : String = String(patchID) + "-tempo"
         //PdBase.sendFloat(120, toReceiver: tempoSend)
         
-        PdBase.sendMessage("dummy", withArguments: nil, toReceiver: "progression")
-        PdBase.sendMessage("C-Blues-Fast", withArguments: nil, toReceiver: "progression")
+        PdBase.sendFloat(1, toReceiver: "progression")
     }
 
     override func didReceiveMemoryWarning() {
