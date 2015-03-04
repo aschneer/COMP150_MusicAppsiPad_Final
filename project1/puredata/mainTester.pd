@@ -1,6 +1,6 @@
-#N canvas 1783 209 680 657 10;
+#N canvas 685 60 680 657 10;
 #X obj 25 37 hsl 128 15 0 1 0 0 empty empty Volume -2 -8 0 10 -262144
--1 -1 12700 1;
+-1 -1 0 1;
 #X obj 181 37 hsl 128 15 -20000 20000 0 0 empty empty Tempo_In -2 -8
 0 10 -262144 -1 -1 0 1;
 #X floatatom 22 63 5 0 0 0 - - -, f 5;
