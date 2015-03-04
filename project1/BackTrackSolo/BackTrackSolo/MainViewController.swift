@@ -39,11 +39,8 @@ class MainViewController: UIViewController {
         if let info = notification.userInfo as? Dictionary<String, Float> {
             var note = info["play"]
             
-            println(note)
-            
             PdBase.sendFloat(note!, toReceiver: "MIDI_pitch")
             PdBase.sendFloat(1, toReceiver: "MIDI_vel")
-            
         }
     }
     
