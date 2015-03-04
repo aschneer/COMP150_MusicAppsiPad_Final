@@ -1,8 +1,8 @@
-#N canvas 685 60 680 657 10;
+#N canvas 683 67 680 657 10;
 #X obj 25 37 hsl 128 15 0 1 0 0 empty empty Volume -2 -8 0 10 -262144
--1 -1 12700 1;
+-1 -1 0 1;
 #X obj 181 37 hsl 128 15 -20000 20000 0 0 empty empty Tempo_In -2 -8
-0 10 -262144 -1 -1 6350 1;
+0 10 -262144 -1 -1 0 1;
 #X floatatom 22 63 5 0 0 0 - - -, f 5;
 #X floatatom 178 63 10 0 0 0 - - -, f 10;
 #X obj 336 37 hsl 128 15 0 127 0 0 empty empty MIDI_Pitch -2 -8 0 10
@@ -29,9 +29,12 @@
 #X obj 317 195 s pause;
 #X obj 395 195 s stop;
 #X obj 252 272 r tempo_out;
-#X msg 22 168 [dummy] C-Blues-Slow;
-#X msg 31 192 [dummy] C-Blues-Medium;
-#X msg 43 216 [dummy] C-Blues-Fast;
+#X msg 22 168 1;
+#X msg 31 192 2;
+#X msg 43 216 3;
+#X text 53 168 C-Blues-Slow;
+#X text 63 192 C-Blues-Medium;
+#X text 74 217 C-Blues-Fast;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 2 0 14 0;
