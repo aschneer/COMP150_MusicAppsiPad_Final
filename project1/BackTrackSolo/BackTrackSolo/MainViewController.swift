@@ -27,6 +27,7 @@ class MainViewController: UIViewController {
         
         var center = NSNotificationCenter.defaultCenter()
         center.addObserver(self, selector: "receiveNote:", name: "noteToPlay", object: nil)
+        center.addObserver(self, selector: "noteToStop", name: "stopNote", object: nil)
     }
     
     deinit {
@@ -43,6 +44,14 @@ class MainViewController: UIViewController {
             PdBase.sendFloat(note!, toReceiver: "MIDI_pitch")
             PdBase.sendFloat(1, toReceiver: "MIDI_vel")
             
+        }
+    }
+    
+    func noteToStop(notification: NSNotification){
+        if let info = notification.userInfo as? Dictionary<String, Float> {
+            var note = info["stop"]
+            
+            PdBase.sendFloat(0, toReceiver: "MIDI_vel")
         }
     }
     

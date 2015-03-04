@@ -47,7 +47,7 @@ class PlayAreaViewController: UIViewController, UIGestureRecognizerDelegate {
             var noteArray = info["notes"]
             numNotes = noteArray!.count
             
-            pieLayer.frame = CGRectMake(0, 0, 200, 200)
+            pieLayer.frame = CGRectMake(0, 0, 490, 604)
             view.layer.addSublayer(pieLayer)
             
             for var i = 0; i < numNotes; i++ {
@@ -67,14 +67,22 @@ class PlayAreaViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func handleTap(tap: UITapGestureRecognizer) {
-        println("tap")
+        var center = NSNotificationCenter.defaultCenter()
+        
         var pos: CGPoint = tap.locationInView(tap.view)
         var tappedSlice: PieElement = self.pieLayer.pieElemInPoint(pos)
         
+        /*if tappedSlice == nil {
+                return
+        }*/
+        
         var midinote = CGColorGetComponents(tappedSlice.color.CGColor)[2] * 100
         
-        var center = NSNotificationCenter.defaultCenter()
         center.postNotificationName("noteToPlay", object: nil, userInfo: ["play": midinote])
+        
+        if tap.state != UIGestureRecognizerState.Ended {
+            center.postNotificationName("stopNote", object: nil, userInfo: ["stop": midinote])
+        }
     }
     
     override func didReceiveMemoryWarning() {

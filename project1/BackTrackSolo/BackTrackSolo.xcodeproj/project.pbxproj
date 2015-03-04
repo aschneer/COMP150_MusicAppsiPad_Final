@@ -235,6 +235,7 @@
 				TargetAttributes = {
 					ECE9632F1A92C3CE00F629C2 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = WC8GK6LE4R;
 					};
 					ECE963481A92C3CE00F629C2 = {
 						CreatedOnToolsVersion = 6.1.1;
