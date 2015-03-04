@@ -20,19 +20,21 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var patch = PdBase.openFile("piano_test.pd", path: NSBundle.mainBundle().resourcePath)
+        var patch = PdBase.openFile("main.pd", path: NSBundle.mainBundle().resourcePath)
         patchID = PdBase.dollarZeroForFile(patch)
         
         // Initialize volume and tempo
-        var midiNote : String = String(patchID) + "-midinote"
-        PdBase.sendFloat(60, toReceiver: midiNote)
-        var beatsPerMeasure : String = String(patchID) + "-beatsPerMeasure"
-        PdBase.sendFloat(4, toReceiver: beatsPerMeasure)
+        //var midiNote : String = String(patchID) + "-midinote"
+        //PdBase.sendFloat(60, toReceiver: midiNote)
+        //var beatsPerMeasure : String = String(patchID) + "-beatsPerMeasure"
+        //PdBase.sendFloat(4, toReceiver: beatsPerMeasure)
         
-        var volumeSend : String = String(patchID) + "-volume"
-        PdBase.sendFloat(0.5, toReceiver: volumeSend)
-        var tempoSend : String = String(patchID) + "-tempo"
-        PdBase.sendFloat(120, toReceiver: tempoSend)
+        //var volumeSend : String = String(patchID) + "-volume"
+        //PdBase.sendFloat(0.5, toReceiver: volumeSend)
+        //var tempoSend : String = String(patchID) + "-tempo"
+        //PdBase.sendFloat(120, toReceiver: tempoSend)
+        
+        PdBase.sendFloat(1, toReceiver: "progression")
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,31 +43,31 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func changeVolume(sender: UISlider) {
-        var ID : String = String(patchID)
-        ID += "-volume"
+        //var ID : String = String(patchID)
+        //ID += "-volume"
         
-        println("\(ID)")
-        PdBase.sendFloat(sender.value, toReceiver: ID)
+        PdBase.sendFloat(sender.value, toReceiver: "volume")
     }
     
     @IBAction func changeTempo(sender: UISlider) {
-        var ID : String = String(patchID)
-        ID += "-tempo"
-        var tempoBPM : Int = 0
-        tempoBPM = 50 + (Int(sender.value) * 250)
+        var tempo : Float = (sender.value - 0.5) * 40000
+        //var ID : String = String(patchID)
+        //ID += "-tempo"
+        //var tempoBPM : Int = 0
+        //tempoBPM = 50 + (Int(sender.value) * 250)
         
-        println("\(ID)")
-        PdBase.sendFloat(Float(tempoBPM), toReceiver: ID)
+        PdBase.sendFloat(tempo, toReceiver: "tempo")
     }
     
     @IBAction func Play(sender: UIButton) {
-        var playSend : String = String(patchID) + "-backingTrackStatus"
-        PdBase.sendFloat(1, toReceiver: playSend)
+        PdBase.sendBangToReceiver("play")
     }
     
+    @IBAction func Pause(sender: UIButton) {
+        PdBase.sendBangToReceiver("pause")
+    }
     @IBAction func Stop(sender: UIButton) {
-        var stopSend : String = String(patchID) + "-backingTrackStatus"
-        PdBase.sendFloat(0, toReceiver: stopSend)
+        PdBase.sendBangToReceiver("stop")
     }
     
     @IBAction func selectNotes(sender: UIButton) {

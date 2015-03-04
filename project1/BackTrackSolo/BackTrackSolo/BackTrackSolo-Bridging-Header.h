@@ -3,6 +3,6 @@
 //
 
 #import "PdDispatcher.h"
-#import "XYPieChart.h"
+//#import "XYPieChart.h"
 #import <MagicPieLayer.h>
 #import <QuartzCore/QuartzCore.h>
