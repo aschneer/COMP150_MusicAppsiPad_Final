@@ -29,12 +29,12 @@
     PdDispatcher *dispatcher = [PdDispatcher new];
     [PdBase setDelegate:dispatcher];
     
-    _patch = [PdBase openFile:@"piano_01.pd"
-                         path:[[NSBundle mainBundle] resourcePath]];
+    //_patch = [PdBase openFile:@"main.pd"
+    //                     path:[[NSBundle mainBundle] resourcePath]];
     
-    if (!_patch) {
-        NSLog(@"Patch didn't open");
-    }
+    //if (!_patch) {
+    //    NSLog(@"Patch didn't open");
+    //}
     // Override point for customization after application launch.
     return YES;
 }

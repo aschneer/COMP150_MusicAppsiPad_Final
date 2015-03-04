@@ -46,32 +46,31 @@ class PlayAreaViewController: UIViewController, UIGestureRecognizerDelegate {
         if let info = notification.userInfo as? Dictionary<String, [Int]> {
             var noteArray = info["notes"]
             numNotes = noteArray!.count
-            //println(numNotes)
-            //println(noteArray!)
             
             pieLayer.frame = CGRectMake(0, 0, 200, 200)
             view.layer.addSublayer(pieLayer)
             
             for var i = 0; i < numNotes; i++ {
-                pieLayer.addValues([PieElement(value: 1, color: randomColor())], animated: true)
-                println(i)
+                pieLayer.addValues([PieElement(value: 1, color: randomColor(noteArray![i]))], animated: true)
             }
         }
     }
     
-    func randomColor() -> UIColor {
+    func randomColor(blue: Int) -> UIColor {
         var randomRed:CGFloat = CGFloat(drand48())
         
         var randomGreen:CGFloat = CGFloat(drand48())
         
-        var randomBlue:CGFloat = CGFloat(drand48())
+        var randomBlue:CGFloat = CGFloat(blue) / 100
         
         return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
     }
     
     func handleTap(tap: UITapGestureRecognizer) {
+        println("tap")
         var pos: CGPoint = tap.locationInView(tap.view)
         var tappedSlice: PieElement = self.pieLayer.pieElemInPoint(pos)
+        println(tappedSlice.color)
     }
     
     override func didReceiveMemoryWarning() {
