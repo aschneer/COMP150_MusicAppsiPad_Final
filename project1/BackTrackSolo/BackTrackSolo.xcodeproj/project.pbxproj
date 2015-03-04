@@ -11,13 +11,13 @@
 		EC03E2001AA6B83D00BC4475 /* 12BarBlues_C_Fast.wav in Resources */ = {isa = PBXBuildFile; fileRef = EC03E1F71AA6B83D00BC4475 /* 12BarBlues_C_Fast.wav */; };
 		EC03E2011AA6B83D00BC4475 /* 12BarBlues_C_Medium.wav in Resources */ = {isa = PBXBuildFile; fileRef = EC03E1F81AA6B83D00BC4475 /* 12BarBlues_C_Medium.wav */; };
 		EC03E2021AA6B83D00BC4475 /* 12BarBlues_C_Slow.wav in Resources */ = {isa = PBXBuildFile; fileRef = EC03E1F91AA6B83D00BC4475 /* 12BarBlues_C_Slow.wav */; };
-		EC03E2031AA6B83D00BC4475 /* backTrack_v02.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC03E1FA1AA6B83D00BC4475 /* backTrack_v02.pd */; };
 		EC03E2041AA6B83D00BC4475 /* dictionary-standalone.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC03E1FB1AA6B83D00BC4475 /* dictionary-standalone.pd */; };
 		EC03E2051AA6B83D00BC4475 /* generateSound.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC03E1FC1AA6B83D00BC4475 /* generateSound.pd */; };
 		EC03E2061AA6B83D00BC4475 /* main.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC03E1FD1AA6B83D00BC4475 /* main.pd */; };
-		EC03E2071AA6B83D00BC4475 /* mainMessageHandler.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC03E1FE1AA6B83D00BC4475 /* mainMessageHandler.pd */; };
 		EC03E2081AA6B83D00BC4475 /* pitchshifter~.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC03E1FF1AA6B83D00BC4475 /* pitchshifter~.pd */; };
 		EC5269F01AA292E200A4D009 /* PlayAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5269EF1AA292E200A4D009 /* PlayAreaViewController.swift */; };
+		ECCBE7AF1AA6C3EA001C2862 /* backTrack_v03.pd in Resources */ = {isa = PBXBuildFile; fileRef = ECCBE7AD1AA6C3EA001C2862 /* backTrack_v03.pd */; };
+		ECCBE7B01AA6C3EA001C2862 /* mainMessageHandler.pd in Resources */ = {isa = PBXBuildFile; fileRef = ECCBE7AE1AA6C3EA001C2862 /* mainMessageHandler.pd */; };
 		ECE66C431AA281D00059B4F5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE66C421AA281D00059B4F5 /* MainViewController.swift */; };
 		ECE66C451AA28A180059B4F5 /* noteSelection.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECE66C441AA28A180059B4F5 /* noteSelection.xib */; };
 		ECE66C471AA28A640059B4F5 /* NoteSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE66C461AA28A640059B4F5 /* NoteSelectionViewController.swift */; };
@@ -47,14 +47,14 @@
 		EC03E1F71AA6B83D00BC4475 /* 12BarBlues_C_Fast.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 12BarBlues_C_Fast.wav; sourceTree = "<group>"; };
 		EC03E1F81AA6B83D00BC4475 /* 12BarBlues_C_Medium.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 12BarBlues_C_Medium.wav; sourceTree = "<group>"; };
 		EC03E1F91AA6B83D00BC4475 /* 12BarBlues_C_Slow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 12BarBlues_C_Slow.wav; sourceTree = "<group>"; };
-		EC03E1FA1AA6B83D00BC4475 /* backTrack_v02.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = backTrack_v02.pd; sourceTree = "<group>"; };
 		EC03E1FB1AA6B83D00BC4475 /* dictionary-standalone.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "dictionary-standalone.pd"; sourceTree = "<group>"; };
 		EC03E1FC1AA6B83D00BC4475 /* generateSound.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = generateSound.pd; sourceTree = "<group>"; };
 		EC03E1FD1AA6B83D00BC4475 /* main.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.pd; sourceTree = "<group>"; };
-		EC03E1FE1AA6B83D00BC4475 /* mainMessageHandler.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mainMessageHandler.pd; sourceTree = "<group>"; };
 		EC03E1FF1AA6B83D00BC4475 /* pitchshifter~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pitchshifter~.pd"; sourceTree = "<group>"; };
 		EC5269EF1AA292E200A4D009 /* PlayAreaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayAreaViewController.swift; sourceTree = "<group>"; };
 		EC7621BD1A9A7A53006E64E7 /* BackTrackSolo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BackTrackSolo-Bridging-Header.h"; sourceTree = "<group>"; };
+		ECCBE7AD1AA6C3EA001C2862 /* backTrack_v03.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = backTrack_v03.pd; sourceTree = "<group>"; };
+		ECCBE7AE1AA6C3EA001C2862 /* mainMessageHandler.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mainMessageHandler.pd; sourceTree = "<group>"; };
 		ECE66C421AA281D00059B4F5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		ECE66C441AA28A180059B4F5 /* noteSelection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = noteSelection.xib; sourceTree = "<group>"; };
 		ECE66C461AA28A640059B4F5 /* NoteSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteSelectionViewController.swift; sourceTree = "<group>"; };
@@ -132,14 +132,14 @@
 		ECE963321A92C3CE00F629C2 /* BackTrackSolo */ = {
 			isa = PBXGroup;
 			children = (
+				ECCBE7AD1AA6C3EA001C2862 /* backTrack_v03.pd */,
+				ECCBE7AE1AA6C3EA001C2862 /* mainMessageHandler.pd */,
 				EC03E1F71AA6B83D00BC4475 /* 12BarBlues_C_Fast.wav */,
 				EC03E1F81AA6B83D00BC4475 /* 12BarBlues_C_Medium.wav */,
 				EC03E1F91AA6B83D00BC4475 /* 12BarBlues_C_Slow.wav */,
-				EC03E1FA1AA6B83D00BC4475 /* backTrack_v02.pd */,
 				EC03E1FB1AA6B83D00BC4475 /* dictionary-standalone.pd */,
 				EC03E1FC1AA6B83D00BC4475 /* generateSound.pd */,
 				EC03E1FD1AA6B83D00BC4475 /* main.pd */,
-				EC03E1FE1AA6B83D00BC4475 /* mainMessageHandler.pd */,
 				EC03E1FF1AA6B83D00BC4475 /* pitchshifter~.pd */,
 				ECE963371A92C3CE00F629C2 /* AppDelegate.h */,
 				ECE963381A92C3CE00F629C2 /* AppDelegate.m */,
@@ -269,16 +269,16 @@
 				EC03E2051AA6B83D00BC4475 /* generateSound.pd in Resources */,
 				EC03E2001AA6B83D00BC4475 /* 12BarBlues_C_Fast.wav in Resources */,
 				ECE66C451AA28A180059B4F5 /* noteSelection.xib in Resources */,
-				EC03E2071AA6B83D00BC4475 /* mainMessageHandler.pd in Resources */,
 				EC03E2011AA6B83D00BC4475 /* 12BarBlues_C_Medium.wav in Resources */,
 				EC03E2041AA6B83D00BC4475 /* dictionary-standalone.pd in Resources */,
 				ECE9633F1A92C3CE00F629C2 /* Main.storyboard in Resources */,
 				EC03E2021AA6B83D00BC4475 /* 12BarBlues_C_Slow.wav in Resources */,
 				ECE963441A92C3CE00F629C2 /* LaunchScreen.xib in Resources */,
+				ECCBE7AF1AA6C3EA001C2862 /* backTrack_v03.pd in Resources */,
+				ECCBE7B01AA6C3EA001C2862 /* mainMessageHandler.pd in Resources */,
 				EC03E2061AA6B83D00BC4475 /* main.pd in Resources */,
 				ECE963411A92C3CE00F629C2 /* Images.xcassets in Resources */,
 				EC03E2081AA6B83D00BC4475 /* pitchshifter~.pd in Resources */,
-				EC03E2031AA6B83D00BC4475 /* backTrack_v02.pd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

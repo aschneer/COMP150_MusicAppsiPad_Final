@@ -70,7 +70,11 @@ class PlayAreaViewController: UIViewController, UIGestureRecognizerDelegate {
         println("tap")
         var pos: CGPoint = tap.locationInView(tap.view)
         var tappedSlice: PieElement = self.pieLayer.pieElemInPoint(pos)
-        println(tappedSlice.color)
+        
+        var midinote = CGColorGetComponents(tappedSlice.color.CGColor)[2] * 100
+        
+        var center = NSNotificationCenter.defaultCenter()
+        center.postNotificationName("noteToPlay", object: nil, userInfo: ["play": midinote])
     }
     
     override func didReceiveMemoryWarning() {
