@@ -18,6 +18,14 @@ class PlayAreaViewController: UIViewController, UIGestureRecognizerDelegate {
         var midiValue : Int
     }
     
+    var slicePlaying : PieElement?
+    
+    private lazy var panGesture: UIPanGestureRecognizer = {
+        let gesture = UIPanGestureRecognizer(target: self, action: "handlePan:")
+        gesture.delegate = self
+        return gesture
+    }()
+    
     private lazy var tapGesture: UITapGestureRecognizer = {
         let gesture = UITapGestureRecognizer(target: self, action: "handleTap:")
         gesture.delegate = self
@@ -26,6 +34,7 @@ class PlayAreaViewController: UIViewController, UIGestureRecognizerDelegate {
     
     private func addGestures() {
         self.view.addGestureRecognizer(self.tapGesture)
+        self.view.addGestureRecognizer(self.panGesture)
     }
     
     var noteArray : [notes] = []
@@ -37,7 +46,8 @@ class PlayAreaViewController: UIViewController, UIGestureRecognizerDelegate {
         var center = NSNotificationCenter.defaultCenter()
         center.addObserver(self, selector: "receiveNotes:", name: "playableNotes", object: nil)
         self.addGestures()
-        view.layer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        var bgColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        self.view.backgroundColor = bgColor
     }
 
     deinit {
@@ -53,8 +63,6 @@ class PlayAreaViewController: UIViewController, UIGestureRecognizerDelegate {
             view.layer.addSublayer(pieLayer)
             pieLayer.setMaxRadius(200, minRadius: 50, animated: true)
             pieLayer.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
-            
-            println(pieInitialized)
             
             if pieInitialized {
                 var count = pieLayer.values.count
@@ -79,6 +87,29 @@ class PlayAreaViewController: UIViewController, UIGestureRecognizerDelegate {
         var randomBlue:CGFloat = CGFloat(blue) / 100
         
         return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 0.60)
+    }
+    
+    func handlePan(tap: UIPanGestureRecognizer) {
+        var center = NSNotificationCenter.defaultCenter()
+        
+        var pos: CGPoint = tap.locationInView(tap.view)
+        
+        var tappedSlice: PieElement? = self.pieLayer.pieElemInPoint(pos)
+        
+        if tappedSlice != slicePlaying {
+            if let actualSlice = tappedSlice {
+                var midinote = CGColorGetComponents(actualSlice.color.CGColor)[2] * 100
+                var slice_color = CGColorGetComponents(actualSlice.color.CGColor)
+                actualSlice.color = UIColor(red: slice_color[0], green: slice_color[1], blue: slice_color[2], alpha: 1)
+                
+                center.postNotificationName("noteToPlay", object: nil, userInfo: ["play": midinote])
+                
+                var timer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self, selector: "fadeOutSlice:", userInfo: ["slice": actualSlice], repeats: false)
+            }
+        }
+        
+        slicePlaying = tappedSlice
+        
     }
     
     func handleTap(tap: UITapGestureRecognizer) {
