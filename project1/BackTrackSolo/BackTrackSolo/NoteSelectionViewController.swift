@@ -37,6 +37,22 @@ class NoteSelectionViewController: UIViewController {
     @IBOutlet weak var ProgressionPicker: UIPickerView!
     
     
+    //KeyPicker setup
+    var keys = ["A", "B", "C", "D", "E", "F", "G"]
+    
+    func numComponentsForKeyPicker(KeyPicker: UIPickerView) -> Int {
+        return 1;
+    }
+    
+    func KeyPicker(KeyPicker: UIPickerView, numRowsinComponent component: Int) -> Int {
+        return keys.count
+    }
+    
+    func KeyPicker(KeyPicker: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return keys[row]
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
