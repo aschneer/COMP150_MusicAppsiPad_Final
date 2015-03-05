@@ -7,7 +7,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoteSelectionViewController" customModule="BackTrackSolo" customModuleProvider="target">
             <connections>
                 <outlet property="KeyPicker" destination="PxI-B6-beC" id="yWm-lP-wIO"/>
-                <outlet property="ProgressionPicker" destination="KYJ-5O-nBW" id="fq9-wo-RYa"/>
                 <outlet property="Switch1" destination="LYh-wq-uF7" id="px6-Fp-URU"/>
                 <outlet property="Switch10" destination="QGT-2E-jiH" id="hck-1C-uJc"/>
                 <outlet property="Switch11" destination="uCI-42-LcI" id="qD9-J1-QWv"/>
@@ -33,15 +32,6 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="493"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PxI-B6-beC">
-                    <rect key="frame" x="-125" y="282" width="600" height="162"/>
-                </pickerView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Key" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ja5-db-MGW">
-                    <rect key="frame" x="160" y="271" width="30" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3KQ-w0-wZm">
                     <rect key="frame" x="340" y="441" width="88" height="30"/>
                     <state key="normal" title="Select Notes">
@@ -51,15 +41,6 @@
                         <action selector="sendNotes:" destination="-1" eventType="touchUpInside" id="VNv-UQ-Udx"/>
                     </connections>
                 </button>
-                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KYJ-5O-nBW">
-                    <rect key="frame" x="294" y="282" width="600" height="162"/>
-                </pickerView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Progression" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dK-hM-iau">
-                    <rect key="frame" x="548" y="271" width="92" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3B-ue-Rnw">
                     <rect key="frame" x="776" y="55" width="30" height="30"/>
                     <state key="normal" title="B">
@@ -210,6 +191,9 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PxI-B6-beC">
+                    <rect key="frame" x="84" y="284" width="600" height="162"/>
+                </pickerView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
