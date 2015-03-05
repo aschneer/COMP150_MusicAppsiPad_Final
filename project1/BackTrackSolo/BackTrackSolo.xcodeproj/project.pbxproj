@@ -19,11 +19,11 @@
 		EC429F261AA7C4B200B3A69E /* iterator.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC429F1A1AA7C4B200B3A69E /* iterator.pd */; };
 		EC429F271AA7C4B200B3A69E /* main.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC429F1B1AA7C4B200B3A69E /* main.pd */; };
 		EC429F281AA7C4B200B3A69E /* mainMessageHandler.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC429F1C1AA7C4B200B3A69E /* mainMessageHandler.pd */; };
-		EC429F291AA7C4B200B3A69E /* midiMessageHandler.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC429F1D1AA7C4B200B3A69E /* midiMessageHandler.pd */; };
 		EC429F2A1AA7C4B200B3A69E /* normalize~.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC429F1E1AA7C4B200B3A69E /* normalize~.pd */; };
 		EC429F2B1AA7C4B200B3A69E /* number.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC429F1F1AA7C4B200B3A69E /* number.pd */; };
 		EC429F2C1AA7C4B200B3A69E /* pitchshifter~.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC429F201AA7C4B200B3A69E /* pitchshifter~.pd */; };
 		EC5269F01AA292E200A4D009 /* PlayAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5269EF1AA292E200A4D009 /* PlayAreaViewController.swift */; };
+		EC8BC2351AA8226A002E4C60 /* midiMessageHandler.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC8BC2341AA8226A002E4C60 /* midiMessageHandler.pd */; };
 		ECE66C431AA281D00059B4F5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE66C421AA281D00059B4F5 /* MainViewController.swift */; };
 		ECE66C451AA28A180059B4F5 /* noteSelection.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECE66C441AA28A180059B4F5 /* noteSelection.xib */; };
 		ECE66C471AA28A640059B4F5 /* NoteSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE66C461AA28A640059B4F5 /* NoteSelectionViewController.swift */; };
@@ -61,12 +61,12 @@
 		EC429F1A1AA7C4B200B3A69E /* iterator.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = iterator.pd; sourceTree = "<group>"; };
 		EC429F1B1AA7C4B200B3A69E /* main.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.pd; sourceTree = "<group>"; };
 		EC429F1C1AA7C4B200B3A69E /* mainMessageHandler.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mainMessageHandler.pd; sourceTree = "<group>"; };
-		EC429F1D1AA7C4B200B3A69E /* midiMessageHandler.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = midiMessageHandler.pd; sourceTree = "<group>"; };
 		EC429F1E1AA7C4B200B3A69E /* normalize~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "normalize~.pd"; sourceTree = "<group>"; };
 		EC429F1F1AA7C4B200B3A69E /* number.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = number.pd; sourceTree = "<group>"; };
 		EC429F201AA7C4B200B3A69E /* pitchshifter~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pitchshifter~.pd"; sourceTree = "<group>"; };
 		EC5269EF1AA292E200A4D009 /* PlayAreaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayAreaViewController.swift; sourceTree = "<group>"; };
 		EC7621BD1A9A7A53006E64E7 /* BackTrackSolo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BackTrackSolo-Bridging-Header.h"; sourceTree = "<group>"; };
+		EC8BC2341AA8226A002E4C60 /* midiMessageHandler.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = midiMessageHandler.pd; sourceTree = "<group>"; };
 		ECE66C421AA281D00059B4F5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		ECE66C441AA28A180059B4F5 /* noteSelection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = noteSelection.xib; sourceTree = "<group>"; };
 		ECE66C461AA28A640059B4F5 /* NoteSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteSelectionViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +144,7 @@
 		ECE963321A92C3CE00F629C2 /* BackTrackSolo */ = {
 			isa = PBXGroup;
 			children = (
+				EC8BC2341AA8226A002E4C60 /* midiMessageHandler.pd */,
 				EC429F151AA7C4B200B3A69E /* backTrack_v03.pd */,
 				EC429F161AA7C4B200B3A69E /* dictionary-standalone.pd */,
 				EC429F171AA7C4B200B3A69E /* gate2.pd */,
@@ -152,7 +153,6 @@
 				EC429F1A1AA7C4B200B3A69E /* iterator.pd */,
 				EC429F1B1AA7C4B200B3A69E /* main.pd */,
 				EC429F1C1AA7C4B200B3A69E /* mainMessageHandler.pd */,
-				EC429F1D1AA7C4B200B3A69E /* midiMessageHandler.pd */,
 				EC429F1E1AA7C4B200B3A69E /* normalize~.pd */,
 				EC429F1F1AA7C4B200B3A69E /* number.pd */,
 				EC429F201AA7C4B200B3A69E /* pitchshifter~.pd */,
@@ -296,12 +296,12 @@
 				EC03E2011AA6B83D00BC4475 /* 12BarBlues_C_Medium.wav in Resources */,
 				ECE9633F1A92C3CE00F629C2 /* Main.storyboard in Resources */,
 				EC429F2A1AA7C4B200B3A69E /* normalize~.pd in Resources */,
+				EC8BC2351AA8226A002E4C60 /* midiMessageHandler.pd in Resources */,
 				EC03E2021AA6B83D00BC4475 /* 12BarBlues_C_Slow.wav in Resources */,
 				EC429F241AA7C4B200B3A69E /* generateSound_v01.pd in Resources */,
 				ECE963441A92C3CE00F629C2 /* LaunchScreen.xib in Resources */,
 				ECE963411A92C3CE00F629C2 /* Images.xcassets in Resources */,
 				EC429F281AA7C4B200B3A69E /* mainMessageHandler.pd in Resources */,
-				EC429F291AA7C4B200B3A69E /* midiMessageHandler.pd in Resources */,
 				EC429F261AA7C4B200B3A69E /* iterator.pd in Resources */,
 				EC429F231AA7C4B200B3A69E /* gate2.pd in Resources */,
 			);
