@@ -32,9 +32,16 @@ class PlayAreaViewController: UIViewController, UIGestureRecognizerDelegate {
         return gesture
     }()
     
+    /*private lazy var longPressGesture: UILongPressGestureRecognizer = {
+        let gesture = UILongPressGestureRecognizer(target: self, action: "handleLongPress:")
+        gesture.delegate = self
+        return gesture
+    }()*/
+    
     private func addGestures() {
         self.view.addGestureRecognizer(self.tapGesture)
         self.view.addGestureRecognizer(self.panGesture)
+        //self.view.addGestureRecognizer(self.longPressGesture)
     }
     
     var noteArray : [notes] = []
@@ -131,6 +138,28 @@ class PlayAreaViewController: UIViewController, UIGestureRecognizerDelegate {
             }
         }
     }
+    
+    /*func handleLongPress(tap: UILongPressGestureRecognizer) {
+        var center = NSNotificationCenter.defaultCenter()
+        
+        var pos: CGPoint = tap.locationInView(tap.view)
+        
+        var tappedSlice: PieElement? = self.pieLayer.pieElemInPoint(pos)
+        
+        if let actualSlice = tappedSlice {
+            var midinote = CGColorGetComponents(actualSlice.color.CGColor)[2] * 100
+            var slice_color = CGColorGetComponents(actualSlice.color.CGColor)
+            actualSlice.color = UIColor(red: slice_color[0], green: slice_color[1], blue: slice_color[2], alpha: 1)
+            
+            center.postNotificationName("noteToPlay", object: nil, userInfo: ["play": midinote])
+            center.postNotificationName("tremolo", object: nil, userInfo: ["tremolo": 1])
+            
+            if tap.state == UIGestureRecognizerState.Ended  || tap.state == UIGestureRecognizerState.Cancelled || tap.state == UIGestureRecognizerState.Failed {
+                center.postNotificationName("tremolo", object: nil, userInfo: ["tremolo": 0])
+                var timer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self, selector: "fadeOutSlice:", userInfo: ["slice": actualSlice], repeats: false)
+            }
+        }
+    }*/
     
     func fadeOutSlice(timer: NSTimer) {
         var center = NSNotificationCenter.defaultCenter()

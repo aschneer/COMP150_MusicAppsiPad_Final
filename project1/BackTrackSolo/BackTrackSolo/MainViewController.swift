@@ -12,6 +12,8 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var volumeSlider: UISlider!
     @IBOutlet weak var tempoSlider: UISlider!
+    @IBOutlet weak var tremoloSwitch: UISwitch!
+    var tremolo : Float = 0.0
     var patchID : Int32 = 0
     
     required init(coder aDecoder: NSCoder) {
@@ -20,6 +22,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         volumeSlider.value = 1
+        tremoloSwitch.on = false
         super.viewDidLoad()
         var patch = PdBase.openFile("main.pd", path: NSBundle.mainBundle().resourcePath)
         patchID = PdBase.dollarZeroForFile(patch)
@@ -28,6 +31,7 @@ class MainViewController: UIViewController {
         var center = NSNotificationCenter.defaultCenter()
         center.addObserver(self, selector: "receiveNote:", name: "noteToPlay", object: nil)
         center.addObserver(self, selector: "noteToStop:", name: "stopNote", object: nil)
+        center.addObserver(self, selector: "toggleTremolo:", name: "tremolo", object: nil)
     }
     
     deinit {
@@ -49,6 +53,17 @@ class MainViewController: UIViewController {
             
             PdBase.sendList([note!, 0], toReceiver: "MIDI_message")
         }
+    }
+    
+    @IBAction func toggleTremolo(sender: UISwitch) {
+        if tremolo == 0.0 {
+            tremolo = 1.0
+        } else if tremolo == 1.0 {
+            tremolo = 0.0
+            
+        }
+        println(tremolo)
+        PdBase.sendFloat(tremolo, toReceiver: "tremolo")
     }
     
     override func didReceiveMemoryWarning() {

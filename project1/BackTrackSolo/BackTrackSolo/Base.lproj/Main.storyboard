@@ -87,12 +87,27 @@
                                     <segue destination="PBg-uc-AyS" kind="embed" id="9Cg-Hs-HBU"/>
                                 </connections>
                             </containerView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="y11-jC-96H">
+                                <rect key="frame" x="150" y="878" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="toggleTremolo:" destination="BYZ-38-t0r" eventType="valueChanged" id="O9m-Xd-y1C"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tremolo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FXO-AH-FUm">
+                                <rect key="frame" x="144" y="835" width="61" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="tempoSlider" destination="iWb-Ap-xeR" id="pZk-wy-KkD"/>
+                        <outlet property="tremoloSwitch" destination="y11-jC-96H" id="7Eh-iQ-Bw0"/>
                         <outlet property="volumeSlider" destination="WJS-nj-b5F" id="E7H-qz-zY4"/>
                     </connections>
                 </viewController>
