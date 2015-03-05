@@ -1,14 +1,14 @@
-#N canvas 1 118 680 657 10;
+#N canvas 1 146 680 657 10;
 #X obj -7 47 inlet;
 #X obj 46 48 inlet;
 #X text -13 22 Volume;
 #X obj 253 48 inlet;
 #X obj 297 48 inlet;
 #X text 217 26 Progression;
-#X obj 143 415 dac~;
+#X obj 53 483 dac~;
 #X obj 518 24 loadbang;
 #X msg 518 51 \; pd dsp 1 \;;
-#X text 62 416 Play sound., f 19;
+#X text -28 484 Play sound., f 19;
 #X text 483 94 Enable DSP by default.;
 #X text 298 27 Play;
 #X obj 338 48 inlet;
@@ -42,6 +42,12 @@
 #X obj 147 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X floatatom -7 92 5 0 0 0 - - -, f 5;
+#X obj 252 486 snapshot~;
+#X obj 267 456 metro 50;
+#X floatatom 252 522 5 0 0 0 - - -, f 5;
+#X obj 267 430 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 54 454 normalize~;
 #X connect 0 0 27 0;
 #X connect 0 0 29 0;
 #X connect 0 0 34 0;
@@ -53,17 +59,23 @@
 #X connect 4 0 23 0;
 #X connect 4 0 28 3;
 #X connect 7 0 8 0;
+#X connect 7 0 38 0;
 #X connect 12 0 24 0;
 #X connect 12 0 28 4;
 #X connect 14 0 25 0;
 #X connect 14 0 28 5;
 #X connect 16 0 26 0;
 #X connect 16 0 28 6;
-#X connect 28 0 6 0;
-#X connect 28 0 6 1;
+#X connect 28 0 35 0;
+#X connect 28 0 39 0;
 #X connect 28 1 18 0;
 #X connect 29 0 28 1;
 #X connect 30 0 32 0;
 #X connect 30 0 33 0;
-#X connect 32 0 6 0;
-#X connect 32 0 6 1;
+#X connect 32 0 35 0;
+#X connect 32 0 39 0;
+#X connect 35 0 37 0;
+#X connect 36 0 35 0;
+#X connect 38 0 36 0;
+#X connect 39 0 6 0;
+#X connect 39 0 6 1;

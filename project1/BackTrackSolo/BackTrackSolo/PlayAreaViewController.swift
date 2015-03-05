@@ -72,13 +72,9 @@ class PlayAreaViewController: UIViewController, UIGestureRecognizerDelegate {
         
         var pos: CGPoint = tap.locationInView(tap.view)
         
-        println(pos)
-        
         var tappedSlice: PieElement? = self.pieLayer.pieElemInPoint(pos)
         
         if let actualSlice = tappedSlice {
-            println("got slice")
-        
             var midinote = CGColorGetComponents(actualSlice.color.CGColor)[2] * 100
             var slice_color = CGColorGetComponents(actualSlice.color.CGColor)
             actualSlice.color = UIColor(red: slice_color[0], green: slice_color[1], blue: slice_color[2], alpha: 1)
