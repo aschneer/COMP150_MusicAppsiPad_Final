@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NoteSelectionViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate{
+class NoteSelectionViewController: UIViewController,UIPickerViewDelegate{
 
     @IBOutlet weak var sendNotes: UIButton!
     
@@ -49,7 +49,7 @@ class NoteSelectionViewController: UIViewController,UIPickerViewDataSource,UIPic
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        key[row]
+        return keys[row]
     }
 
     
