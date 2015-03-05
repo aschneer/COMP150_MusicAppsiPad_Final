@@ -32,6 +32,7 @@ class NoteSelectionViewController: UIViewController {
     @IBAction func sendNotes(sender: UIButton) {
         var center = NSNotificationCenter.defaultCenter()
         center.postNotificationName("playableNotes", object: nil, userInfo: ["notes": notes])
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
 }

@@ -12,6 +12,8 @@ class PlayAreaViewController: UIViewController, UIGestureRecognizerDelegate {
 
     let pieLayer = PieLayer()
     
+    private var pieInitialized : Bool = false
+    
     struct notes {
         var midiValue : Int
     }
@@ -35,6 +37,7 @@ class PlayAreaViewController: UIViewController, UIGestureRecognizerDelegate {
         var center = NSNotificationCenter.defaultCenter()
         center.addObserver(self, selector: "receiveNotes:", name: "playableNotes", object: nil)
         self.addGestures()
+        view.layer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
     }
 
     deinit {
@@ -51,9 +54,20 @@ class PlayAreaViewController: UIViewController, UIGestureRecognizerDelegate {
             pieLayer.setMaxRadius(200, minRadius: 50, animated: true)
             pieLayer.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
             
+            println(pieInitialized)
+            
+            if pieInitialized {
+                var count = pieLayer.values.count
+                for var i : Int = count - 1; i >= 0; i-- {
+                    pieLayer.deleteValues([pieLayer.values[i]], animated: true)
+                }
+            }
+            
             for var i = 0; i < numNotes; i++ {
                 pieLayer.addValues([PieElement(value: 1, color: randomColor(noteArray![i]))], animated: true)
             }
+            
+            pieInitialized = true
         }
     }
     
@@ -64,7 +78,7 @@ class PlayAreaViewController: UIViewController, UIGestureRecognizerDelegate {
         
         var randomBlue:CGFloat = CGFloat(blue) / 100
         
-        return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 0.75)
+        return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 0.60)
     }
     
     func handleTap(tap: UITapGestureRecognizer) {
@@ -96,7 +110,7 @@ class PlayAreaViewController: UIViewController, UIGestureRecognizerDelegate {
             var midinote = CGColorGetComponents(slice!.color.CGColor)[2] * 100
             
             var slice_color = CGColorGetComponents(slice!.color.CGColor)
-            slice!.color = UIColor(red: slice_color[0], green: slice_color[1], blue: slice_color[2], alpha: 0.75)
+            slice!.color = UIColor(red: slice_color[0], green: slice_color[1], blue: slice_color[2], alpha: 0.60)
             center.postNotificationName("stopNote", object: nil, userInfo: ["stop": midinote])
         }
     }
