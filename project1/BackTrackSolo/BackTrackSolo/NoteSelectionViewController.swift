@@ -34,7 +34,7 @@ class NoteSelectionViewController: UIViewController,UIPickerViewDelegate{
     @IBOutlet weak var Switch16: UISwitch!
     
     @IBOutlet weak var KeyPicker: UIPickerView!
-    @IBOutlet weak var ProgressionPicker: UIPickerView!
+    //@IBOutlet weak var ProgressionPicker: UIPickerView!
     
     
     //KeyPicker setup
@@ -55,9 +55,6 @@ class NoteSelectionViewController: UIViewController,UIPickerViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-
         // Do any additional setup after loading the view.
     }
 
