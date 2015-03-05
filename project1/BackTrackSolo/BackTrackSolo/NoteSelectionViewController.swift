@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NoteSelectionViewController: UIViewController {
+class NoteSelectionViewController: UIViewController,UIPickerViewDelegate{
 
     @IBOutlet weak var sendNotes: UIButton!
     
@@ -16,9 +16,44 @@ class NoteSelectionViewController: UIViewController {
     //var notes = [Int]()
     var notes : [Int] = [60, 62, 64, 65, 67, 69, 71, 72]
     
+    @IBOutlet weak var Switch1: UISwitch!
+    @IBOutlet weak var Switch2: UISwitch!
+    @IBOutlet weak var Switch3: UISwitch!
+    @IBOutlet weak var Switch4: UISwitch!
+    @IBOutlet weak var Switch5: UISwitch!
+    @IBOutlet weak var Switch6: UISwitch!
+    @IBOutlet weak var Switch7: UISwitch!
+    @IBOutlet weak var Switch8: UISwitch!
+    @IBOutlet weak var Switch9: UISwitch!
+    @IBOutlet weak var Switch10: UISwitch!
+    @IBOutlet weak var Switch11: UISwitch!
+    @IBOutlet weak var Switch12: UISwitch!
+    @IBOutlet weak var Switch13: UISwitch!
+    @IBOutlet weak var Switch14: UISwitch!
+    @IBOutlet weak var Switch15: UISwitch!
+    @IBOutlet weak var Switch16: UISwitch!
+    
+    @IBOutlet weak var KeyPicker: UIPickerView!
+    
+    
+    //KeyPicker setup
+    var keys = ["A", "B", "C", "D", "E", "F", "G"]
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return keys.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return keys[row]
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -32,6 +67,7 @@ class NoteSelectionViewController: UIViewController {
     @IBAction func sendNotes(sender: UIButton) {
         var center = NSNotificationCenter.defaultCenter()
         center.postNotificationName("playableNotes", object: nil, userInfo: ["notes": notes])
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
 }

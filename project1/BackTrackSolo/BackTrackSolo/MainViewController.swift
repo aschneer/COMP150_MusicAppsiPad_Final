@@ -62,8 +62,7 @@ class MainViewController: UIViewController {
     
     @IBAction func changeTempo(sender: UISlider) {
         var tempo : Float = (sender.value - 0.5) * 40000
-        println(tempo)
-        PdBase.sendFloat(tempo, toReceiver: "tempo")
+        PdBase.sendFloat(tempo, toReceiver: "tempo_in")
         
     }
     
