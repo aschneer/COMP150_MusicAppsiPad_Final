@@ -1,31 +1,34 @@
-#N canvas 1 74 680 657 10;
-#X obj 74 131 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#N canvas 3 60 680 657 10;
+#X obj 34 131 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 151 130 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 111 130 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 368 133 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 328 133 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 458 130 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 418 130 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 523 127 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 483 127 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 593 129 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 553 129 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 74 101 r volume;
-#X obj 151 101 r tempo_in;
-#X obj 353 101 r progression;
-#X obj 458 101 r play;
-#X obj 523 101 r pause;
-#X obj 593 101 r stop;
+#X obj 34 101 r volume;
+#X obj 111 101 r tempo_in;
+#X obj 313 101 r progression;
+#X obj 418 101 r play;
+#X obj 483 101 r pause;
+#X obj 553 101 r stop;
 #X obj 301 305 s tempo_out;
 #X obj 301 222 mainMessageHandler;
-#X obj 170 16 loadbang;
-#X msg 170 129 0;
-#X msg 93 129 1;
-#X obj 246 101 r MIDI_message;
-#X obj 246 132 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 130 16 loadbang;
+#X msg 130 129 0;
+#X msg 53 129 1;
+#X obj 206 101 r MIDI_message;
+#X obj 206 132 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X floatatom 92 164 5 0 0 0 - - -, f 5;
+#X floatatom 52 164 5 0 0 0 - - -, f 5;
+#X obj 602 101 r tremolo;
+#X obj 602 129 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X connect 6 0 0 0;
 #X connect 6 0 19 0;
 #X connect 7 0 1 0;
@@ -46,3 +49,5 @@
 #X connect 17 0 13 2;
 #X connect 17 0 18 0;
 #X connect 19 0 13 0;
+#X connect 20 0 21 0;
+#X connect 20 0 13 8;
