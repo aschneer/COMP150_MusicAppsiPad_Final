@@ -6,6 +6,24 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoteSelectionViewController" customModule="BackTrackSolo" customModuleProvider="target">
             <connections>
+                <outlet property="KeyPicker" destination="PxI-B6-beC" id="yWm-lP-wIO"/>
+                <outlet property="ProgressionPicker" destination="KYJ-5O-nBW" id="fq9-wo-RYa"/>
+                <outlet property="Switch1" destination="LYh-wq-uF7" id="px6-Fp-URU"/>
+                <outlet property="Switch10" destination="QGT-2E-jiH" id="hck-1C-uJc"/>
+                <outlet property="Switch11" destination="uCI-42-LcI" id="qD9-J1-QWv"/>
+                <outlet property="Switch12" destination="OZ1-zU-6RQ" id="6us-B4-8ID"/>
+                <outlet property="Switch13" destination="Ohe-Y0-RQ4" id="o5r-2W-jtq"/>
+                <outlet property="Switch14" destination="8LV-yK-HgY" id="lfK-cb-U7E"/>
+                <outlet property="Switch15" destination="DeM-6Z-tqq" id="eAg-az-iQc"/>
+                <outlet property="Switch16" destination="bKB-FP-RiV" id="4GX-Yq-twT"/>
+                <outlet property="Switch2" destination="IPH-Pe-ca3" id="S0y-lz-TNa"/>
+                <outlet property="Switch3" destination="JxP-zh-rk8" id="ZI8-Wg-ukj"/>
+                <outlet property="Switch4" destination="PJW-Ou-986" id="KQc-Mw-EzA"/>
+                <outlet property="Switch5" destination="3U2-gV-MSb" id="S0L-pp-9cJ"/>
+                <outlet property="Switch6" destination="19l-4n-Wc4" id="Z64-uT-jC2"/>
+                <outlet property="Switch7" destination="hE8-P9-9ab" id="hRt-vp-81x"/>
+                <outlet property="Switch8" destination="F36-Z9-tSL" id="u1a-6D-CfL"/>
+                <outlet property="Switch9" destination="ZE3-gM-brE" id="eH7-pV-eHD"/>
                 <outlet property="sendNotes" destination="3KQ-w0-wZm" id="xvq-Zj-KSt"/>
                 <outlet property="view" destination="iN0-l3-epB" id="iED-4B-DoN"/>
             </connections>
@@ -96,6 +114,102 @@
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bKB-FP-RiV">
                     <rect key="frame" x="626" y="176" width="51" height="31"/>
                 </switch>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zb1-84-zDY">
+                    <rect key="frame" x="102" y="22" width="30" height="30"/>
+                    <state key="normal" title="C">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aci-bA-Xvn">
+                    <rect key="frame" x="178" y="22" width="30" height="30"/>
+                    <state key="normal" title="D">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4K-GS-Rtf">
+                    <rect key="frame" x="256" y="22" width="30" height="30"/>
+                    <state key="normal" title="E">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fR8-jn-QDy">
+                    <rect key="frame" x="330" y="22" width="30" height="30"/>
+                    <state key="normal" title="F">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPa-T8-8ta">
+                    <rect key="frame" x="411" y="22" width="30" height="30"/>
+                    <state key="normal" title="G">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXg-Sn-AWQ">
+                    <rect key="frame" x="485" y="22" width="30" height="30"/>
+                    <state key="normal" title="A">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6i-uu-VB6">
+                    <rect key="frame" x="561" y="22" width="30" height="30"/>
+                    <state key="normal" title="B">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHK-uj-L36">
+                    <rect key="frame" x="636" y="22" width="30" height="30"/>
+                    <state key="normal" title="C">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCE-jJ-V9v">
+                    <rect key="frame" x="102" y="138" width="30" height="30"/>
+                    <state key="normal" title="D">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhp-NF-oSC">
+                    <rect key="frame" x="180" y="138" width="30" height="30"/>
+                    <state key="normal" title="E">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSF-SY-ywi">
+                    <rect key="frame" x="254" y="138" width="30" height="30"/>
+                    <state key="normal" title="F">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSW-RC-3x3">
+                    <rect key="frame" x="335" y="138" width="30" height="30"/>
+                    <state key="normal" title="G">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3b-hU-emG">
+                    <rect key="frame" x="409" y="138" width="30" height="30"/>
+                    <state key="normal" title="A">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6w-fN-hxM">
+                    <rect key="frame" x="485" y="138" width="30" height="30"/>
+                    <state key="normal" title="B">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtH-ne-VmD">
+                    <rect key="frame" x="560" y="138" width="30" height="30"/>
+                    <state key="normal" title="C">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yh1-66-u5z">
+                    <rect key="frame" x="636" y="138" width="30" height="30"/>
+                    <state key="normal" title="D">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

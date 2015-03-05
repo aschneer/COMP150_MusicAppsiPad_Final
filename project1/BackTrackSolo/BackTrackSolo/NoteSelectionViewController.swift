@@ -16,6 +16,27 @@ class NoteSelectionViewController: UIViewController {
     //var notes = [Int]()
     var notes : [Int] = [60, 62, 64, 65, 67, 69, 71, 72]
     
+    @IBOutlet weak var Switch1: UISwitch!
+    @IBOutlet weak var Switch2: UISwitch!
+    @IBOutlet weak var Switch3: UISwitch!
+    @IBOutlet weak var Switch4: UISwitch!
+    @IBOutlet weak var Switch5: UISwitch!
+    @IBOutlet weak var Switch6: UISwitch!
+    @IBOutlet weak var Switch7: UISwitch!
+    @IBOutlet weak var Switch8: UISwitch!
+    @IBOutlet weak var Switch9: UISwitch!
+    @IBOutlet weak var Switch10: UISwitch!
+    @IBOutlet weak var Switch11: UISwitch!
+    @IBOutlet weak var Switch12: UISwitch!
+    @IBOutlet weak var Switch13: UISwitch!
+    @IBOutlet weak var Switch14: UISwitch!
+    @IBOutlet weak var Switch15: UISwitch!
+    @IBOutlet weak var Switch16: UISwitch!
+    
+    @IBOutlet weak var KeyPicker: UIPickerView!
+    @IBOutlet weak var ProgressionPicker: UIPickerView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
