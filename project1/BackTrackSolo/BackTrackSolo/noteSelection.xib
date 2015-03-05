@@ -25,6 +25,7 @@
                 <outlet property="Switch9" destination="ZE3-gM-brE" id="eH7-pV-eHD"/>
                 <outlet property="sendNotes" destination="3KQ-w0-wZm" id="xvq-Zj-KSt"/>
                 <outlet property="view" destination="iN0-l3-epB" id="iED-4B-DoN"/>
+                <outletCollection property="switches" destination="bKB-FP-RiV" id="dKY-NX-GLL"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -85,6 +86,9 @@
                 </switch>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ohe-Y0-RQ4">
                     <rect key="frame" x="395" y="176" width="51" height="31"/>
+                    <connections>
+                        <action selector="switchesTriggered:" destination="-1" eventType="valueChanged" id="juY-36-YCO"/>
+                    </connections>
                 </switch>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8LV-yK-HgY">
                     <rect key="frame" x="471" y="176" width="51" height="31"/>

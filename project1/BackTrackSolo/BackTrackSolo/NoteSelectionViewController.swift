@@ -13,9 +13,8 @@ class NoteSelectionViewController: UIViewController, UIPickerViewDataSource, UIP
     @IBOutlet weak var sendNotes: UIButton!
     
     
-    //var notes = [Int]()
-    var notes : [Int] = [60, 62, 64, 65, 67, 69, 71, 72]
-    
+
+    /*
     @IBOutlet weak var Switch1: UISwitch!
     @IBOutlet weak var Switch2: UISwitch!
     @IBOutlet weak var Switch3: UISwitch!
@@ -32,7 +31,13 @@ class NoteSelectionViewController: UIViewController, UIPickerViewDataSource, UIP
     @IBOutlet weak var Switch14: UISwitch!
     @IBOutlet weak var Switch15: UISwitch!
     @IBOutlet weak var Switch16: UISwitch!
+    */
     
+    //var notes = [Int]()
+    
+    @IBOutlet var notes: [UISwitch]!
+    
+
     @IBOutlet weak var KeyPicker: UIPickerView!
     
     
@@ -55,6 +60,7 @@ class NoteSelectionViewController: UIViewController, UIPickerViewDataSource, UIP
     }
 
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         KeyPicker.delegate = self
@@ -67,6 +73,20 @@ class NoteSelectionViewController: UIViewController, UIPickerViewDataSource, UIP
         // Dispose of any resources that can be recreated.
     }
     
+    
+    var notesOn: [Int];
+    
+    @IBAction func switchesTriggered(sender: UISwitch) {
+        for item in notes {
+            if item.on {
+                println("switch is on")
+            }
+            else if !item.on{
+                println("switch is off")
+            }
+        }
+        
+    }
     
     
     @IBAction func sendNotes(sender: UIButton) {
