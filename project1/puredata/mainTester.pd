@@ -1,6 +1,6 @@
-#N canvas 685 60 680 657 10;
+#N canvas 681 74 680 657 10;
 #X obj 25 37 hsl 128 15 0 1 0 0 empty empty Volume -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 12700 1;
 #X obj 181 37 hsl 128 15 -20000 20000 0 0 empty empty Tempo_In -2 -8
 0 10 -262144 -1 -1 0 1;
 #X floatatom 22 63 5 0 0 0 - - -, f 5;
@@ -35,13 +35,21 @@
 #X text 53 168 C-Blues-Slow;
 #X text 63 192 C-Blues-Medium;
 #X text 74 217 C-Blues-Fast;
-#X msg 560 289 60 0;
+#X msg 560 290 60 0;
 #X obj 511 391 s MIDI_message;
-#X msg 560 332 64 0;
+#X msg 560 331 64 0;
 #X obj 22 0 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X msg 512 290 60 100;
 #X msg 512 331 64 100;
+#X obj 87 459 s tremolo;
+#X obj 87 396 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 124 396 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 87 425 1;
+#X msg 124 425 0;
+#X text 70 370 Tremolo On/Off;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 2 0 14 0;
@@ -67,3 +75,7 @@
 #X connect 33 0 32 0;
 #X connect 34 0 30 0;
 #X connect 34 0 32 0;
+#X connect 36 0 38 0;
+#X connect 37 0 39 0;
+#X connect 38 0 35 0;
+#X connect 39 0 35 0;
