@@ -1,4 +1,4 @@
-#N canvas 3 60 680 657 10;
+#N canvas 1 67 680 657 10;
 #X obj -7 47 inlet;
 #X obj 46 48 inlet;
 #X text -13 22 Volume;
@@ -67,8 +67,8 @@
 #X floatatom 514 391 5 0 0 0 - - -, f 5;
 #X text 298 401 Amount of Tremolo.;
 #X obj 467 268 metro 50;
-#X obj 414 268 osc~ 3;
 #X obj 414 400 *~ 0.5;
+#X obj 414 268 osc~ 5;
 #X connect 0 0 27 0;
 #X connect 0 0 29 0;
 #X connect 0 0 34 0;
@@ -106,7 +106,7 @@
 #X connect 43 0 44 0;
 #X connect 45 0 56 0;
 #X connect 46 0 47 0;
-#X connect 47 0 58 0;
+#X connect 47 0 57 0;
 #X connect 48 0 39 0;
 #X connect 49 0 45 0;
 #X connect 50 0 52 0;
@@ -116,6 +116,6 @@
 #X connect 53 0 54 0;
 #X connect 54 0 51 1;
 #X connect 56 0 43 0;
-#X connect 57 0 43 0;
-#X connect 57 0 46 0;
-#X connect 58 0 51 0;
+#X connect 57 0 51 0;
+#X connect 58 0 43 0;
+#X connect 58 0 46 0;
