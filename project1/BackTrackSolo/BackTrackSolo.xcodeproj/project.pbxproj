@@ -11,19 +11,20 @@
 		EC03E2001AA6B83D00BC4475 /* 12BarBlues_C_Fast.wav in Resources */ = {isa = PBXBuildFile; fileRef = EC03E1F71AA6B83D00BC4475 /* 12BarBlues_C_Fast.wav */; };
 		EC03E2011AA6B83D00BC4475 /* 12BarBlues_C_Medium.wav in Resources */ = {isa = PBXBuildFile; fileRef = EC03E1F81AA6B83D00BC4475 /* 12BarBlues_C_Medium.wav */; };
 		EC03E2021AA6B83D00BC4475 /* 12BarBlues_C_Slow.wav in Resources */ = {isa = PBXBuildFile; fileRef = EC03E1F91AA6B83D00BC4475 /* 12BarBlues_C_Slow.wav */; };
-		EC429F211AA7C4B200B3A69E /* backTrack_v03.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC429F151AA7C4B200B3A69E /* backTrack_v03.pd */; };
-		EC429F221AA7C4B200B3A69E /* dictionary-standalone.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC429F161AA7C4B200B3A69E /* dictionary-standalone.pd */; };
-		EC429F231AA7C4B200B3A69E /* gate2.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC429F171AA7C4B200B3A69E /* gate2.pd */; };
-		EC429F241AA7C4B200B3A69E /* generateSound_v01.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC429F181AA7C4B200B3A69E /* generateSound_v01.pd */; };
-		EC429F251AA7C4B200B3A69E /* ggate.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC429F191AA7C4B200B3A69E /* ggate.pd */; };
-		EC429F261AA7C4B200B3A69E /* iterator.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC429F1A1AA7C4B200B3A69E /* iterator.pd */; };
-		EC429F271AA7C4B200B3A69E /* main.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC429F1B1AA7C4B200B3A69E /* main.pd */; };
-		EC429F281AA7C4B200B3A69E /* mainMessageHandler.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC429F1C1AA7C4B200B3A69E /* mainMessageHandler.pd */; };
-		EC429F2A1AA7C4B200B3A69E /* normalize~.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC429F1E1AA7C4B200B3A69E /* normalize~.pd */; };
-		EC429F2B1AA7C4B200B3A69E /* number.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC429F1F1AA7C4B200B3A69E /* number.pd */; };
-		EC429F2C1AA7C4B200B3A69E /* pitchshifter~.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC429F201AA7C4B200B3A69E /* pitchshifter~.pd */; };
 		EC5269F01AA292E200A4D009 /* PlayAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5269EF1AA292E200A4D009 /* PlayAreaViewController.swift */; };
-		EC8BC2351AA8226A002E4C60 /* midiMessageHandler.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC8BC2341AA8226A002E4C60 /* midiMessageHandler.pd */; };
+		EC8BC2431AA83718002E4C60 /* backTrack_v03.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC8BC2361AA83718002E4C60 /* backTrack_v03.pd */; };
+		EC8BC2441AA83718002E4C60 /* dictionary-standalone.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC8BC2371AA83718002E4C60 /* dictionary-standalone.pd */; };
+		EC8BC2451AA83718002E4C60 /* gate2.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC8BC2381AA83718002E4C60 /* gate2.pd */; };
+		EC8BC2461AA83718002E4C60 /* generateSound_v01.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC8BC2391AA83718002E4C60 /* generateSound_v01.pd */; };
+		EC8BC2471AA83718002E4C60 /* ggate.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC8BC23A1AA83718002E4C60 /* ggate.pd */; };
+		EC8BC2481AA83718002E4C60 /* iterator.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC8BC23B1AA83718002E4C60 /* iterator.pd */; };
+		EC8BC2491AA83718002E4C60 /* main.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC8BC23C1AA83718002E4C60 /* main.pd */; };
+		EC8BC24B1AA83718002E4C60 /* midiMessageHandler.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC8BC23E1AA83718002E4C60 /* midiMessageHandler.pd */; };
+		EC8BC24C1AA83718002E4C60 /* normalize~.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC8BC23F1AA83718002E4C60 /* normalize~.pd */; };
+		EC8BC24D1AA83718002E4C60 /* number.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC8BC2401AA83718002E4C60 /* number.pd */; };
+		EC8BC24E1AA83718002E4C60 /* pitchshifter~.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC8BC2411AA83718002E4C60 /* pitchshifter~.pd */; };
+		EC8BC24F1AA83718002E4C60 /* subtractor_waveforms.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC8BC2421AA83718002E4C60 /* subtractor_waveforms.pd */; };
+		EC8BC2511AA83906002E4C60 /* mainMessageHandler.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC8BC2501AA83906002E4C60 /* mainMessageHandler.pd */; };
 		ECE66C431AA281D00059B4F5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE66C421AA281D00059B4F5 /* MainViewController.swift */; };
 		ECE66C451AA28A180059B4F5 /* noteSelection.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECE66C441AA28A180059B4F5 /* noteSelection.xib */; };
 		ECE66C471AA28A640059B4F5 /* NoteSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE66C461AA28A640059B4F5 /* NoteSelectionViewController.swift */; };
@@ -53,20 +54,21 @@
 		EC03E1F71AA6B83D00BC4475 /* 12BarBlues_C_Fast.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 12BarBlues_C_Fast.wav; sourceTree = "<group>"; };
 		EC03E1F81AA6B83D00BC4475 /* 12BarBlues_C_Medium.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 12BarBlues_C_Medium.wav; sourceTree = "<group>"; };
 		EC03E1F91AA6B83D00BC4475 /* 12BarBlues_C_Slow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 12BarBlues_C_Slow.wav; sourceTree = "<group>"; };
-		EC429F151AA7C4B200B3A69E /* backTrack_v03.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = backTrack_v03.pd; sourceTree = "<group>"; };
-		EC429F161AA7C4B200B3A69E /* dictionary-standalone.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "dictionary-standalone.pd"; sourceTree = "<group>"; };
-		EC429F171AA7C4B200B3A69E /* gate2.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gate2.pd; sourceTree = "<group>"; };
-		EC429F181AA7C4B200B3A69E /* generateSound_v01.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = generateSound_v01.pd; sourceTree = "<group>"; };
-		EC429F191AA7C4B200B3A69E /* ggate.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ggate.pd; sourceTree = "<group>"; };
-		EC429F1A1AA7C4B200B3A69E /* iterator.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = iterator.pd; sourceTree = "<group>"; };
-		EC429F1B1AA7C4B200B3A69E /* main.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.pd; sourceTree = "<group>"; };
-		EC429F1C1AA7C4B200B3A69E /* mainMessageHandler.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mainMessageHandler.pd; sourceTree = "<group>"; };
-		EC429F1E1AA7C4B200B3A69E /* normalize~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "normalize~.pd"; sourceTree = "<group>"; };
-		EC429F1F1AA7C4B200B3A69E /* number.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = number.pd; sourceTree = "<group>"; };
-		EC429F201AA7C4B200B3A69E /* pitchshifter~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pitchshifter~.pd"; sourceTree = "<group>"; };
 		EC5269EF1AA292E200A4D009 /* PlayAreaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayAreaViewController.swift; sourceTree = "<group>"; };
 		EC7621BD1A9A7A53006E64E7 /* BackTrackSolo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BackTrackSolo-Bridging-Header.h"; sourceTree = "<group>"; };
-		EC8BC2341AA8226A002E4C60 /* midiMessageHandler.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = midiMessageHandler.pd; sourceTree = "<group>"; };
+		EC8BC2361AA83718002E4C60 /* backTrack_v03.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = backTrack_v03.pd; sourceTree = "<group>"; };
+		EC8BC2371AA83718002E4C60 /* dictionary-standalone.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "dictionary-standalone.pd"; sourceTree = "<group>"; };
+		EC8BC2381AA83718002E4C60 /* gate2.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gate2.pd; sourceTree = "<group>"; };
+		EC8BC2391AA83718002E4C60 /* generateSound_v01.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = generateSound_v01.pd; sourceTree = "<group>"; };
+		EC8BC23A1AA83718002E4C60 /* ggate.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ggate.pd; sourceTree = "<group>"; };
+		EC8BC23B1AA83718002E4C60 /* iterator.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = iterator.pd; sourceTree = "<group>"; };
+		EC8BC23C1AA83718002E4C60 /* main.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.pd; sourceTree = "<group>"; };
+		EC8BC23E1AA83718002E4C60 /* midiMessageHandler.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = midiMessageHandler.pd; sourceTree = "<group>"; };
+		EC8BC23F1AA83718002E4C60 /* normalize~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "normalize~.pd"; sourceTree = "<group>"; };
+		EC8BC2401AA83718002E4C60 /* number.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = number.pd; sourceTree = "<group>"; };
+		EC8BC2411AA83718002E4C60 /* pitchshifter~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pitchshifter~.pd"; sourceTree = "<group>"; };
+		EC8BC2421AA83718002E4C60 /* subtractor_waveforms.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = subtractor_waveforms.pd; sourceTree = "<group>"; };
+		EC8BC2501AA83906002E4C60 /* mainMessageHandler.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mainMessageHandler.pd; sourceTree = "<group>"; };
 		ECE66C421AA281D00059B4F5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		ECE66C441AA28A180059B4F5 /* noteSelection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = noteSelection.xib; sourceTree = "<group>"; };
 		ECE66C461AA28A640059B4F5 /* NoteSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteSelectionViewController.swift; sourceTree = "<group>"; };
@@ -144,18 +146,19 @@
 		ECE963321A92C3CE00F629C2 /* BackTrackSolo */ = {
 			isa = PBXGroup;
 			children = (
-				EC8BC2341AA8226A002E4C60 /* midiMessageHandler.pd */,
-				EC429F151AA7C4B200B3A69E /* backTrack_v03.pd */,
-				EC429F161AA7C4B200B3A69E /* dictionary-standalone.pd */,
-				EC429F171AA7C4B200B3A69E /* gate2.pd */,
-				EC429F181AA7C4B200B3A69E /* generateSound_v01.pd */,
-				EC429F191AA7C4B200B3A69E /* ggate.pd */,
-				EC429F1A1AA7C4B200B3A69E /* iterator.pd */,
-				EC429F1B1AA7C4B200B3A69E /* main.pd */,
-				EC429F1C1AA7C4B200B3A69E /* mainMessageHandler.pd */,
-				EC429F1E1AA7C4B200B3A69E /* normalize~.pd */,
-				EC429F1F1AA7C4B200B3A69E /* number.pd */,
-				EC429F201AA7C4B200B3A69E /* pitchshifter~.pd */,
+				EC8BC2501AA83906002E4C60 /* mainMessageHandler.pd */,
+				EC8BC2361AA83718002E4C60 /* backTrack_v03.pd */,
+				EC8BC2371AA83718002E4C60 /* dictionary-standalone.pd */,
+				EC8BC2381AA83718002E4C60 /* gate2.pd */,
+				EC8BC2391AA83718002E4C60 /* generateSound_v01.pd */,
+				EC8BC23A1AA83718002E4C60 /* ggate.pd */,
+				EC8BC23B1AA83718002E4C60 /* iterator.pd */,
+				EC8BC23C1AA83718002E4C60 /* main.pd */,
+				EC8BC23E1AA83718002E4C60 /* midiMessageHandler.pd */,
+				EC8BC23F1AA83718002E4C60 /* normalize~.pd */,
+				EC8BC2401AA83718002E4C60 /* number.pd */,
+				EC8BC2411AA83718002E4C60 /* pitchshifter~.pd */,
+				EC8BC2421AA83718002E4C60 /* subtractor_waveforms.pd */,
 				EC03E1F71AA6B83D00BC4475 /* 12BarBlues_C_Fast.wav */,
 				EC03E1F81AA6B83D00BC4475 /* 12BarBlues_C_Medium.wav */,
 				EC03E1F91AA6B83D00BC4475 /* 12BarBlues_C_Slow.wav */,
@@ -285,25 +288,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC429F2B1AA7C4B200B3A69E /* number.pd in Resources */,
-				EC429F271AA7C4B200B3A69E /* main.pd in Resources */,
-				EC429F2C1AA7C4B200B3A69E /* pitchshifter~.pd in Resources */,
-				EC429F211AA7C4B200B3A69E /* backTrack_v03.pd in Resources */,
+				EC8BC24D1AA83718002E4C60 /* number.pd in Resources */,
+				EC8BC2491AA83718002E4C60 /* main.pd in Resources */,
+				EC8BC24E1AA83718002E4C60 /* pitchshifter~.pd in Resources */,
+				EC8BC2431AA83718002E4C60 /* backTrack_v03.pd in Resources */,
 				EC03E2001AA6B83D00BC4475 /* 12BarBlues_C_Fast.wav in Resources */,
-				EC429F251AA7C4B200B3A69E /* ggate.pd in Resources */,
+				EC8BC2471AA83718002E4C60 /* ggate.pd in Resources */,
 				ECE66C451AA28A180059B4F5 /* noteSelection.xib in Resources */,
-				EC429F221AA7C4B200B3A69E /* dictionary-standalone.pd in Resources */,
+				EC8BC2511AA83906002E4C60 /* mainMessageHandler.pd in Resources */,
+				EC8BC24F1AA83718002E4C60 /* subtractor_waveforms.pd in Resources */,
+				EC8BC2441AA83718002E4C60 /* dictionary-standalone.pd in Resources */,
 				EC03E2011AA6B83D00BC4475 /* 12BarBlues_C_Medium.wav in Resources */,
 				ECE9633F1A92C3CE00F629C2 /* Main.storyboard in Resources */,
-				EC429F2A1AA7C4B200B3A69E /* normalize~.pd in Resources */,
-				EC8BC2351AA8226A002E4C60 /* midiMessageHandler.pd in Resources */,
+				EC8BC24C1AA83718002E4C60 /* normalize~.pd in Resources */,
 				EC03E2021AA6B83D00BC4475 /* 12BarBlues_C_Slow.wav in Resources */,
-				EC429F241AA7C4B200B3A69E /* generateSound_v01.pd in Resources */,
+				EC8BC2461AA83718002E4C60 /* generateSound_v01.pd in Resources */,
 				ECE963441A92C3CE00F629C2 /* LaunchScreen.xib in Resources */,
 				ECE963411A92C3CE00F629C2 /* Images.xcassets in Resources */,
-				EC429F281AA7C4B200B3A69E /* mainMessageHandler.pd in Resources */,
-				EC429F261AA7C4B200B3A69E /* iterator.pd in Resources */,
-				EC429F231AA7C4B200B3A69E /* gate2.pd in Resources */,
+				EC8BC24B1AA83718002E4C60 /* midiMessageHandler.pd in Resources */,
+				EC8BC2481AA83718002E4C60 /* iterator.pd in Resources */,
+				EC8BC2451AA83718002E4C60 /* gate2.pd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tremoloSwitch: UISwitch!
     var tremolo : Float = 0.0
     var patchID : Int32 = 0
+    var switches : [Bool] = [true, false, false, true, false, true, true, true, false, false, true, false, true, false, false, true]
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -32,11 +33,28 @@ class MainViewController: UIViewController {
         center.addObserver(self, selector: "receiveNote:", name: "noteToPlay", object: nil)
         center.addObserver(self, selector: "noteToStop:", name: "stopNote", object: nil)
         center.addObserver(self, selector: "toggleTremolo:", name: "tremolo", object: nil)
+        center.addObserver(self, selector: "saveNotes:", name: "notesForMain", object: nil)
+        center.addObserver(self, selector: "sendNotesTo:", name: "pleaseSend", object: nil)
+    }
+    
+    func sendNotesTo(notification: NSNotification) {
+        var center = NSNotificationCenter.defaultCenter()
+        center.postNotificationName("noteSelections", object: nil, userInfo: ["selections": switches])
     }
     
     deinit {
         var center = NSNotificationCenter.defaultCenter()
         center.removeObserver(self)
+    }
+    
+    func saveNotes(notification: NSNotification) {
+        if let info = notification.userInfo as? Dictionary<String, [Bool]> {
+            var note = info["myNotes"]
+            
+            for var i : Int = 0; i < 16; i++ {
+                switches[i] = note![i]
+            }
+        }
     }
 
     func receiveNote(notification: NSNotification){
@@ -62,7 +80,7 @@ class MainViewController: UIViewController {
             tremolo = 0.0
             
         }
-        println(tremolo)
+        
         PdBase.sendFloat(tremolo, toReceiver: "tremolo")
     }
     
