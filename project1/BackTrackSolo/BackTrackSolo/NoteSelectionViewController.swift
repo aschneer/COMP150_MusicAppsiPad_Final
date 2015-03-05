@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NoteSelectionViewController: UIViewController,UIPickerViewDelegate{
+class NoteSelectionViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
 
     @IBOutlet weak var sendNotes: UIButton!
     
@@ -37,23 +37,28 @@ class NoteSelectionViewController: UIViewController,UIPickerViewDelegate{
     
     
     //KeyPicker setup
-    var keys = ["A", "B", "C", "D", "E", "F", "G"]
+    var pickerData = [
+        ["A", "B", "C", "D", "E", "F", "G"],
+        ["Blues-Fast", "Blues-Medium", "Blues-Slow"]
+    ]
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
+        return pickerData.count
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return keys.count
+        return pickerData[component].count
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return keys[row]
+        return pickerData[component][row]
     }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        KeyPicker.delegate = self
+        KeyPicker.dataSource = self
         // Do any additional setup after loading the view.
     }
 
