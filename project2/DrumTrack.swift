@@ -1,26 +1,27 @@
 //
-//  BTVC.swift
-//  BackTrackV2
+//  DrumTrack.swift
+//  project2
 //
-//  Created by Jacob Apkon on 3/27/15.
-//  Copyright (c) 2015 COMP150. All rights reserved.
+//  Created by Margaret Feltz on 3/29/15.
+//  Copyright (c) 2015 Facebook. All rights reserved.
 //
 
 import UIKit
 
-class BTVC: UIViewController {
-    
+class DrumTrack: UIViewController {
+
     
     @IBOutlet weak var ChordPicker: UIPickerView!
     let pickerData = [
         ["A", "B", "C", "D", "E", "F", "G"],
         ["M", "m"],
         ["7", "9"]
-    ]
+        ]
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        ChordPicker.description
 
         // Do any additional setup after loading the view.
     }
@@ -30,7 +31,7 @@ class BTVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-   
+
     /*
     // MARK: - Navigation
 
