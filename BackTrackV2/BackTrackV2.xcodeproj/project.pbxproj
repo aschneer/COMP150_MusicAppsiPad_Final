@@ -211,6 +211,7 @@
 				TargetAttributes = {
 					EC85AA091AC621FA008D1CD8 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = WC8GK6LE4R;
 					};
 					EC85AA221AC621FA008D1CD8 = {
 						CreatedOnToolsVersion = 6.2;
