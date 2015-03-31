@@ -20,6 +20,7 @@
 		EC85AA391AC63794008D1CD8 /* BTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC85AA381AC63794008D1CD8 /* BTVC.swift */; };
 		EC85AA3B1AC63820008D1CD8 /* NoteSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC85AA3A1AC63820008D1CD8 /* NoteSelectionVC.swift */; };
 		EC85AA3D1AC63856008D1CD8 /* LeadSoundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC85AA3C1AC63856008D1CD8 /* LeadSoundVC.swift */; };
+		ECC15EFD1ACB504500FC3E01 /* LeadEffectsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC15EFC1ACB504500FC3E01 /* LeadEffectsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		EC85AA381AC63794008D1CD8 /* BTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTVC.swift; sourceTree = "<group>"; };
 		EC85AA3A1AC63820008D1CD8 /* NoteSelectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteSelectionVC.swift; sourceTree = "<group>"; };
 		EC85AA3C1AC63856008D1CD8 /* LeadSoundVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeadSoundVC.swift; sourceTree = "<group>"; };
+		ECC15EFC1ACB504500FC3E01 /* LeadEffectsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeadEffectsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				EC85AA151AC621FA008D1CD8 /* ViewController.m */,
 				EC85AA361AC624DB008D1CD8 /* MainVC.swift */,
 				EC85AA171AC621FA008D1CD8 /* Main.storyboard */,
+				ECC15EFC1ACB504500FC3E01 /* LeadEffectsVC.swift */,
 				EC85AA3C1AC63856008D1CD8 /* LeadSoundVC.swift */,
 				EC85AA3A1AC63820008D1CD8 /* NoteSelectionVC.swift */,
 				EC85AA381AC63794008D1CD8 /* BTVC.swift */,
@@ -297,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC85AA161AC621FA008D1CD8 /* ViewController.m in Sources */,
+				ECC15EFD1ACB504500FC3E01 /* LeadEffectsVC.swift in Sources */,
 				EC85AA3B1AC63820008D1CD8 /* NoteSelectionVC.swift in Sources */,
 				EC85AA371AC624DB008D1CD8 /* MainVC.swift in Sources */,
 				EC85AA391AC63794008D1CD8 /* BTVC.swift in Sources */,
