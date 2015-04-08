@@ -21,7 +21,7 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     ]
     
     override func viewDidLoad() {
-        println(view.backgroundColor)
+        //println(view.backgroundColor)
         super.viewDidLoad()
         ChordPicker.dataSource = self
         ChordPicker.delegate = self

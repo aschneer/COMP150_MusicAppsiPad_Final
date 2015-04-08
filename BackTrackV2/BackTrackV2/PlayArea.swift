@@ -8,40 +8,172 @@
 
 import UIKit
 
-class PlayArea: UIView, UIGestureRecognizerDelegate {
+class PlayArea: UIView {
 
-    var playableNotes = [60, 62, 64, 65, 67, 69, 71, 72]
+    let windowWidth: CGFloat = 684
+    let windowHeight: CGFloat = 530
+    var playableNotes = [76, 74, 72, 71, 69, 67, 65, 64, 62, 60]
+    var spacing: CGFloat = 0
+    
+    struct Line {
+        var note: Int
+        var top: CGFloat
+        var middle: CGFloat
+        var bottom: CGFloat
+        var touched: Bool
+    }
+    
+    var lines: [Line] = []
+    var linesInitialized: Bool = false
+    
+    var sineCounter: CGFloat = 0
     
     override func drawRect(rect: CGRect) {
         
         let context = UIGraphicsGetCurrentContext()
-        CGContextSetLineWidth(context, 4.0)
+        CGContextSetLineWidth(context, 2.0)
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         let components: [CGFloat] = [0.0, 0.0, 0.0, 1.0]
         let color = CGColorCreate(colorSpace, components)
         CGContextSetStrokeColorWithColor(context, color)
-        let spacing: CGFloat = 530 / CGFloat(playableNotes.count + 1)
         
-        var startingPoint: CGFloat = spacing
-        CGContextMoveToPoint(context, 75, startingPoint)
+        if !linesInitialized {
+            spacing = windowHeight / CGFloat(playableNotes.count + 1)
         
-        for note in playableNotes {
-            CGContextAddLineToPoint(context, 609, startingPoint)
-            CGContextStrokePath(context)
-            startingPoint = spacing + startingPoint
-            CGContextMoveToPoint(context, 75, startingPoint)
+            var startingPoint: CGFloat = spacing
+            CGContextMoveToPoint(context, 0, startingPoint)
+            
+            for note in playableNotes {
+                var newLine = Line(note: note, top: startingPoint - (spacing / 2), middle: startingPoint, bottom: startingPoint + (spacing / 2), touched: false)
+                lines.append(newLine)
+            
+                CGContextAddLineToPoint(context, windowWidth, startingPoint)
+                CGContextStrokePath(context)
+                startingPoint = spacing + startingPoint
+                CGContextMoveToPoint(context, 0, startingPoint)
+            }
+            
+            linesInitialized = true
+        
+            var timer = NSTimer.scheduledTimerWithTimeInterval(0.02, target: self, selector: "drawLines:", userInfo: nil, repeats: true)
+        } else {
+            for line in lines {
+                CGContextMoveToPoint(context, 0, line.middle)
+                if line.touched {
+                    for var i = 0; i < Int(windowWidth); i += 5 {
+                        CGContextAddLineToPoint(context, CGFloat(i), CGFloat(10 * sin((CGFloat(i) + sineCounter) * 0.02)) + line.middle)
+                        CGContextStrokePath(context)
+                        CGContextMoveToPoint(context, CGFloat(i), CGFloat(10 * sin((CGFloat(i) + sineCounter) * 0.02)) + line.middle)
+                        
+                    }
+                } else {
+                    CGContextAddLineToPoint(context, windowWidth, line.middle)
+                    CGContextStrokePath(context)
+                }
+                
+                sineCounter += 1.0
+            }
         }
-        
-        addGestureRecognizer(self.tapGesture)
     }
     
-    private lazy var tapGesture: UITapGestureRecognizer = {
-        let gesture = UITapGestureRecognizer(target: self, action: "handleTap:")
-        gesture.delegate = self
-        return gesture
-    }()
+    func drawLines(timer: NSTimer) {
+        setNeedsDisplay()
+    }
     
-    func handleTap(tap: UITapGestureRecognizer) {
-        println(tap.locationInView(self))
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        let touchCount = touches.count
+        let touch = touches.anyObject() as UITouch
+        let tapCount = touch.tapCount
+        
+        let yValue = touch.locationInView(self).y
+        var note = -1
+        
+        var counter = 0
+        for line in lines {
+            if yValue >= line.top && yValue <= line.bottom {
+                note = line.note
+                lines[counter].touched = true
+                break
+            }
+            counter++
+        }
+        
+        if note != -1 {
+            //println("Touch at MIDI " + String(note))
+        }
+    }
+    
+    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+        let touchCount = touches.count
+        let touch = touches.anyObject() as UITouch
+        let tapCount = touch.tapCount
+        
+        let yValue = touch.locationInView(self).y
+        var note = -1
+        
+        var counter = 0
+        for line in lines {
+            if yValue >= line.top && yValue <= line.bottom {
+                note = line.note
+            }
+            
+            lines[counter].touched = false
+            
+            counter++
+        }
+        
+        
+        var allTouches = event.allTouches()
+        
+        for singleTouch in allTouches! {
+            var touchYValue = singleTouch.locationInView(self).y
+        
+            counter = 0
+            
+            for line in lines {
+                if touchYValue >= line.top && touchYValue <= line.bottom {
+                    lines[counter].touched = true
+                }
+                counter++
+            }
+        }
+        
+        if note != -1 {
+//            println("Touch moved at MIDI " + String(note))
+//            
+//            for line in lines {
+//                print(line.touched)
+//                print(" ")
+//            }
+        }
+    }
+    
+    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+        let touchCount = touches.count
+        let touch = touches.anyObject() as UITouch
+        let tapCount = touch.tapCount
+        
+        let yValue = touch.locationInView(self).y
+        var note = -1
+        
+        var counter = 0
+        for line in lines {
+            if yValue >= line.top && yValue <= line.bottom {
+                note = line.note
+                lines[counter].touched = false
+                break
+            }
+            counter++
+        }
+        
+        if note != -1 {
+//            println("Touch ended at MIDI " + String(note))
+//            
+//            for line in lines {
+//                print(line.touched)
+//                print(" ")
+//            }
+        }
     }
 }
