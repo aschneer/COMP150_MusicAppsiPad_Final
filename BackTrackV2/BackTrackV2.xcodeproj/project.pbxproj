@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5EF4D6D8B18BEC8844A62B71 /* libPods-BackTrackV2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58AB865CA4295DC3D0FC6EDF /* libPods-BackTrackV2.a */; };
+		EC6759341AD48FF6000D5C89 /* PlayArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6759331AD48FF6000D5C89 /* PlayArea.swift */; };
 		EC85AA101AC621FA008D1CD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC85AA0F1AC621FA008D1CD8 /* main.m */; };
 		EC85AA131AC621FA008D1CD8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC85AA121AC621FA008D1CD8 /* AppDelegate.m */; };
 		EC85AA161AC621FA008D1CD8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC85AA151AC621FA008D1CD8 /* ViewController.m */; };
@@ -37,6 +38,7 @@
 		26983D95E6B7DD314342DB29 /* Pods-BackTrackV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackTrackV2.release.xcconfig"; path = "Pods/Target Support Files/Pods-BackTrackV2/Pods-BackTrackV2.release.xcconfig"; sourceTree = "<group>"; };
 		58AB865CA4295DC3D0FC6EDF /* libPods-BackTrackV2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BackTrackV2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		945879EFBE1A818F0699B8E7 /* Pods-BackTrackV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackTrackV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BackTrackV2/Pods-BackTrackV2.debug.xcconfig"; sourceTree = "<group>"; };
+		EC6759331AD48FF6000D5C89 /* PlayArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayArea.swift; sourceTree = "<group>"; };
 		EC85AA0A1AC621FA008D1CD8 /* BackTrackV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackTrackV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC85AA0E1AC621FA008D1CD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC85AA0F1AC621FA008D1CD8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				EC85AA121AC621FA008D1CD8 /* AppDelegate.m */,
 				EC85AA141AC621FA008D1CD8 /* ViewController.h */,
 				EC85AA341AC62428008D1CD8 /* StaffVC.swift */,
+				EC6759331AD48FF6000D5C89 /* PlayArea.swift */,
 				EC85AA151AC621FA008D1CD8 /* ViewController.m */,
 				EC85AA361AC624DB008D1CD8 /* MainVC.swift */,
 				EC85AA171AC621FA008D1CD8 /* Main.storyboard */,
@@ -305,6 +308,7 @@
 				EC85AA371AC624DB008D1CD8 /* MainVC.swift in Sources */,
 				EC85AA391AC63794008D1CD8 /* BTVC.swift in Sources */,
 				EC85AA3D1AC63856008D1CD8 /* LeadSoundVC.swift in Sources */,
+				EC6759341AD48FF6000D5C89 /* PlayArea.swift in Sources */,
 				EC85AA351AC62428008D1CD8 /* StaffVC.swift in Sources */,
 				EC85AA131AC621FA008D1CD8 /* AppDelegate.m in Sources */,
 				EC85AA101AC621FA008D1CD8 /* main.m in Sources */,

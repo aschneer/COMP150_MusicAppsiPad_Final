@@ -252,7 +252,7 @@
                         <viewControllerLayoutGuide type="top" id="z5s-25-R4g"/>
                         <viewControllerLayoutGuide type="bottom" id="hHl-Ih-s98"/>
                     </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xyQ-gV-iW2">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xyQ-gV-iW2" customClass="PlayArea" customModule="BackTrackV2" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="684" height="530"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
