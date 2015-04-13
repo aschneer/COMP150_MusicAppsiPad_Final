@@ -8,25 +8,41 @@
 
 import UIKit
 
-class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIScrollViewDelegate {
+    
+    @IBOutlet var ProgScrollView: UIScrollView!
     
     @IBOutlet weak var selectedChord: UILabel!
+    
+    @IBOutlet weak var PianoSwitch: UISwitch!
+    @IBOutlet weak var GuitarSwitch: UISwitch!
+    @IBOutlet weak var BassSwitch: UISwitch!
+    @IBOutlet weak var Other: UISwitch!
+    
+    @IBOutlet weak var AddChordButton: UIButton!
     
     @IBOutlet weak var ChordPicker: UIPickerView!
     let pickerData = [
         ["A", "B", "C", "D", "E", "F", "G"],
         ["♮", "♯", "♭"],
         ["Maj", "Min", "Aug", "Dim"],
-        ["Triad", "7", "9"]
+        ["Triad", "7", "9"],
+        ["1 beat", "2 beats"]
     ]
     
+    var chords: [UIView] = []
     override func viewDidLoad() {
         //println(view.backgroundColor)
         super.viewDidLoad()
+        
+        ProgScrollView.contentSize = CGSizeMake(1440, 128)
+        
         ChordPicker.dataSource = self
         ChordPicker.delegate = self
-//        ChordPicker.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        ChordPicker.backgroundColor = UIColor(red: 1.0, green: 250/255, blue: 240/255, alpha: 0.7)
         ChordPicker.layer.cornerRadius = 15
+        ChordPicker.layer.borderColor = UIColor.blackColor().CGColor
+        ChordPicker.layer.borderWidth = 5
         selectedChord.textAlignment = .Center
     }
 
@@ -121,5 +137,14 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
         selectedChord.text = label
         selectedChord.textAlignment = .Center
     }
+    
+    @IBAction func AddChord(sender: UIButton) {
+        var chord = UIView(frame: CGRectMake(0,0,100,128))
+        chord.backgroundColor = UIColor.whiteColor()
+        ProgScrollView.addSubview(chord)
+        
+        
+    }
+    
 
 }
