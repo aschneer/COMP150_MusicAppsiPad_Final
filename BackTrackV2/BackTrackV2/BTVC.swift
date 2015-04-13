@@ -67,7 +67,7 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView!) -> UIView {
-        var pickerLabel = view as UILabel!
+        var pickerLabel = view as! UILabel!
         if view == nil {
             pickerLabel = UILabel()
             //let hue = CGFloat(row) / CGFloat(pickerData.count)
