@@ -126,7 +126,7 @@ class NoteSelectionVC: UIViewController, UIScrollViewDelegate {
         var noteCount = noteSelected.count
         for var i = noteCount - 1; i >= 0; i-- {
             if noteSelected[i] {
-                notes.append(i + 60)
+                notes.append(i + 48)
             }
         }
         

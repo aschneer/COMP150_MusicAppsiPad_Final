@@ -20,6 +20,9 @@
                                 <rect key="frame" x="437" y="694" width="151" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="Set Backing Track"/>
+                                <connections>
+                                    <segue destination="PBY-tg-hUt" kind="unwind" unwindAction="unwindToMain:" id="kRK-9c-8Kb"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iYd-Na-gyy">
                                 <rect key="frame" x="230" y="101" width="564" height="162"/>
@@ -104,6 +107,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5EK-K7-yUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="PBY-tg-hUt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-571" y="-648"/>
         </scene>
@@ -124,6 +128,9 @@
                                 <state key="normal" title="Select Notes">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="uZy-XU-50Y" kind="unwind" unwindAction="unwindToMain:" id="CFI-it-Zzo"/>
+                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="El7-Vm-814" userLabel="PianoScrollView">
                                 <rect key="frame" x="16" y="37" width="992" height="369"/>
@@ -551,6 +558,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tPb-Hk-f7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="uZy-XU-50Y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="911" y="-1618"/>
         </scene>
@@ -612,6 +620,9 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="displayBackingTrackVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XOm-pq-shD"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbD-xD-kez">
                                 <rect key="frame" x="692" y="20" width="332" height="75"/>
@@ -701,6 +712,9 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="displayNoteSelectionVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AcW-Jv-iWJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

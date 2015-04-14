@@ -48,7 +48,6 @@ class PlayArea: UIView {
             CGContextMoveToPoint(context, 0, startingPoint)
             
             for note in playableNotes {
-                println("hello")
                 var newLine = Line(note: note, top: startingPoint - (spacing / 2), middle: startingPoint, bottom: startingPoint + (spacing / 2), touched: false)
                 lines.append(newLine)
             
