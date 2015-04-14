@@ -137,13 +137,22 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         selectedChord.text = label
         selectedChord.textAlignment = .Center
     }
+    var top = 0.0
+    var left = 0.0
+    var width = 100.0
+    var height = 128.0
+    var beatlength = pickerData[4][ChordPicker.selectedRowInComponent(4)]
     
     @IBAction func AddChord(sender: UIButton) {
-        var chord = UIView(frame: CGRectMake(0,0,100,128))
+        if(left > 1400) {
+            return;
+        }
+        var chord = UIView(frame: CGRectMake(CGFloat(left),CGFloat(top),CGFloat(width),CGFloat(height)))
         chord.backgroundColor = UIColor.whiteColor()
+        chord.layer.borderColor = UIColor.blackColor().CGColor
+        chord.layer.borderWidth = 1
         ProgScrollView.addSubview(chord)
-        
-        
+        left += width;
     }
     
 
