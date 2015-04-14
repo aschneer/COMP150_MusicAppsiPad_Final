@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
@@ -7,7 +7,7 @@
         <!--BTVC-->
         <scene sceneID="97X-jy-y6v">
             <objects>
-                <viewController id="gvQ-dj-QB5" customClass="BTVC" customModule="BackTrackV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BackingTrack" id="gvQ-dj-QB5" customClass="BTVC" customModule="BackTrackV2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Em-0Q-bHC"/>
                         <viewControllerLayoutGuide type="bottom" id="7gk-JG-xim"/>
@@ -20,19 +20,10 @@
                                 <rect key="frame" x="437" y="694" width="151" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="Set Backing Track"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="fzJ-yq-2NB"/>
-                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iYd-Na-gyy">
                                 <rect key="frame" x="230" y="101" width="564" height="162"/>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A-M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RuB-ix-dlh">
-                                <rect key="frame" x="451" y="48" width="123" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDo-V8-flp">
                                 <rect key="frame" x="16" y="489" width="992" height="128"/>
                             </scrollView>
@@ -90,6 +81,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A-M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RuB-ix-dlh">
+                                <rect key="frame" x="340" y="54" width="345" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.71372549019607845" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -113,7 +110,7 @@
         <!--Note SelectionVC-->
         <scene sceneID="adC-l7-XYo">
             <objects>
-                <viewController id="CXK-TJ-Mqj" customClass="NoteSelectionVC" customModule="BackTrackV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoteSelection" id="CXK-TJ-Mqj" customClass="NoteSelectionVC" customModule="BackTrackV2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1qu-Ky-5xf"/>
                         <viewControllerLayoutGuide type="bottom" id="Z5u-Gy-CUh"/>
@@ -127,9 +124,6 @@
                                 <state key="normal" title="Select Notes">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="pdZ-Xn-ZPc"/>
-                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="El7-Vm-814" userLabel="PianoScrollView">
                                 <rect key="frame" x="16" y="37" width="992" height="369"/>
@@ -618,9 +612,6 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="gvQ-dj-QB5" kind="show" id="nJw-CI-dzf"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbD-xD-kez">
                                 <rect key="frame" x="692" y="20" width="332" height="75"/>
@@ -710,9 +701,6 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="CXK-TJ-Mqj" kind="show" id="q4e-zL-j91"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -821,7 +809,4 @@
             <point key="canvasLocation" x="1238" y="249"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="pdZ-Xn-ZPc"/>
-    </inferredMetricsTieBreakers>
 </document>

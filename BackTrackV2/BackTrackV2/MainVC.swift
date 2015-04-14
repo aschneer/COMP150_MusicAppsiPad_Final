@@ -13,6 +13,21 @@ class MainVC: UIViewController {
     @IBOutlet weak var currChord: UILabel!
     @IBOutlet weak var nextChord: UILabel!
     
+    var initialized = false
+    var NoteSelectionController: NoteSelectionVC!
+    var BackTrackController: BTVC!
+    var LeadSoundController: LeadSoundVC!
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        NoteSelectionController = storyboard.instantiateViewControllerWithIdentifier("NoteSelection") as! NoteSelectionVC
+        BackTrackController = storyboard.instantiateViewControllerWithIdentifier("BackingTrack") as! BTVC
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,14 +44,20 @@ class MainVC: UIViewController {
         nextChord.text = chord2
     }
     
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - Navigation
+    @IBAction func displayNoteSelectionVC(sender: AnyObject) {
+        self.presentViewController(NoteSelectionController, animated: true, completion: nil)
     }
-    */
+    
+    @IBAction func displayBackingTrackVC(sender: AnyObject) {
+        self.presentViewController(BackTrackController, animated: true, completion: nil)
+    }
+
+    @IBAction func unwindToMain(segue: UIStoryboardSegue) {
+        // Do Nothing
+    }
+    
+    
 
 }

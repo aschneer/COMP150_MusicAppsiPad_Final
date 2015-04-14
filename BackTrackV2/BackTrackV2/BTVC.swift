@@ -27,7 +27,7 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         ["♮", "♯", "♭"],
         ["Maj", "Min", "Aug", "Dim"],
         ["Triad", "7", "9"],
-        ["1 beat", "2 beats"]
+        ["1 beat", "2 beats", "3 beats"]
     ]
     
     var chords: [UIView] = []
@@ -108,7 +108,7 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         var sharpOrFlat = pickerData[1][ChordPicker.selectedRowInComponent(1)]
         var majOrMin = pickerData[2][ChordPicker.selectedRowInComponent(2)]
         var chord = pickerData[3][ChordPicker.selectedRowInComponent(3)]
-        var beat = pickerData[4][ChordPicker.selectedRowInComponent(4)]
+        var beatlength = pickerData[4][ChordPicker.selectedRowInComponent(4)]
         
         var label = root
         
@@ -135,32 +135,55 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
             label += chord
         }
         
+        label += " " + "for " + beatlength
+        /*if beatlength == "1 beat" {
+            label += " " + "for " + beatlength
+        }*/
+        
         selectedChord.text = label
         selectedChord.textAlignment = .Center
     }
+    
+    //values for chord scroll bar view placement
     var top = 0.0
     var left = 0.0
     var width = 100.0
     var height = 128.0
-    //var beat = pickerData[4][ChordPicker.selectedRowInComponent(4)]
     
+    //Function to add chord to chord scrollview
     @IBAction func AddChord(sender: UIButton) {
-        println("in AddChord")
-        /*if(beat == "1") {
-            width = 100
-        } else if (beat == "2") {
-            width = 200
-        }*/
-        if(left > 3100) {
-            return;
+        //ChordPicker information for label and width
+        var root = pickerData[0][ChordPicker.selectedRowInComponent(0)]
+        var sharpOrFlat = pickerData[1][ChordPicker.selectedRowInComponent(1)]
+        var majOrMin = pickerData[2][ChordPicker.selectedRowInComponent(2)]
+        var chord = pickerData[3][ChordPicker.selectedRowInComponent(3)]
+        var beat = pickerData[4][ChordPicker.selectedRowInComponent(4)]
+        
+        if(beat == "2 beats"){
+            width *= 2
         }
-        var chord = UIView(frame: CGRectMake(CGFloat(left),CGFloat(top),CGFloat(width),CGFloat(height)))
-        chord.backgroundColor = UIColor.whiteColor()
-        chord.layer.borderColor = UIColor.blackColor().CGColor
-        chord.layer.borderWidth = 1
-        ProgScrollView.addSubview(chord)
-        left += width;
-        println(left)
+        if(beat == "3 beats"){
+            width *= 3
+        }
+        if(left <= 2900){
+            //creating uiview for each chord added
+            var chordView = UIView(frame: CGRectMake(CGFloat(left),CGFloat(top),CGFloat(width),CGFloat(height)))
+            chordView.backgroundColor = UIColor.whiteColor()
+            chordView.layer.borderColor = UIColor.blackColor().CGColor
+            chordView.layer.borderWidth = 1
+            
+            //creating uitextfield for chord label in uiview
+            var txtField: UITextField = UITextField(frame: CGRect(x: 0, y: 0, width: 90.00, height: 30.00));
+            var chordlabel = root + sharpOrFlat + "-" + majOrMin + chord + "\n" + beat
+            println(chordlabel)
+            txtField.text = chordlabel
+            chordView.addSubview(txtField)
+            
+            //add chordView to ProgScrollView
+            ProgScrollView.addSubview(chordView)
+            left += width;
+            width = 100.0
+        }
     }
     
 
