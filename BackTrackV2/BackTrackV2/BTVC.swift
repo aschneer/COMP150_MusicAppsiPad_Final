@@ -35,7 +35,7 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         //println(view.backgroundColor)
         super.viewDidLoad()
         
-        ProgScrollView.contentSize = CGSizeMake(1440, 128)
+        ProgScrollView.contentSize = CGSizeMake(3000, 128)
         
         ChordPicker.dataSource = self
         ChordPicker.delegate = self
@@ -108,6 +108,7 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         var sharpOrFlat = pickerData[1][ChordPicker.selectedRowInComponent(1)]
         var majOrMin = pickerData[2][ChordPicker.selectedRowInComponent(2)]
         var chord = pickerData[3][ChordPicker.selectedRowInComponent(3)]
+        var beat = pickerData[4][ChordPicker.selectedRowInComponent(4)]
         
         var label = root
         
@@ -141,10 +142,16 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
     var left = 0.0
     var width = 100.0
     var height = 128.0
-    var beatlength = pickerData[4][ChordPicker.selectedRowInComponent(4)]
+    //var beat = pickerData[4][ChordPicker.selectedRowInComponent(4)]
     
     @IBAction func AddChord(sender: UIButton) {
-        if(left > 1400) {
+        println("in AddChord")
+        /*if(beat == "1") {
+            width = 100
+        } else if (beat == "2") {
+            width = 200
+        }*/
+        if(left > 3100) {
             return;
         }
         var chord = UIView(frame: CGRectMake(CGFloat(left),CGFloat(top),CGFloat(width),CGFloat(height)))
@@ -153,6 +160,7 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         chord.layer.borderWidth = 1
         ProgScrollView.addSubview(chord)
         left += width;
+        println(left)
     }
     
 
