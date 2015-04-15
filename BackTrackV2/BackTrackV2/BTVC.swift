@@ -101,9 +101,10 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         updateLabel()
+        
     }
     
-    func updateLabel() {
+    func updateLabel() -> String {
         var root = pickerData[0][ChordPicker.selectedRowInComponent(0)]
         var sharpOrFlat = pickerData[1][ChordPicker.selectedRowInComponent(1)]
         var majOrMin = pickerData[2][ChordPicker.selectedRowInComponent(2)]
@@ -142,6 +143,7 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         
         selectedChord.text = label
         selectedChord.textAlignment = .Center
+        return label
     }
     
     //values for chord scroll bar view placement
@@ -173,10 +175,10 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
             chordView.layer.borderWidth = 1
             
             //creating uitextfield for chord label in uiview
-            var txtField: UITextField = UITextField(frame: CGRect(x: 0, y: 0, width: 90.00, height: 30.00));
-            var chordlabel = root + sharpOrFlat + "-" + majOrMin + chord + "\n" + beat
-            println(chordlabel)
+            var txtField: UITextField = UITextField(frame: CGRect(x: 0, y: 0, width:95.00, height: 40.00));
+            var chordlabel = updateLabel()
             txtField.text = chordlabel
+            txtField.font = UIFont(name: "HelveticaNeue-UltraLight", size: 12)
             chordView.addSubview(txtField)
             
             //add chordView to ProgScrollView
