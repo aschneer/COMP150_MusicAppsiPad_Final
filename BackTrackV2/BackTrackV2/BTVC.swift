@@ -20,6 +20,8 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
     @IBOutlet weak var Other: UISwitch!
     
     @IBOutlet weak var AddChordButton: UIButton!
+    @IBOutlet weak var DeleteChordButton: UIButton!
+    @IBOutlet weak var ClearAllButton: UIButton!
     
     @IBOutlet weak var ChordPicker: UIPickerView!
     let pickerData = [
@@ -186,6 +188,20 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
             left += width;
             width = 100.0
         }
+    }
+    
+    @IBAction func DeleteChord(sender: UIButton) {
+        //delete last touched chord and shift all views over
+        //for subview in view {}.. look at uitouch timestamp
+        
+    }
+    
+    @IBAction func ClearAll(sender: UIButton) {
+        for subview in ProgScrollView.subviews{
+            subview.removeFromSuperview()
+        }
+        left = 0
+
     }
     
 

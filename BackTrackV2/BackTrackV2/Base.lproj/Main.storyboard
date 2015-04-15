@@ -30,16 +30,6 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDo-V8-flp">
                                 <rect key="frame" x="16" y="489" width="992" height="128"/>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7w-T1-mqU">
-                                <rect key="frame" x="475" y="424" width="75" height="30"/>
-                                <state key="normal" title="Add Chord">
-                                    <color key="titleColor" red="0.039215687659999998" green="0.180392161" blue="0.078431375319999996" alpha="1" colorSpace="deviceRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="AddChord:" destination="gvQ-dj-QB5" eventType="touchUpInside" id="vEQ-d7-heg"/>
-                                </connections>
-                            </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uRt-zc-7nc">
                                 <rect key="frame" x="326" y="330" width="51" height="31"/>
                                 <color key="onTintColor" red="0.0" green="0.73333334920000004" blue="0.73725491759999995" alpha="1" colorSpace="deviceRGB"/>
@@ -90,6 +80,36 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbH-oV-kaS">
+                                <rect key="frame" x="489" y="424" width="44" height="30"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="DeleteChord:" destination="gvQ-dj-QB5" eventType="touchUpInside" id="lbu-zN-pJ1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBz-jZ-Txv">
+                                <rect key="frame" x="650" y="424" width="58" height="30"/>
+                                <state key="normal" title="Clear All">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ClearAll:" destination="gvQ-dj-QB5" eventType="touchUpInside" id="yUr-pW-Jfw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7w-T1-mqU">
+                                <rect key="frame" x="313" y="424" width="75" height="30"/>
+                                <state key="normal" title="Add Chord">
+                                    <color key="titleColor" red="0.039215687659999998" green="0.180392161" blue="0.078431375319999996" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="AddChord:" destination="gvQ-dj-QB5" eventType="touchUpInside" id="vEQ-d7-heg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.71372549019607845" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -124,7 +144,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffR-8o-MuI">
-                                <rect key="frame" x="468" y="693" width="88" height="30"/>
+                                <rect key="frame" x="764" y="601" width="120" height="60"/>
                                 <state key="normal" title="Select Notes">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -512,6 +532,24 @@
                                     </button>
                                 </subviews>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3c-uJ-AkQ">
+                                <rect key="frame" x="764" y="471" width="120" height="60"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ClearNotes:" destination="CXK-TJ-Mqj" eventType="touchUpInside" id="czB-Uf-ZLO"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="N3w-AN-l6f">
+                                <rect key="frame" x="65" y="545" width="155" height="29"/>
+                                <color key="backgroundColor" red="0.71372549019999998" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <segments>
+                                    <segment title="Piano"/>
+                                    <segment title="Guitar"/>
+                                </segments>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.83921568627450982" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -533,6 +571,8 @@
                         <outlet property="BButton7" destination="WgE-YL-2Ue" id="Qoq-9o-bfk"/>
                         <outlet property="BButton8" destination="tLW-aC-Um3" id="K7d-uB-wIb"/>
                         <outlet property="BButton9" destination="aJw-iM-WDX" id="wXS-mh-PpU"/>
+                        <outlet property="ClearNotesButton" destination="p3c-uJ-AkQ" id="wW4-vH-hZH"/>
+                        <outlet property="LeadInstrControl" destination="N3w-AN-l6f" id="elS-nT-ZGB"/>
                         <outlet property="PianoScrollView" destination="El7-Vm-814" id="RmH-a3-ImK"/>
                         <outlet property="WButton1" destination="r9H-fI-6Eb" id="TH7-UI-De2"/>
                         <outlet property="WButton10" destination="Atd-OE-h0l" id="s37-22-85b"/>

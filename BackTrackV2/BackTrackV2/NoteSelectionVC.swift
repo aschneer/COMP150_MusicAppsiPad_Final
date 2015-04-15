@@ -12,6 +12,9 @@ class NoteSelectionVC: UIViewController, UIScrollViewDelegate {
 
 
     @IBOutlet var PianoScrollView: UIScrollView!
+    @IBOutlet weak var ClearNotesButton: UIButton!
+    @IBOutlet weak var LeadInstrControl: UISegmentedControl!
+
     
     @IBOutlet weak var WButton1: UIButton!
     @IBOutlet weak var WButton2: UIButton!
@@ -109,6 +112,21 @@ class NoteSelectionVC: UIViewController, UIScrollViewDelegate {
     }
     
     
+    @IBAction func ClearNotes(sender: UIButton) {
+        var Wcount = WButtons.count
+        var Bcount = BButtons.count
+        var NoteCount = noteSelected.count
+        for var i = 0; i < Wcount; i++ {
+            WButtons[i].backgroundColor = UIColor.whiteColor()
+        }
+        for var i = 0; i < Bcount; i++ {
+            BButtons[i].backgroundColor = UIColor.blackColor()
+        }
+        for var i = 0; i < NoteCount; i++ {
+            noteSelected[i] = false
+        }
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
