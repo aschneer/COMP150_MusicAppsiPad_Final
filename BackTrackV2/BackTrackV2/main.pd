@@ -1,0 +1,18 @@
+#N canvas 1443 770 452 278 10;
+#X obj 175 178 dac~;
+#X obj 104 215 view~;
+#X msg -6 56 1 1 65 0 600 1000 0.1 3000 1;
+#X msg -6 8 1 2 65 127 600 1000 0.1 3000 0;
+#X msg -6 32 1 2 65 0 600 1000 0.1 3000 0;
+#X msg 191 8 1 2 69 127 600 1000 0.1 3000 0;
+#X obj 175 115 r \$0-note_msg;
+#X obj 32 87 s \$0-note_msg;
+#X obj 175 146 mainController_v02;
+#X connect 2 0 7 0;
+#X connect 3 0 7 0;
+#X connect 4 0 7 0;
+#X connect 5 0 7 0;
+#X connect 6 0 8 0;
+#X connect 8 0 0 0;
+#X connect 8 0 1 0;
+#X connect 8 1 0 1;

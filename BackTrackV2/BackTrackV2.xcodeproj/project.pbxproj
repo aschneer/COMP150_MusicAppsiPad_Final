@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5EF4D6D8B18BEC8844A62B71 /* libPods-BackTrackV2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58AB865CA4295DC3D0FC6EDF /* libPods-BackTrackV2.a */; };
+		6D37BB751ADF800B009882B8 /* instrument_v02.pd in Resources */ = {isa = PBXBuildFile; fileRef = 6D37BB721ADF800B009882B8 /* instrument_v02.pd */; };
+		6D37BB761ADF800B009882B8 /* main.pd in Resources */ = {isa = PBXBuildFile; fileRef = 6D37BB731ADF800B009882B8 /* main.pd */; };
+		6D37BB771ADF800B009882B8 /* mainController_v02.pd in Resources */ = {isa = PBXBuildFile; fileRef = 6D37BB741ADF800B009882B8 /* mainController_v02.pd */; };
+		6D37BB791ADF810F009882B8 /* use in Resources */ = {isa = PBXBuildFile; fileRef = 6D37BB781ADF810E009882B8 /* use */; };
 		EC6759341AD48FF6000D5C89 /* PlayArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6759331AD48FF6000D5C89 /* PlayArea.swift */; };
 		EC85AA101AC621FA008D1CD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC85AA0F1AC621FA008D1CD8 /* main.m */; };
 		EC85AA131AC621FA008D1CD8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC85AA121AC621FA008D1CD8 /* AppDelegate.m */; };
@@ -37,6 +41,12 @@
 /* Begin PBXFileReference section */
 		26983D95E6B7DD314342DB29 /* Pods-BackTrackV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackTrackV2.release.xcconfig"; path = "Pods/Target Support Files/Pods-BackTrackV2/Pods-BackTrackV2.release.xcconfig"; sourceTree = "<group>"; };
 		58AB865CA4295DC3D0FC6EDF /* libPods-BackTrackV2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BackTrackV2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D37BB721ADF800B009882B8 /* instrument_v02.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = instrument_v02.pd; sourceTree = "<group>"; };
+		6D37BB731ADF800B009882B8 /* main.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.pd; sourceTree = "<group>"; };
+		6D37BB741ADF800B009882B8 /* mainController_v02.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mainController_v02.pd; sourceTree = "<group>"; };
+		6D37BB781ADF810E009882B8 /* use */ = {isa = PBXFileReference; lastKnownFileType = folder; path = use; sourceTree = "<group>"; };
+		6D37BB7E1ADF8190009882B8 /* LesPaul.SF2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = LesPaul.SF2; sourceTree = "<group>"; };
+		6D37BB7F1ADF8190009882B8 /* piano_1.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = piano_1.sf2; sourceTree = "<group>"; };
 		945879EFBE1A818F0699B8E7 /* Pods-BackTrackV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackTrackV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BackTrackV2/Pods-BackTrackV2.debug.xcconfig"; sourceTree = "<group>"; };
 		EC6759331AD48FF6000D5C89 /* PlayArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayArea.swift; sourceTree = "<group>"; };
 		EC85AA0A1AC621FA008D1CD8 /* BackTrackV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackTrackV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +122,12 @@
 		EC85AA0C1AC621FA008D1CD8 /* BackTrackV2 */ = {
 			isa = PBXGroup;
 			children = (
+				6D37BB781ADF810E009882B8 /* use */,
+				6D37BB721ADF800B009882B8 /* instrument_v02.pd */,
+				6D37BB731ADF800B009882B8 /* main.pd */,
+				6D37BB741ADF800B009882B8 /* mainController_v02.pd */,
+				6D37BB7E1ADF8190009882B8 /* LesPaul.SF2 */,
+				6D37BB7F1ADF8190009882B8 /* piano_1.sf2 */,
 				EC85AA111AC621FA008D1CD8 /* AppDelegate.h */,
 				EC85AA121AC621FA008D1CD8 /* AppDelegate.m */,
 				EC85AA141AC621FA008D1CD8 /* ViewController.h */,
@@ -249,6 +265,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D37BB791ADF810F009882B8 /* use in Resources */,
+				6D37BB771ADF800B009882B8 /* mainController_v02.pd in Resources */,
+				6D37BB761ADF800B009882B8 /* main.pd in Resources */,
+				6D37BB751ADF800B009882B8 /* instrument_v02.pd in Resources */,
 				EC85AA191AC621FA008D1CD8 /* Main.storyboard in Resources */,
 				EC85AA1E1AC621FA008D1CD8 /* LaunchScreen.xib in Resources */,
 				EC85AA1B1AC621FA008D1CD8 /* Images.xcassets in Resources */,
