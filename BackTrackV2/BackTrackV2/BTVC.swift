@@ -32,6 +32,8 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         ["1 beat", "2 beats", "3 beats"]
     ]
     
+    //var touch = 0
+    
     var chords: [UIView] = []
     override func viewDidLoad() {
         //println(view.backgroundColor)
@@ -201,7 +203,6 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
             subview.removeFromSuperview()
         }
         left = 0
-
     }
     
 
