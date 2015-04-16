@@ -23,6 +23,28 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
     @IBOutlet weak var DeleteChordButton: UIButton!
     @IBOutlet weak var ClearAllButton: UIButton!
     
+    
+    
+    @IBOutlet weak var ChordLabel: UILabel!
+    @IBOutlet weak var PianoLabel: UILabel!
+    @IBOutlet weak var GuitarLabel: UILabel!
+    @IBOutlet weak var BassLabel: UILabel!
+    @IBOutlet weak var DrumsLabel: UILabel!
+    
+    var labels: [UILabel] = [ChordLabel, PianoLabel, GuitarLabel, BassLabel, DrumsLabel]
+    var buttons: [UIButton] = [AddChordButton, DeleteChordButton, ClearAllButton]
+    
+    for button in buttons {
+    button.titleLabel!.font = UIFont(name: "KohinoorDevanagari-Light", size: 30)
+    }
+    for label in labels {
+        label.font = UIFont(name: "KohinoorDevanagari-Light", size: 30)
+    }
+    
+    advanceButton.titleLabel!.font = UIFont(name: "Times New Roman", size: 25)
+    
+    
+    
     @IBOutlet weak var ChordPicker: UIPickerView!
     let pickerData = [
         ["A", "B", "C", "D", "E", "F", "G"],
@@ -96,7 +118,7 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         }
         
         let titleData = pickerData[component][row]
-        let rowTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName: UIFont(name: "Verdana", size: 24.0)!, NSForegroundColorAttributeName: UIColor.blackColor()])
+        let rowTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName: UIFont(name: "KohinoorDevanagari-Light", size: 24.0)!, NSForegroundColorAttributeName: UIColor.blackColor()])
         pickerLabel!.attributedText = rowTitle
         pickerLabel!.textAlignment = .Center
         
@@ -182,7 +204,7 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
             var txtField: UITextField = UITextField(frame: CGRect(x: 0, y: 0, width:95.00, height: 40.00));
             var chordlabel = updateLabel()
             txtField.text = chordlabel
-            txtField.font = UIFont(name: "HelveticaNeue-UltraLight", size: 12)
+            txtField.font = UIFont(name: "KohinoorDevanagari-Light", size: 15)
             chordView.addSubview(txtField)
             
             //add chordView to ProgScrollView
@@ -204,6 +226,7 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         }
         left = 0
     }
+    
     
 
 }
