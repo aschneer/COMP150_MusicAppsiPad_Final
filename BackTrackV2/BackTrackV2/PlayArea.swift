@@ -16,6 +16,7 @@ class PlayArea: UIView {
     //var playableNotes = [76, 74, 72, 71, 69, 67, 65, 64, 62, 60]
     var playableNotes: [Int] = []
     var spacing: CGFloat = 0
+    var frequency: CGFloat = 0.02
     
     struct Line {
         var note: Int
@@ -63,8 +64,11 @@ class PlayArea: UIView {
                 // Add a notification center to receive notes
                 var center = NSNotificationCenter.defaultCenter()
                 center.addObserver(self, selector: "receiveNotes:", name: "playableNotes", object: nil)
+                center.addObserver(self, selector: "setFreq:", name: "setFreq", object: nil)
                 
                 var timer = NSTimer.scheduledTimerWithTimeInterval(0.02, target: self, selector: "drawLines:", userInfo: nil, repeats: true)
+                
+                var patch = PdBase.openFile("main.pd", path: NSBundle.mainBundle().resourcePath)
                 
                 firstTimeThrough = false
             }
@@ -73,9 +77,9 @@ class PlayArea: UIView {
                 CGContextMoveToPoint(context, 0, line.middle)
                 if line.touched {
                     for var i = 0; i < Int(windowWidth); i += 5 {
-                        CGContextAddLineToPoint(context, CGFloat(i), CGFloat(10 * sin((CGFloat(i) + sineCounter) * 0.01)) + line.middle)
+                        CGContextAddLineToPoint(context, CGFloat(i), CGFloat(10 * sin((CGFloat(i) + sineCounter) * frequency)) + line.middle)
                         CGContextStrokePath(context)
-                        CGContextMoveToPoint(context, CGFloat(i), CGFloat(10 * sin((CGFloat(i) + sineCounter) * 0.01)) + line.middle)
+                        CGContextMoveToPoint(context, CGFloat(i), CGFloat(10 * sin((CGFloat(i) + sineCounter) * frequency)) + line.middle)
                         
                     }
                 } else {
@@ -83,7 +87,7 @@ class PlayArea: UIView {
                     CGContextStrokePath(context)
                 }
                 
-                sineCounter += 1.0
+                sineCounter += 5.0
             }
         }
     }
@@ -92,7 +96,7 @@ class PlayArea: UIView {
         setNeedsDisplay()
     }
     
-    func receiveNotes(notification: NSNotification){
+    func receiveNotes(notification: NSNotification) {
         println("receiving notes")
         if let info = notification.userInfo as? Dictionary<String, [Int]> {
             lines = []
@@ -101,6 +105,12 @@ class PlayArea: UIView {
             linesInitialized = false
             print("New playable notes are: ")
             println(playableNotes)
+        }
+    }
+    
+    func setFreq(notification: NSNotification) {
+        if let info = notification.userInfo as? Dictionary<String, CGFloat> {
+            frequency = info["freq"]! + 0.01
         }
     }
     
@@ -118,6 +128,10 @@ class PlayArea: UIView {
             if yValue >= line.top && yValue <= line.bottom {
                 note = line.note
                 lines[counter].touched = true
+                
+                // 1, piano = 1 guitar = 2, midi num, velocity 0 or 1, a 600, d 1000, s .1, r 3000, 1
+                PdBase.sendList([1, 2, lines[counter].note, 1, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                
                 break
             }
             counter++
@@ -144,6 +158,9 @@ class PlayArea: UIView {
             
             lines[counter].touched = false
             
+            // 1, piano = 1 guitar = 2, midi num, velocity 0 or 1, a 600, d 1000, s .1, r 3000, 1
+            PdBase.sendList([1, 2, lines[counter].note, 0, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+            
             counter++
         }
         
@@ -158,6 +175,9 @@ class PlayArea: UIView {
             for line in lines {
                 if touchYValue >= line.top && touchYValue <= line.bottom {
                     lines[counter].touched = true
+                    
+                    // 1, piano = 1 guitar = 2, midi num, velocity 0 or 1, a 600, d 1000, s .1, r 3000, 1
+                    PdBase.sendList([1, 2, lines[counter].note, 1, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
                 }
                 counter++
             }
@@ -186,6 +206,9 @@ class PlayArea: UIView {
             if yValue >= line.top && yValue <= line.bottom {
                 note = line.note
                 lines[counter].touched = false
+                
+                // 1, piano = 1 guitar = 2, midi num, velocity 0 or 1, a 600, d 1000, s .1, r 3000, 1
+                PdBase.sendList([1, 2, lines[counter].note, 0, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
                 break
             }
             counter++

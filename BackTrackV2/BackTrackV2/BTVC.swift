@@ -31,19 +31,9 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
     @IBOutlet weak var BassLabel: UILabel!
     @IBOutlet weak var DrumsLabel: UILabel!
     
-    var labels: [UILabel] = [ChordLabel, PianoLabel, GuitarLabel, BassLabel, DrumsLabel]
-    var buttons: [UIButton] = [AddChordButton, DeleteChordButton, ClearAllButton]
-    
-    for button in buttons {
-    button.titleLabel!.font = UIFont(name: "KohinoorDevanagari-Light", size: 30)
-    }
-    for label in labels {
-        label.font = UIFont(name: "KohinoorDevanagari-Light", size: 30)
-    }
-    
-    advanceButton.titleLabel!.font = UIFont(name: "Times New Roman", size: 25)
-    
-    
+    //var LabelList: [UILabel]! {return [PianoLabel, GuitarLabel, BassLabel, DrumsLabel]}
+    //var ButtonList: [UIButton]! {return [AddChordButton, DeleteChordButton, ClearAllButton]}
+    //ChordLabel.font = UIFont(name: "KohinoorDevanagari-Light", size: 45)
     
     @IBOutlet weak var ChordPicker: UIPickerView!
     let pickerData = [
@@ -60,6 +50,13 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
     override func viewDidLoad() {
         //println(view.backgroundColor)
         super.viewDidLoad()
+        
+        /*for button in ButtonList {
+            button.titleLabel!.font = UIFont(name: "KohinoorDevanagari-Light", size: 30)
+        }
+        for label in LabelList {
+            label.font = UIFont(name: "KohinoorDevanagari-Light", size: 30)
+        }*/
         
         ProgScrollView.contentSize = CGSizeMake(3000, 128)
         

@@ -10,9 +10,11 @@ import UIKit
 
 class LeadEffectsVC: UIViewController {
 
+    @IBOutlet weak var tremoloSlider: UISlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //tremoloChanged(tremoloSlider)
         // Do any additional setup after loading the view.
     }
 
@@ -21,6 +23,10 @@ class LeadEffectsVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func tremoloChanged(sender: UISlider) {
+        //var center = NSNotificationCenter.defaultCenter()
+        //center.postNotificationName("setFreq", object: nil, userInfo: ["freq": CGFloat(sender.value) / 50])
+    }
 
     /*
     // MARK: - Navigation
