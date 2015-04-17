@@ -24,8 +24,6 @@ class MainVC: UIViewController {
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         NoteSelectionController = storyboard.instantiateViewControllerWithIdentifier("NoteSelection") as! NoteSelectionVC
         BackTrackController = storyboard.instantiateViewControllerWithIdentifier("BackingTrack") as! BTVC
-        
-        
     }
     
     override func viewDidLoad() {

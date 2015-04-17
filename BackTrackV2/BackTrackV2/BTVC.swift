@@ -41,7 +41,7 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         ["♮", "♯", "♭"],
         ["Maj", "Min", "Aug", "Dim"],
         ["Triad", "7", "9"],
-        ["1 beat", "2 beats", "3 beats"]
+        ["1 beat", "2 beats", "3 beats", "4 beats"]
     ]
     
     //var touch = 0
@@ -62,7 +62,7 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         
         ChordPicker.dataSource = self
         ChordPicker.delegate = self
-        ChordPicker.backgroundColor = UIColor(red: 1.0, green: 250/255, blue: 240/255, alpha: 0.7)
+        ChordPicker.backgroundColor = UIColor(red: 170/255, green: 57/255, blue: 57/255, alpha: 1.0)
         ChordPicker.layer.cornerRadius = 15
         ChordPicker.layer.borderColor = UIColor.blackColor().CGColor
         ChordPicker.layer.borderWidth = 5
@@ -184,13 +184,16 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         var chord = pickerData[3][ChordPicker.selectedRowInComponent(3)]
         var beat = pickerData[4][ChordPicker.selectedRowInComponent(4)]
         
-        if(beat == "2 beats"){
+        if (beat == "2 beats") {
             width *= 2
         }
-        if(beat == "3 beats"){
+        if (beat == "3 beats") {
             width *= 3
         }
-        if(left <= 2900){
+        if (beat == "4 beats") {
+            width *= 4
+        }
+        if (left <= 2900) {
             //creating uiview for each chord added
             var chordView = UIView(frame: CGRectMake(CGFloat(left),CGFloat(top),CGFloat(width),CGFloat(height)))
             chordView.backgroundColor = UIColor.whiteColor()

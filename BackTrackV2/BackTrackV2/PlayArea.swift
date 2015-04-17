@@ -13,7 +13,6 @@ class PlayArea: UIView {
 
     let windowWidth: CGFloat = 684
     let windowHeight: CGFloat = 530
-    //var playableNotes = [76, 74, 72, 71, 69, 67, 65, 64, 62, 60]
     var playableNotes: [Int] = []
     var spacing: CGFloat = 0
     var frequency: CGFloat = 0.02
@@ -152,12 +151,12 @@ class PlayArea: UIView {
         let touch = touches.first as! UITouch
         let tapCount = touch.tapCount
         
-        let yValue = touch.locationInView(self).y
+        let point = touch.locationInView(self)
         var note = -1
         
         var counter = 0
         for line in lines {
-            if yValue >= line.top && yValue <= line.bottom {
+            if point.y >= line.top && point.y <= line.bottom && point.x <= windowWidth{
                 note = line.note
                 lines[counter].touched = true
                 
