@@ -24,12 +24,12 @@ class PlayArea: UIView {
         var middle: CGFloat
         var bottom: CGFloat
         var touched: Bool
+        var label: UILabel
+        var sineCounter: CGFloat
     }
     
     var lines: [Line] = []
     var linesInitialized: Bool = false
-    
-    var sineCounter: CGFloat = 0
     
     override func drawRect(rect: CGRect) {
         
@@ -46,16 +46,22 @@ class PlayArea: UIView {
             spacing = windowHeight / CGFloat(playableNotes.count + 1)
         
             var startingPoint: CGFloat = spacing
-            CGContextMoveToPoint(context, 0, startingPoint)
+            CGContextMoveToPoint(context, 50, startingPoint)
             
             for note in playableNotes {
-                var newLine = Line(note: note, top: startingPoint - (spacing / 2), middle: startingPoint, bottom: startingPoint + (spacing / 2), touched: false)
+                var label = UILabel(frame: CGRectMake(5, startingPoint, 50, 50))
+                label.center = CGPointMake(25, startingPoint)
+                label.text = getNoteName(note)
+                label.textAlignment = .Center
+                self.addSubview(label)
+                
+                var newLine = Line(note: note, top: startingPoint - (spacing / 2), middle: startingPoint, bottom: startingPoint + (spacing / 2), touched: false, label: label, sineCounter: 50.0)
                 lines.append(newLine)
             
                 CGContextAddLineToPoint(context, windowWidth, startingPoint)
                 CGContextStrokePath(context)
                 startingPoint = spacing + startingPoint
-                CGContextMoveToPoint(context, 0, startingPoint)
+                CGContextMoveToPoint(context, 50, startingPoint)
             }
             
             linesInitialized = true
@@ -73,21 +79,21 @@ class PlayArea: UIView {
                 firstTimeThrough = false
             }
         } else {
-            for line in lines {
-                CGContextMoveToPoint(context, 0, line.middle)
-                if line.touched {
-                    for var i = 0; i < Int(windowWidth); i += 5 {
-                        CGContextAddLineToPoint(context, CGFloat(i), CGFloat(10 * sin((CGFloat(i) + sineCounter) * frequency)) + line.middle)
+            var numLines = lines.count
+            for var i = 0; i < numLines; i++ {
+                CGContextMoveToPoint(context, 50, lines[i].middle)
+                if lines[i].touched {
+                    for var j = 50; j < Int(windowWidth); j += 5 {
+                        CGContextAddLineToPoint(context, CGFloat(j), CGFloat(10 * sin((CGFloat(j - 50) + lines[i].sineCounter) * frequency)) + lines[i].middle)
                         CGContextStrokePath(context)
-                        CGContextMoveToPoint(context, CGFloat(i), CGFloat(10 * sin((CGFloat(i) + sineCounter) * frequency)) + line.middle)
+                        CGContextMoveToPoint(context, CGFloat(j), CGFloat(10 * sin((CGFloat(j - 50) + lines[i].sineCounter) * frequency)) + lines[i].middle)
                         
                     }
+                    lines[i].sineCounter += 5.0
                 } else {
-                    CGContextAddLineToPoint(context, windowWidth, line.middle)
+                    CGContextAddLineToPoint(context, windowWidth, lines[i].middle)
                     CGContextStrokePath(context)
                 }
-                
-                sineCounter += 5.0
             }
         }
     }
@@ -96,9 +102,35 @@ class PlayArea: UIView {
         setNeedsDisplay()
     }
     
+    func getNoteName(note: Int) -> String {
+        var noteNumber = note % 12
+        
+        //"♮", "♯", "♭"
+        
+        switch noteNumber {
+        case 0: return "C"
+        case 1: return "C♯/D♭"
+        case 2: return "D"
+        case 3: return "D♯/E♭"
+        case 4: return "E"
+        case 5: return "F"
+        case 6: return "F♯/G♭"
+        case 7: return "G"
+        case 8: return "G♯/A♭"
+        case 9: return "A"
+        case 10: return "A♯/B♭"
+        case 11: return "B"
+            
+        default: return "Q"
+        }
+    }
+    
     func receiveNotes(notification: NSNotification) {
         println("receiving notes")
         if let info = notification.userInfo as? Dictionary<String, [Int]> {
+            for line in lines {
+                line.label.removeFromSuperview()
+            }
             lines = []
             playableNotes = info["notes"]!
             
@@ -178,6 +210,7 @@ class PlayArea: UIView {
                     
                     // 1, piano = 1 guitar = 2, midi num, velocity 0 or 1, a 600, d 1000, s .1, r 3000, 1
                     PdBase.sendList([1, 2, lines[counter].note, 1, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                    
                 }
                 counter++
             }
