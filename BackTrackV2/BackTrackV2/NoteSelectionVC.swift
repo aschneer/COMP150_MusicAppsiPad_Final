@@ -116,12 +116,15 @@ class NoteSelectionVC: UIViewController, UIScrollViewDelegate {
         var Wcount = WButtons.count
         var Bcount = BButtons.count
         var NoteCount = noteSelected.count
+        
         for var i = 0; i < Wcount; i++ {
             WButtons[i].backgroundColor = UIColor.whiteColor()
         }
+        
         for var i = 0; i < Bcount; i++ {
             BButtons[i].backgroundColor = UIColor.blackColor()
         }
+        
         for var i = 0; i < NoteCount; i++ {
             noteSelected[i] = false
         }
@@ -147,9 +150,6 @@ class NoteSelectionVC: UIViewController, UIScrollViewDelegate {
                 notes.append(i + 48)
             }
         }
-        
-        print("notes are: ")
-        println(notes)
         
         var center = NSNotificationCenter.defaultCenter()
         center.postNotificationName("playableNotes", object: nil, userInfo: ["notes": notes])

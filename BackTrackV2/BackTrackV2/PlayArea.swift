@@ -73,7 +73,7 @@ class PlayArea: UIView {
                 
                 var timer = NSTimer.scheduledTimerWithTimeInterval(0.02, target: self, selector: "drawLines:", userInfo: nil, repeats: true)
                 
-                var patch = PdBase.openFile("main.pd", path: NSBundle.mainBundle().resourcePath)
+                var patch = PdBase.openFile("main.pd", path: (NSBundle.mainBundle().resourcePath! + "/"))
                 
                 firstTimeThrough = false
             }
@@ -104,8 +104,6 @@ class PlayArea: UIView {
     func getNoteName(note: Int) -> String {
         var noteNumber = note % 12
         
-        //"♮", "♯", "♭"
-        
         switch noteNumber {
         case 0: return "C"
         case 1: return "C♯/D♭"
@@ -125,7 +123,6 @@ class PlayArea: UIView {
     }
     
     func receiveNotes(notification: NSNotification) {
-        println("receiving notes")
         if let info = notification.userInfo as? Dictionary<String, [Int]> {
             for line in lines {
                 line.label.removeFromSuperview()
@@ -134,8 +131,6 @@ class PlayArea: UIView {
             playableNotes = info["notes"]!
             
             linesInitialized = false
-            print("New playable notes are: ")
-            println(playableNotes)
         }
     }
     
