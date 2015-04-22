@@ -153,6 +153,18 @@ class NoteSelectionVC: UIViewController, UIScrollViewDelegate {
         
         var center = NSNotificationCenter.defaultCenter()
         center.postNotificationName("playableNotes", object: nil, userInfo: ["notes": notes])
+        
+        var sfpath = NSBundle.mainBundle().resourcePath! + "/LesPaul.SF2"
+        //var sfpath = ""
+        if LeadInstrControl.description == "Guitar" {
+            sfpath += "LesPaul.SF2"
+        } else if LeadInstrControl.description == "Piano" {
+            sfpath += "piano_1.sf2"
+        }
+        
+        println(sfpath)
+        PdBase.sendList(["set", sfpath], toReceiver: "sf_path2")
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }

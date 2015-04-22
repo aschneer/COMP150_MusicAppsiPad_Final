@@ -39,9 +39,7 @@ class PlayArea: UIView {
         let color = CGColorCreate(colorSpace, components)
         CGContextSetStrokeColorWithColor(context, color)
         
-        if !linesInitialized {
-            println(playableNotes.count)
-            
+        if !linesInitialized {            
             spacing = windowHeight / CGFloat(playableNotes.count + 1)
         
             var startingPoint: CGFloat = spacing
@@ -89,7 +87,6 @@ class PlayArea: UIView {
                         CGContextAddLineToPoint(context, CGFloat(j), CGFloat(10 * sin((CGFloat(j - 50) + lines[i].sineCounter) * frequency)) + lines[i].middle)
                         CGContextStrokePath(context)
                         CGContextMoveToPoint(context, CGFloat(j), CGFloat(10 * sin((CGFloat(j - 50) + lines[i].sineCounter) * frequency)) + lines[i].middle)
-                        
                     }
                     lines[i].sineCounter += 5.0
                 } else {
