@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		5EF4D6D8B18BEC8844A62B71 /* libPods-BackTrackV2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58AB865CA4295DC3D0FC6EDF /* libPods-BackTrackV2.a */; };
 		EC6759341AD48FF6000D5C89 /* PlayArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6759331AD48FF6000D5C89 /* PlayArea.swift */; };
+		EC7843021AE99ECE006614EE /* main.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC7843011AE99ECE006614EE /* main.pd */; };
+		EC7843041AE99EF1006614EE /* instrument_v03.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC7843031AE99EF1006614EE /* instrument_v03.pd */; };
+		EC7843061AE99EF8006614EE /* mainController_v03.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC7843051AE99EF8006614EE /* mainController_v03.pd */; };
 		EC85AA101AC621FA008D1CD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC85AA0F1AC621FA008D1CD8 /* main.m */; };
 		EC85AA131AC621FA008D1CD8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC85AA121AC621FA008D1CD8 /* AppDelegate.m */; };
 		EC85AA161AC621FA008D1CD8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC85AA151AC621FA008D1CD8 /* ViewController.m */; };
@@ -22,9 +25,6 @@
 		EC85AA3B1AC63820008D1CD8 /* NoteSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC85AA3A1AC63820008D1CD8 /* NoteSelectionVC.swift */; };
 		EC85AA3D1AC63856008D1CD8 /* LeadSoundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC85AA3C1AC63856008D1CD8 /* LeadSoundVC.swift */; };
 		ECC15EFD1ACB504500FC3E01 /* LeadEffectsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC15EFC1ACB504500FC3E01 /* LeadEffectsVC.swift */; };
-		ECC932231AE73A3D006AAD6C /* main.pd in Resources */ = {isa = PBXBuildFile; fileRef = ECC932201AE73A3D006AAD6C /* main.pd */; };
-		ECC932241AE73A3D006AAD6C /* mainController_v02.pd in Resources */ = {isa = PBXBuildFile; fileRef = ECC932211AE73A3D006AAD6C /* mainController_v02.pd */; };
-		ECC9322C1AE74A9D006AAD6C /* instrument_v02 (2).pd in Resources */ = {isa = PBXBuildFile; fileRef = ECC9322B1AE74A9D006AAD6C /* instrument_v02 (2).pd */; };
 		ECD646C21AE6FAE700D742AC /* !=~.pd in Resources */ = {isa = PBXBuildFile; fileRef = ECD645311AE6FAE500D742AC /* !=~.pd */; };
 		ECD646C31AE6FAE700D742AC /* &&~.pd in Resources */ = {isa = PBXBuildFile; fileRef = ECD645321AE6FAE500D742AC /* &&~.pd */; };
 		ECD646C41AE6FAE700D742AC /* <=~.pd in Resources */ = {isa = PBXBuildFile; fileRef = ECD645331AE6FAE500D742AC /* <=~.pd */; };
@@ -913,10 +913,12 @@
 /* Begin PBXFileReference section */
 		26983D95E6B7DD314342DB29 /* Pods-BackTrackV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackTrackV2.release.xcconfig"; path = "Pods/Target Support Files/Pods-BackTrackV2/Pods-BackTrackV2.release.xcconfig"; sourceTree = "<group>"; };
 		58AB865CA4295DC3D0FC6EDF /* libPods-BackTrackV2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BackTrackV2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D37BB7E1ADF8190009882B8 /* LesPaul.SF2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = LesPaul.SF2; sourceTree = "<group>"; };
 		6D37BB7F1ADF8190009882B8 /* piano_1.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = piano_1.sf2; sourceTree = "<group>"; };
 		945879EFBE1A818F0699B8E7 /* Pods-BackTrackV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackTrackV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BackTrackV2/Pods-BackTrackV2.debug.xcconfig"; sourceTree = "<group>"; };
 		EC6759331AD48FF6000D5C89 /* PlayArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayArea.swift; sourceTree = "<group>"; };
+		EC7843011AE99ECE006614EE /* main.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = main.pd; path = "pd-for-libpd/main.pd"; sourceTree = "<group>"; };
+		EC7843031AE99EF1006614EE /* instrument_v03.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = instrument_v03.pd; sourceTree = "<group>"; };
+		EC7843051AE99EF8006614EE /* mainController_v03.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mainController_v03.pd; sourceTree = "<group>"; };
 		EC85AA0A1AC621FA008D1CD8 /* BackTrackV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackTrackV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC85AA0E1AC621FA008D1CD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC85AA0F1AC621FA008D1CD8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -937,9 +939,6 @@
 		EC85AA3A1AC63820008D1CD8 /* NoteSelectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteSelectionVC.swift; sourceTree = "<group>"; };
 		EC85AA3C1AC63856008D1CD8 /* LeadSoundVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeadSoundVC.swift; sourceTree = "<group>"; };
 		ECC15EFC1ACB504500FC3E01 /* LeadEffectsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeadEffectsVC.swift; sourceTree = "<group>"; };
-		ECC932201AE73A3D006AAD6C /* main.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.pd; sourceTree = "<group>"; };
-		ECC932211AE73A3D006AAD6C /* mainController_v02.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mainController_v02.pd; sourceTree = "<group>"; };
-		ECC9322B1AE74A9D006AAD6C /* instrument_v02 (2).pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "instrument_v02 (2).pd"; sourceTree = "<group>"; };
 		ECD645311AE6FAE500D742AC /* !=~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "!=~.pd"; sourceTree = "<group>"; };
 		ECD645321AE6FAE500D742AC /* &&~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "&&~.pd"; sourceTree = "<group>"; };
 		ECD645331AE6FAE500D742AC /* <=~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "<=~.pd"; sourceTree = "<group>"; };
@@ -2029,11 +2028,10 @@
 			children = (
 				ECD648531AE6FAF800D742AC /* use */,
 				ECD645301AE6FAE500D742AC /* pd-for-libpd */,
-				ECC932201AE73A3D006AAD6C /* main.pd */,
-				ECC9322B1AE74A9D006AAD6C /* instrument_v02 (2).pd */,
-				ECC932211AE73A3D006AAD6C /* mainController_v02.pd */,
-				6D37BB7E1ADF8190009882B8 /* LesPaul.SF2 */,
 				6D37BB7F1ADF8190009882B8 /* piano_1.sf2 */,
+				EC7843031AE99EF1006614EE /* instrument_v03.pd */,
+				EC7843051AE99EF8006614EE /* mainController_v03.pd */,
+				EC7843011AE99ECE006614EE /* main.pd */,
 				EC85AA111AC621FA008D1CD8 /* AppDelegate.h */,
 				EC85AA121AC621FA008D1CD8 /* AppDelegate.m */,
 				EC85AA141AC621FA008D1CD8 /* ViewController.h */,
@@ -3644,7 +3642,6 @@
 				ECD6479E1AE6FAE700D742AC /* if.pd in Resources */,
 				ECD647251AE6FAE700D742AC /* dictionary-standalone.pd in Resources */,
 				ECD647071AE6FAE700D742AC /* complex.pd in Resources */,
-				ECC932231AE73A3D006AAD6C /* main.pd in Resources */,
 				ECD64BA71AE6FAFA00D742AC /* Scope~-help.pd in Resources */,
 				ECD646E71AE6FAE700D742AC /* cconj.pd in Resources */,
 				ECD647941AE6FAE700D742AC /* guiadsr.pd in Resources */,
@@ -3745,6 +3742,7 @@
 				ECD646F51AE6FAE700D742AC /* chorus~-help.pd in Resources */,
 				ECD647DE1AE6FAE700D742AC /* name_manager.pd in Resources */,
 				ECD64BB81AE6FAFA00D742AC /* Table-help.pd in Resources */,
+				EC7843021AE99ECE006614EE /* main.pd in Resources */,
 				ECD647611AE6FAE700D742AC /* gate27-help.pd in Resources */,
 				ECD64B971AE6FAFA00D742AC /* pink~-help.pd in Resources */,
 				ECD64BB91AE6FAFA00D742AC /* tanh-help.pd in Resources */,
@@ -3794,6 +3792,7 @@
 				ECD647651AE6FAE700D742AC /* gate29-help.pd in Resources */,
 				ECD6481F1AE6FAE700D742AC /* switch2.pd in Resources */,
 				ECD646F91AE6FAE700D742AC /* circularlist-help.pd in Resources */,
+				EC7843041AE99EF1006614EE /* instrument_v03.pd in Resources */,
 				ECD6480E1AE6FAE700D742AC /* sec~.pd in Resources */,
 				ECD648501AE6FAE700D742AC /* volume~-help.pd in Resources */,
 				ECD646C81AE6FAE700D742AC /* >~.pd in Resources */,
@@ -3835,7 +3834,6 @@
 				ECD647831AE6FAE700D742AC /* gate8-help.pd in Resources */,
 				ECD64B9F1AE6FAFA00D742AC /* prob-help.pd in Resources */,
 				ECD647D31AE6FAE700D742AC /* lswap.pd in Resources */,
-				ECC9322C1AE74A9D006AAD6C /* instrument_v02 (2).pd in Resources */,
 				ECD64BA81AE6FAFA00D742AC /* seq-help.pd in Resources */,
 				ECD6471C1AE6FAE700D742AC /* csub.pd in Resources */,
 				ECD64B421AE6FAFA00D742AC /* atan2~-help.pd in Resources */,
@@ -3971,11 +3969,11 @@
 				ECD64AE61AE6FAFA00D742AC /* build_counter in Resources */,
 				ECD64B641AE6FAFA00D742AC /* cycle~-help.pd in Resources */,
 				ECD647E51AE6FAE700D742AC /* number.pd in Resources */,
-				ECC932241AE73A3D006AAD6C /* mainController_v02.pd in Resources */,
 				ECD646CB1AE6FAE700D742AC /* abstractions-standalone.pd in Resources */,
 				ECD647391AE6FAE700D742AC /* for++-help.pd in Resources */,
 				ECD6483C1AE6FAE700D742AC /* switchmaker~-help.pd in Resources */,
 				ECD647A81AE6FAE700D742AC /* lapp-help.pd in Resources */,
+				EC7843061AE99EF8006614EE /* mainController_v03.pd in Resources */,
 				ECD647EA1AE6FAE700D742AC /* panner~~-help.pd in Resources */,
 				ECD64B411AE6FAFA00D742AC /* asin~-help.pd in Resources */,
 				ECD64B761AE6FAFA00D742AC /* index~-help.pd in Resources */,

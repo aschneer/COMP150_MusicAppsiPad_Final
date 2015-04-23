@@ -74,7 +74,7 @@ class PlayArea: UIView {
                 PdBase.addToSearchPath(NSBundle.mainBundle().resourcePath)
                 PdExternals.setup()
                 
-                var patch = PdBase.openFile("main.pd", path: (NSBundle.mainBundle().resourcePath! + "/"))
+                var patch = PdBase.openFile("main.pd", path: (NSBundle.mainBundle().resourcePath!))
                 
                 firstTimeThrough = false
             }
@@ -156,7 +156,8 @@ class PlayArea: UIView {
                 lines[counter].touched = true
                 
                 // 1, piano = 1 guitar = 2, midi num, velocity 0 or 1, a 600, d 1000, s .1, r 3000, 1
-                var sfpath = NSBundle.mainBundle().resourcePath! + "/LesPaul.SF2"
+                var sfpath = NSBundle.mainBundle().resourcePath! + "/piano_1.sf2"
+                println(sfpath)
                 PdBase.sendList([1, sfpath, lines[counter].note, 1, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
                 
                 break
@@ -204,7 +205,9 @@ class PlayArea: UIView {
                     lines[counter].touched = true
                     
                     // 1, piano = 1 guitar = 2, midi num, velocity 0 or 1, a 600, d 1000, s .1, r 3000, 1
-                    PdBase.sendList([1, 2, lines[counter].note, 1, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                    var sfpath = NSBundle.mainBundle().resourcePath! + "/piano_1.sf2"
+                    println(sfpath)
+                    PdBase.sendList([1, sfpath, lines[counter].note, 1, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
                     
                 }
                 counter++
@@ -236,7 +239,9 @@ class PlayArea: UIView {
                 lines[counter].touched = false
                 
                 // 1, piano = 1 guitar = 2, midi num, velocity 0 or 1, a 600, d 1000, s .1, r 3000, 1
-                PdBase.sendList([1, 2, lines[counter].note, 0, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                var sfpath = NSBundle.mainBundle().resourcePath! + "/piano_1.sf2"
+                println(sfpath)
+                PdBase.sendList([1, sfpath, lines[counter].note, 0, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
                 break
             }
             counter++
