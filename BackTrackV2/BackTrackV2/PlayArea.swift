@@ -156,7 +156,8 @@ class PlayArea: UIView {
                 lines[counter].touched = true
                 
                 // 1, piano = 1 guitar = 2, midi num, velocity 0 or 1, a 600, d 1000, s .1, r 3000, 1
-                PdBase.sendList([1, 2, lines[counter].note, 1, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                var sfpath = NSBundle.mainBundle().resourcePath! + "/LesPaul.SF2"
+                PdBase.sendList([1, sfpath, lines[counter].note, 1, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
                 
                 break
             }
