@@ -71,8 +71,8 @@ class PlayArea: UIView {
                 
                 var timer = NSTimer.scheduledTimerWithTimeInterval(0.02, target: self, selector: "drawLines:", userInfo: nil, repeats: true)
                 
-                PdBase.addToSearchPath(NSBundle.mainBundle().resourcePath)
                 PdExternals.setup()
+                PdBase.addToSearchPath(NSBundle.mainBundle().resourcePath)
                 
                 var patch = PdBase.openFile("main.pd", path: (NSBundle.mainBundle().resourcePath!))
                 
