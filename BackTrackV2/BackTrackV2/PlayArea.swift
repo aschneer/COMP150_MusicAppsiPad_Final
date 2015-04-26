@@ -158,7 +158,7 @@ class PlayArea: UIView {
                 // 1, piano = 1 guitar = 2, midi num, velocity 0 or 1, a 600, d 1000, s .1, r 3000, 1
                 var sfpath = NSBundle.mainBundle().resourcePath! + "/piano_1.sf2"
                 println(sfpath)
-                PdBase.sendList([1, sfpath, lines[counter].note, 1, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                PdBase.sendList([1, sfpath, lines[counter].note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
                 
                 break
             }
@@ -179,7 +179,9 @@ class PlayArea: UIView {
         var note = -1
         
         var counter = 0
+        
         for line in lines {
+            
             if yValue >= line.top && yValue <= line.bottom {
                 note = line.note
             }
@@ -205,9 +207,9 @@ class PlayArea: UIView {
                     lines[counter].touched = true
                     
                     // 1, piano = 1 guitar = 2, midi num, velocity 0 or 1, a 600, d 1000, s .1, r 3000, 1
-                    var sfpath = NSBundle.mainBundle().resourcePath! + "/piano_1.sf2"
+                    var sfpath = NSBundle.mainBundle().resourcePath! + "/muted_trombone.sf2"
                     println(sfpath)
-                    PdBase.sendList([1, sfpath, lines[counter].note, 1, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                    PdBase.sendList([1, sfpath, lines[counter].note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
                     
                 }
                 counter++

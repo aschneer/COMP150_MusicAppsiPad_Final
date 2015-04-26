@@ -9,6 +9,35 @@
 /* Begin PBXBuildFile section */
 		5EF4D6D8B18BEC8844A62B71 /* libPods-BackTrackV2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58AB865CA4295DC3D0FC6EDF /* libPods-BackTrackV2.a */; };
 		EC1E23FC1AED7A0000CE1669 /* main.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC1E23FB1AED7A0000CE1669 /* main.pd */; };
+		EC1E241C1AED7F2A00CE1669 /* analog_age.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E23FE1AED7F2A00CE1669 /* analog_age.sf2 */; };
+		EC1E241D1AED7F2A00CE1669 /* banjo_1.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E23FF1AED7F2A00CE1669 /* banjo_1.sf2 */; };
+		EC1E241E1AED7F2A00CE1669 /* beautiful_pad.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E24001AED7F2A00CE1669 /* beautiful_pad.sf2 */; };
+		EC1E241F1AED7F2A00CE1669 /* bolivianflute.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E24011AED7F2A00CE1669 /* bolivianflute.sf2 */; };
+		EC1E24201AED7F2A00CE1669 /* Campbells_strings.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E24021AED7F2A00CE1669 /* Campbells_strings.sf2 */; };
+		EC1E24211AED7F2A00CE1669 /* Campbells_Verby_Vocal.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E24031AED7F2A00CE1669 /* Campbells_Verby_Vocal.sf2 */; };
+		EC1E24221AED7F2A00CE1669 /* church_organ.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E24041AED7F2A00CE1669 /* church_organ.sf2 */; };
+		EC1E24231AED7F2A00CE1669 /* DCs_Mellotron_Flute.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E24051AED7F2A00CE1669 /* DCs_Mellotron_Flute.sf2 */; };
+		EC1E24241AED7F2A00CE1669 /* ElPiano1.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E24061AED7F2A00CE1669 /* ElPiano1.sf2 */; };
+		EC1E24251AED7F2A00CE1669 /* enigma_flute.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E24071AED7F2A00CE1669 /* enigma_flute.sf2 */; };
+		EC1E24261AED7F2A00CE1669 /* flugelhorn.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E24081AED7F2A00CE1669 /* flugelhorn.sf2 */; };
+		EC1E24271AED7F2A00CE1669 /* janos_lead.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E24091AED7F2A00CE1669 /* janos_lead.sf2 */; };
+		EC1E24281AED7F2A00CE1669 /* jonnypad1.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E240A1AED7F2A00CE1669 /* jonnypad1.sf2 */; };
+		EC1E24291AED7F2A00CE1669 /* jonnypad3.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E240B1AED7F2A00CE1669 /* jonnypad3.sf2 */; };
+		EC1E242A1AED7F2A00CE1669 /* jonnypad4.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E240C1AED7F2A00CE1669 /* jonnypad4.sf2 */; };
+		EC1E242B1AED7F2A00CE1669 /* jonnypad5.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E240D1AED7F2A00CE1669 /* jonnypad5.sf2 */; };
+		EC1E242C1AED7F2A00CE1669 /* jonnypad6.SF2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E240E1AED7F2A00CE1669 /* jonnypad6.SF2 */; };
+		EC1E242D1AED7F2A00CE1669 /* jonnypad7.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E240F1AED7F2A00CE1669 /* jonnypad7.sf2 */; };
+		EC1E242E1AED7F2A00CE1669 /* jonnypad8.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E24101AED7F2A00CE1669 /* jonnypad8.sf2 */; };
+		EC1E242F1AED7F2A00CE1669 /* LesPaul.SF2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E24111AED7F2A00CE1669 /* LesPaul.SF2 */; };
+		EC1E24301AED7F2A00CE1669 /* muted_trombone.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E24121AED7F2A00CE1669 /* muted_trombone.sf2 */; };
+		EC1E24311AED7F2A00CE1669 /* piano_1.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E24131AED7F2A00CE1669 /* piano_1.sf2 */; };
+		EC1E24321AED7F2A00CE1669 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC1E24141AED7F2A00CE1669 /* README.txt */; };
+		EC1E24331AED7F2A00CE1669 /* saz.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E24151AED7F2A00CE1669 /* saz.sf2 */; };
+		EC1E24341AED7F2A00CE1669 /* SC88Drumset.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E24161AED7F2A00CE1669 /* SC88Drumset.sf2 */; };
+		EC1E24351AED7F2A00CE1669 /* soundfonts-help.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC1E24171AED7F2A00CE1669 /* soundfonts-help.pd */; };
+		EC1E24361AED7F2A00CE1669 /* StomperSet.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E24181AED7F2A00CE1669 /* StomperSet.sf2 */; };
+		EC1E24371AED7F2A00CE1669 /* import_sf.py in Resources */ = {isa = PBXBuildFile; fileRef = EC1E241A1AED7F2A00CE1669 /* import_sf.py */; };
+		EC1E24381AED7F2A00CE1669 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC1E241B1AED7F2A00CE1669 /* README.txt */; };
 		EC6759341AD48FF6000D5C89 /* PlayArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6759331AD48FF6000D5C89 /* PlayArea.swift */; };
 		EC7843041AE99EF1006614EE /* instrument_v03.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC7843031AE99EF1006614EE /* instrument_v03.pd */; };
 		EC7843061AE99EF8006614EE /* mainController_v03.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC7843051AE99EF8006614EE /* mainController_v03.pd */; };
@@ -916,6 +945,35 @@
 		6D37BB7F1ADF8190009882B8 /* piano_1.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = piano_1.sf2; sourceTree = "<group>"; };
 		945879EFBE1A818F0699B8E7 /* Pods-BackTrackV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackTrackV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BackTrackV2/Pods-BackTrackV2.debug.xcconfig"; sourceTree = "<group>"; };
 		EC1E23FB1AED7A0000CE1669 /* main.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.pd; sourceTree = "<group>"; };
+		EC1E23FE1AED7F2A00CE1669 /* analog_age.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = analog_age.sf2; sourceTree = "<group>"; };
+		EC1E23FF1AED7F2A00CE1669 /* banjo_1.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = banjo_1.sf2; sourceTree = "<group>"; };
+		EC1E24001AED7F2A00CE1669 /* beautiful_pad.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = beautiful_pad.sf2; sourceTree = "<group>"; };
+		EC1E24011AED7F2A00CE1669 /* bolivianflute.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bolivianflute.sf2; sourceTree = "<group>"; };
+		EC1E24021AED7F2A00CE1669 /* Campbells_strings.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Campbells_strings.sf2; sourceTree = "<group>"; };
+		EC1E24031AED7F2A00CE1669 /* Campbells_Verby_Vocal.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Campbells_Verby_Vocal.sf2; sourceTree = "<group>"; };
+		EC1E24041AED7F2A00CE1669 /* church_organ.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = church_organ.sf2; sourceTree = "<group>"; };
+		EC1E24051AED7F2A00CE1669 /* DCs_Mellotron_Flute.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = DCs_Mellotron_Flute.sf2; sourceTree = "<group>"; };
+		EC1E24061AED7F2A00CE1669 /* ElPiano1.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ElPiano1.sf2; sourceTree = "<group>"; };
+		EC1E24071AED7F2A00CE1669 /* enigma_flute.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = enigma_flute.sf2; sourceTree = "<group>"; };
+		EC1E24081AED7F2A00CE1669 /* flugelhorn.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = flugelhorn.sf2; sourceTree = "<group>"; };
+		EC1E24091AED7F2A00CE1669 /* janos_lead.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = janos_lead.sf2; sourceTree = "<group>"; };
+		EC1E240A1AED7F2A00CE1669 /* jonnypad1.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = jonnypad1.sf2; sourceTree = "<group>"; };
+		EC1E240B1AED7F2A00CE1669 /* jonnypad3.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = jonnypad3.sf2; sourceTree = "<group>"; };
+		EC1E240C1AED7F2A00CE1669 /* jonnypad4.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = jonnypad4.sf2; sourceTree = "<group>"; };
+		EC1E240D1AED7F2A00CE1669 /* jonnypad5.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = jonnypad5.sf2; sourceTree = "<group>"; };
+		EC1E240E1AED7F2A00CE1669 /* jonnypad6.SF2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = jonnypad6.SF2; sourceTree = "<group>"; };
+		EC1E240F1AED7F2A00CE1669 /* jonnypad7.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = jonnypad7.sf2; sourceTree = "<group>"; };
+		EC1E24101AED7F2A00CE1669 /* jonnypad8.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = jonnypad8.sf2; sourceTree = "<group>"; };
+		EC1E24111AED7F2A00CE1669 /* LesPaul.SF2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = LesPaul.SF2; sourceTree = "<group>"; };
+		EC1E24121AED7F2A00CE1669 /* muted_trombone.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = muted_trombone.sf2; sourceTree = "<group>"; };
+		EC1E24131AED7F2A00CE1669 /* piano_1.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = piano_1.sf2; sourceTree = "<group>"; };
+		EC1E24141AED7F2A00CE1669 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		EC1E24151AED7F2A00CE1669 /* saz.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = saz.sf2; sourceTree = "<group>"; };
+		EC1E24161AED7F2A00CE1669 /* SC88Drumset.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SC88Drumset.sf2; sourceTree = "<group>"; };
+		EC1E24171AED7F2A00CE1669 /* soundfonts-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "soundfonts-help.pd"; sourceTree = "<group>"; };
+		EC1E24181AED7F2A00CE1669 /* StomperSet.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = StomperSet.sf2; sourceTree = "<group>"; };
+		EC1E241A1AED7F2A00CE1669 /* import_sf.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = import_sf.py; sourceTree = "<group>"; };
+		EC1E241B1AED7F2A00CE1669 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		EC6759331AD48FF6000D5C89 /* PlayArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayArea.swift; sourceTree = "<group>"; };
 		EC7843031AE99EF1006614EE /* instrument_v03.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = instrument_v03.pd; sourceTree = "<group>"; };
 		EC7843051AE99EF8006614EE /* mainController_v03.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mainController_v03.pd; sourceTree = "<group>"; };
@@ -2003,6 +2061,50 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EC1E23FD1AED7F2A00CE1669 /* soundfonts */ = {
+			isa = PBXGroup;
+			children = (
+				EC1E23FE1AED7F2A00CE1669 /* analog_age.sf2 */,
+				EC1E23FF1AED7F2A00CE1669 /* banjo_1.sf2 */,
+				EC1E24001AED7F2A00CE1669 /* beautiful_pad.sf2 */,
+				EC1E24011AED7F2A00CE1669 /* bolivianflute.sf2 */,
+				EC1E24021AED7F2A00CE1669 /* Campbells_strings.sf2 */,
+				EC1E24031AED7F2A00CE1669 /* Campbells_Verby_Vocal.sf2 */,
+				EC1E24041AED7F2A00CE1669 /* church_organ.sf2 */,
+				EC1E24051AED7F2A00CE1669 /* DCs_Mellotron_Flute.sf2 */,
+				EC1E24061AED7F2A00CE1669 /* ElPiano1.sf2 */,
+				EC1E24071AED7F2A00CE1669 /* enigma_flute.sf2 */,
+				EC1E24081AED7F2A00CE1669 /* flugelhorn.sf2 */,
+				EC1E24091AED7F2A00CE1669 /* janos_lead.sf2 */,
+				EC1E240A1AED7F2A00CE1669 /* jonnypad1.sf2 */,
+				EC1E240B1AED7F2A00CE1669 /* jonnypad3.sf2 */,
+				EC1E240C1AED7F2A00CE1669 /* jonnypad4.sf2 */,
+				EC1E240D1AED7F2A00CE1669 /* jonnypad5.sf2 */,
+				EC1E240E1AED7F2A00CE1669 /* jonnypad6.SF2 */,
+				EC1E240F1AED7F2A00CE1669 /* jonnypad7.sf2 */,
+				EC1E24101AED7F2A00CE1669 /* jonnypad8.sf2 */,
+				EC1E24111AED7F2A00CE1669 /* LesPaul.SF2 */,
+				EC1E24121AED7F2A00CE1669 /* muted_trombone.sf2 */,
+				EC1E24131AED7F2A00CE1669 /* piano_1.sf2 */,
+				EC1E24141AED7F2A00CE1669 /* README.txt */,
+				EC1E24151AED7F2A00CE1669 /* saz.sf2 */,
+				EC1E24161AED7F2A00CE1669 /* SC88Drumset.sf2 */,
+				EC1E24171AED7F2A00CE1669 /* soundfonts-help.pd */,
+				EC1E24181AED7F2A00CE1669 /* StomperSet.sf2 */,
+				EC1E24191AED7F2A00CE1669 /* unpacking_soundfonts */,
+			);
+			path = soundfonts;
+			sourceTree = "<group>";
+		};
+		EC1E24191AED7F2A00CE1669 /* unpacking_soundfonts */ = {
+			isa = PBXGroup;
+			children = (
+				EC1E241A1AED7F2A00CE1669 /* import_sf.py */,
+				EC1E241B1AED7F2A00CE1669 /* README.txt */,
+			);
+			path = unpacking_soundfonts;
+			sourceTree = "<group>";
+		};
 		EC85AA011AC621FA008D1CD8 = {
 			isa = PBXGroup;
 			children = (
@@ -2026,6 +2128,7 @@
 		EC85AA0C1AC621FA008D1CD8 /* BackTrackV2 */ = {
 			isa = PBXGroup;
 			children = (
+				EC1E23FD1AED7F2A00CE1669 /* soundfonts */,
 				ECD648531AE6FAF800D742AC /* use */,
 				ECD645301AE6FAE500D742AC /* pd-for-libpd */,
 				6D37BB7F1ADF8190009882B8 /* piano_1.sf2 */,
@@ -3458,6 +3561,7 @@
 				ECD646C41AE6FAE700D742AC /* <=~.pd in Resources */,
 				ECD647EE1AE6FAE700D742AC /* piano.pd in Resources */,
 				ECD64BC11AE6FAFA00D742AC /* trapezoid~-help.pd in Resources */,
+				EC1E24231AED7F2A00CE1669 /* DCs_Mellotron_Flute.sf2 in Resources */,
 				ECD648231AE6FAE700D742AC /* switch3.pd in Resources */,
 				ECD647E11AE6FAE700D742AC /* normalize~-help.pd in Resources */,
 				ECD648481AE6FAE700D742AC /* transistor~-help.pd in Resources */,
@@ -3471,6 +3575,7 @@
 				ECD6471A1AE6FAE700D742AC /* csc~.pd in Resources */,
 				ECD6477E1AE6FAE700D742AC /* gate6~.pd in Resources */,
 				ECD64B3C1AE6FAFA00D742AC /* all_about_cyclone.pd in Resources */,
+				EC1E24351AED7F2A00CE1669 /* soundfonts-help.pd in Resources */,
 				ECD648381AE6FAE700D742AC /* switch8~-help.pd in Resources */,
 				ECD64B741AE6FAFA00D742AC /* grab-help.pd in Resources */,
 				ECD647B71AE6FAE700D742AC /* lindexget.pd in Resources */,
@@ -3523,10 +3628,12 @@
 				ECD648141AE6FAE700D742AC /* sinh.pd in Resources */,
 				ECD646D61AE6FAE700D742AC /* autobiquad2~.pd in Resources */,
 				ECD647AA1AE6FAE700D742AC /* lbuilder-help.pd in Resources */,
+				EC1E242B1AED7F2A00CE1669 /* jonnypad5.sf2 in Resources */,
 				ECD64B871AE6FAFA00D742AC /* minimum-help.pd in Resources */,
 				ECD6480D1AE6FAE700D742AC /* sec~-help.pd in Resources */,
 				ECD6472D1AE6FAE700D742AC /* dynamicpd-help.pd in Resources */,
 				ECD64B691AE6FAFA00D742AC /* delta~-help.pd in Resources */,
+				EC1E24241AED7F2A00CE1669 /* ElPiano1.sf2 in Resources */,
 				ECD647091AE6FAE700D742AC /* cosh~-help.pd in Resources */,
 				ECD647E91AE6FAE700D742AC /* panner~.pd in Resources */,
 				ECD647B51AE6FAE700D742AC /* lfor.pd in Resources */,
@@ -3573,6 +3680,7 @@
 				ECD64B7C1AE6FAFA00D742AC /* lookup~-help.pd in Resources */,
 				ECD647051AE6FAE700D742AC /* complex-mod~-help.pd in Resources */,
 				ECD647931AE6FAE700D742AC /* guiadsr-help.pd in Resources */,
+				EC1E241D1AED7F2A00CE1669 /* banjo_1.sf2 in Resources */,
 				ECD64B6D1AE6FAFA00D742AC /* forward-help.pd in Resources */,
 				ECD64B4C1AE6FAFA00D742AC /* bitxor~-help.pd in Resources */,
 				ECD64BC51AE6FAFA00D742AC /* urn-help.pd in Resources */,
@@ -3611,6 +3719,7 @@
 				ECD647BC1AE6FAE700D742AC /* ljoin-help.pd in Resources */,
 				ECD648431AE6FAE700D742AC /* tan~-help.pd in Resources */,
 				ECD647B41AE6FAE700D742AC /* lfor-help.pd in Resources */,
+				EC1E24201AED7F2A00CE1669 /* Campbells_strings.sf2 in Resources */,
 				ECD64B361AE6FAFA00D742AC /* abs~-help.pd in Resources */,
 				ECD64BAE1AE6FAFA00D742AC /* speedlim-help.pd in Resources */,
 				ECD647991AE6FAE700D742AC /* help_builder-help.pd in Resources */,
@@ -3620,6 +3729,7 @@
 				ECD647661AE6FAE700D742AC /* gate29.pd in Resources */,
 				ECD647F21AE6FAE700D742AC /* pitchshifter~.pd in Resources */,
 				ECD648041AE6FAE700D742AC /* sawtooth_table.pd in Resources */,
+				EC1E24311AED7F2A00CE1669 /* piano_1.sf2 in Resources */,
 				ECD647AF1AE6FAE700D742AC /* lfl<=.pd in Resources */,
 				ECD648071AE6FAE700D742AC /* scales.pd in Resources */,
 				ECD64B3D1AE6FAFA00D742AC /* allpass~-help.pd in Resources */,
@@ -3633,6 +3743,7 @@
 				ECD648261AE6FAE700D742AC /* switch4-help.pd in Resources */,
 				ECD646E01AE6FAE700D742AC /* biquad_response-help.pd in Resources */,
 				ECD646C31AE6FAE700D742AC /* &&~.pd in Resources */,
+				EC1E24371AED7F2A00CE1669 /* import_sf.py in Resources */,
 				ECD646EB1AE6FAE700D742AC /* cdiv.pd in Resources */,
 				ECD64B9A1AE6FAFA00D742AC /* poltocar-help.pd in Resources */,
 				ECD64BAD1AE6FAFA00D742AC /* Snapshot~-help.pd in Resources */,
@@ -3640,6 +3751,8 @@
 				ECD6478A1AE6FAE700D742AC /* gatemaker.pd in Resources */,
 				ECD647E81AE6FAE700D742AC /* panner~-help.pd in Resources */,
 				ECD6479E1AE6FAE700D742AC /* if.pd in Resources */,
+				EC1E24381AED7F2A00CE1669 /* README.txt in Resources */,
+				EC1E24281AED7F2A00CE1669 /* jonnypad1.sf2 in Resources */,
 				ECD647251AE6FAE700D742AC /* dictionary-standalone.pd in Resources */,
 				ECD647071AE6FAE700D742AC /* complex.pd in Resources */,
 				ECD64BA71AE6FAFA00D742AC /* Scope~-help.pd in Resources */,
@@ -3653,6 +3766,7 @@
 				ECD64BCC1AE6FAFA00D742AC /* xbendout2-help.pd in Resources */,
 				ECD64B891AE6FAFA00D742AC /* mousefilter-help.pd in Resources */,
 				ECD647DC1AE6FAE700D742AC /* multitremolo~~.pd in Resources */,
+				EC1E24361AED7F2A00CE1669 /* StomperSet.sf2 in Resources */,
 				ECD64B651AE6FAFA00D742AC /* decide-help.pd in Resources */,
 				ECD646D71AE6FAE700D742AC /* autobiquad~-help.pd in Resources */,
 				ECD648491AE6FAE700D742AC /* transistor~.pd in Resources */,
@@ -3660,10 +3774,12 @@
 				ECD647AD1AE6FAE700D742AC /* lfl!=.pd in Resources */,
 				ECD647F31AE6FAE700D742AC /* playground.pd in Resources */,
 				ECD647981AE6FAE700D742AC /* hann_table.pd in Resources */,
+				EC1E24211AED7F2A00CE1669 /* Campbells_Verby_Vocal.sf2 in Resources */,
 				ECD64B531AE6FAFA00D742AC /* capture~-help.pd in Resources */,
 				ECD647DB1AE6FAE700D742AC /* multitremolo~~-help.pd in Resources */,
 				ECD647641AE6FAE700D742AC /* gate28.pd in Resources */,
 				ECD646C91AE6FAE700D742AC /* abstractions-help.pd in Resources */,
+				EC1E242E1AED7F2A00CE1669 /* jonnypad8.sf2 in Resources */,
 				ECD64B981AE6FAFA00D742AC /* play~-help.pd in Resources */,
 				ECD64B5A1AE6FAFA00D742AC /* coll-help.pd in Resources */,
 				ECD64B901AE6FAFA00D742AC /* onepole~-help.pd in Resources */,
@@ -3677,8 +3793,10 @@
 				ECD647731AE6FAE700D742AC /* gate4-help.pd in Resources */,
 				ECD646EC1AE6FAE700D742AC /* cdiv~-help.pd in Resources */,
 				ECD6471D1AE6FAE700D742AC /* csub~-help.pd in Resources */,
+				EC1E24301AED7F2A00CE1669 /* muted_trombone.sf2 in Resources */,
 				ECD6479C1AE6FAE700D742AC /* hilbert~.pd in Resources */,
 				ECD647671AE6FAE700D742AC /* gate2~-help.pd in Resources */,
+				EC1E242D1AED7F2A00CE1669 /* jonnypad7.sf2 in Resources */,
 				ECD647D51AE6FAE700D742AC /* multidelay~-help.pd in Resources */,
 				ECD6483B1AE6FAE700D742AC /* switchmaker.pd in Resources */,
 				ECD64B581AE6FAFA00D742AC /* Clip-help.pd in Resources */,
@@ -3716,6 +3834,7 @@
 				ECD648201AE6FAE700D742AC /* switch2~-help.pd in Resources */,
 				ECD647A21AE6FAE700D742AC /* ladd-help.pd in Resources */,
 				ECD647691AE6FAE700D742AC /* gate3-help.pd in Resources */,
+				EC1E24271AED7F2A00CE1669 /* janos_lead.sf2 in Resources */,
 				ECD64BBB1AE6FAFA00D742AC /* tanx~-help.pd in Resources */,
 				ECD64C4B1AE6FAFA00D742AC /* loop~-help.pd in Resources */,
 				ECD6482D1AE6FAE700D742AC /* switch5~.pd in Resources */,
@@ -3724,6 +3843,7 @@
 				ECD646DD1AE6FAE700D742AC /* autospectrum~.pd in Resources */,
 				ECD6475B1AE6FAE700D742AC /* gate24-help.pd in Resources */,
 				ECD64B471AE6FAFA00D742AC /* bangbang-help.pd in Resources */,
+				EC1E24261AED7F2A00CE1669 /* flugelhorn.sf2 in Resources */,
 				ECD64B721AE6FAFA00D742AC /* funnel-help.pd in Resources */,
 				ECD647411AE6FAE700D742AC /* gate12-help.pd in Resources */,
 				ECD64B711AE6FAFA00D742AC /* funbuff-help.pd in Resources */,
@@ -3733,8 +3853,10 @@
 				ECD64B671AE6FAFA00D742AC /* delay~-help.pd in Resources */,
 				ECD647591AE6FAE700D742AC /* gate23-help.pd in Resources */,
 				ECD6484F1AE6FAE700D742AC /* voice~.pd in Resources */,
+				EC1E24321AED7F2A00CE1669 /* README.txt in Resources */,
 				ECD64B5B1AE6FAFA00D742AC /* comb~-help.pd in Resources */,
 				ECD646E91AE6FAE700D742AC /* cconj~.pd in Resources */,
+				EC1E24331AED7F2A00CE1669 /* saz.sf2 in Resources */,
 				ECD64BC61AE6FAFA00D742AC /* Uzi-help.pd in Resources */,
 				ECD646DF1AE6FAE700D742AC /* biquad_coefficients.pd in Resources */,
 				ECD6472C1AE6FAE700D742AC /* dr.pd in Resources */,
@@ -3757,6 +3879,7 @@
 				ECD6473A1AE6FAE700D742AC /* for++.pd in Resources */,
 				ECD646D11AE6FAE700D742AC /* arg2method-help.pd in Resources */,
 				EC85AA191AC621FA008D1CD8 /* Main.storyboard in Resources */,
+				EC1E24341AED7F2A00CE1669 /* SC88Drumset.sf2 in Resources */,
 				ECD64B631AE6FAFA00D742AC /* cycle-help.pd in Resources */,
 				ECD6476E1AE6FAE700D742AC /* gate31.pd in Resources */,
 				ECD647901AE6FAE700D742AC /* gswitch-help.pd in Resources */,
@@ -3779,8 +3902,10 @@
 				ECD648391AE6FAE700D742AC /* switch8~.pd in Resources */,
 				ECD647081AE6FAE700D742AC /* cosh.pd in Resources */,
 				ECD6478F1AE6FAE700D742AC /* ggate~.pd in Resources */,
+				EC1E24251AED7F2A00CE1669 /* enigma_flute.sf2 in Resources */,
 				ECD6475A1AE6FAE700D742AC /* gate23.pd in Resources */,
 				ECD6482F1AE6FAE700D742AC /* switch6.pd in Resources */,
+				EC1E24291AED7F2A00CE1669 /* jonnypad3.sf2 in Resources */,
 				ECD6482E1AE6FAE700D742AC /* switch6-help.pd in Resources */,
 				ECD64B371AE6FAFA00D742AC /* accum-help.pd in Resources */,
 				ECD646D81AE6FAE700D742AC /* autobiquad~.pd in Resources */,
@@ -3846,11 +3971,13 @@
 				ECD646D21AE6FAE700D742AC /* arg2method.pd in Resources */,
 				ECD647241AE6FAE700D742AC /* dictionary-standalone-help.pd in Resources */,
 				ECD647031AE6FAE700D742AC /* cmult~.pd in Resources */,
+				EC1E242F1AED7F2A00CE1669 /* LesPaul.SF2 in Resources */,
 				ECD647381AE6FAE700D742AC /* filt.pd in Resources */,
 				ECD6478C1AE6FAE700D742AC /* gatemaker~.pd in Resources */,
 				ECD64B7A1AE6FAFA00D742AC /* Line~-help.pd in Resources */,
 				ECD647821AE6FAE700D742AC /* gate7~.pd in Resources */,
 				ECD64B7B1AE6FAFA00D742AC /* log~-help.pd in Resources */,
+				EC1E241F1AED7F2A00CE1669 /* bolivianflute.sf2 in Resources */,
 				ECD647261AE6FAE700D742AC /* dictionary.pd in Resources */,
 				ECD647721AE6FAE700D742AC /* gate3~.pd in Resources */,
 				ECD646C71AE6FAE700D742AC /* >=~.pd in Resources */,
@@ -3884,7 +4011,9 @@
 				ECD647F81AE6FAE700D742AC /* rev1-final.pd in Resources */,
 				ECD64B931AE6FAFA00D742AC /* Peak-help.pd in Resources */,
 				ECD64BAA1AE6FAFA00D742AC /* sinh~-help.pd in Resources */,
+				EC1E24221AED7F2A00CE1669 /* church_organ.sf2 in Resources */,
 				ECD64BB41AE6FAFA00D742AC /* substitute-help.pd in Resources */,
+				EC1E242A1AED7F2A00CE1669 /* jonnypad4.sf2 in Resources */,
 				ECD646DB1AE6FAE700D742AC /* autosampler~.pd in Resources */,
 				ECD647791AE6FAE700D742AC /* gate5~-help.pd in Resources */,
 				ECD6484E1AE6FAE700D742AC /* view~.pd in Resources */,
@@ -3935,6 +4064,7 @@
 				ECD6477C1AE6FAE700D742AC /* gate6.pd in Resources */,
 				ECD647E31AE6FAE700D742AC /* noteflush.pd in Resources */,
 				ECD64BB01AE6FAFA00D742AC /* spike~-help.pd in Resources */,
+				EC1E241C1AED7F2A00CE1669 /* analog_age.sf2 in Resources */,
 				EC1E23FC1AED7A0000CE1669 /* main.pd in Resources */,
 				ECD648021AE6FAE700D742AC /* round-help.pd in Resources */,
 				ECD647131AE6FAE700D742AC /* counter2.pd in Resources */,
@@ -3962,6 +4092,7 @@
 				ECD64C4A1AE6FAFA00D742AC /* fiddle~-help.pd in Resources */,
 				ECD648131AE6FAE700D742AC /* sine_table.pd in Resources */,
 				ECD647B31AE6FAE700D742AC /* lfl>=.pd in Resources */,
+				EC1E242C1AED7F2A00CE1669 /* jonnypad6.SF2 in Resources */,
 				ECD647181AE6FAE700D742AC /* csch~.pd in Resources */,
 				ECD647771AE6FAE700D742AC /* gate5-help.pd in Resources */,
 				ECD647151AE6FAE700D742AC /* csc.pd in Resources */,
@@ -3985,6 +4116,7 @@
 				ECD6481A1AE6FAE700D742AC /* stack-help.pd in Resources */,
 				ECD647C21AE6FAE700D742AC /* lpre-help.pd in Resources */,
 				ECD6470A1AE6FAE700D742AC /* cosh~.pd in Resources */,
+				EC1E241E1AED7F2A00CE1669 /* beautiful_pad.sf2 in Resources */,
 				ECD646F01AE6FAE700D742AC /* cexp.pd in Resources */,
 				ECD646E41AE6FAE700D742AC /* cadd~-help.pd in Resources */,
 				ECD647A91AE6FAE700D742AC /* lapp.pd in Resources */,
