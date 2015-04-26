@@ -7,10 +7,6 @@
 #X msg 248 84 1 2 67 127 600 1000 0.1 3000 0;
 #X obj 385 298 mainController_v03;
 #X obj 99 199 list;
-#X obj 50 242 print FIRSTLIST;
-#X obj 49 372 list;
-#X obj 47 421 print;
-#X msg 40 332 hello man;
 #X msg -6 8 1 /Users/comp150/Desktop/pd-for-libpd/Pd-for-LibPd/soundfonts/piano_1.sf2
 65 127 600 1000 0.1 3000 0;
 #X obj 385 268 r note_msg;
@@ -21,9 +17,6 @@
 #X connect 6 0 0 0;
 #X connect 6 0 1 0;
 #X connect 6 1 0 1;
-#X connect 7 0 8 0;
-#X connect 7 0 14 0;
-#X connect 9 0 10 0;
-#X connect 11 0 9 0;
-#X connect 12 0 7 0;
-#X connect 13 0 6 0;
+#X connect 7 0 10 0;
+#X connect 8 0 7 0;
+#X connect 9 0 6 0;

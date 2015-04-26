@@ -3,6 +3,7 @@
 
 target 'BackTrackV2' do
 	pod 'libpd', '~> 0.7'
+	pod 'MIKMIDI', '~> 1.0'
 end
 
 target 'BackTrackV2Tests' do

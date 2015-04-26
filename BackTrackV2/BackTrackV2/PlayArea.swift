@@ -157,7 +157,6 @@ class PlayArea: UIView {
                 
                 // 1, piano = 1 guitar = 2, midi num, velocity 0 or 1, a 600, d 1000, s .1, r 3000, 1
                 var sfpath = NSBundle.mainBundle().resourcePath! + "/piano_1.sf2"
-                println(sfpath)
                 PdBase.sendList([1, sfpath, lines[counter].note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
                 
                 break
@@ -180,50 +179,45 @@ class PlayArea: UIView {
         
         var counter = 0
         
+        var allTouches = event.allTouches()
+        allTouches?.insert(touch)
         for line in lines {
+            var stillTouched: Bool = false
             
-            if yValue >= line.top && yValue <= line.bottom {
-                note = line.note
+            for singleTouch in allTouches! {
+                var touchYValue = (singleTouch as! UITouch).locationInView(self).y
+                
+                if stillTouched { break }
+                
+                if touchYValue >= lines[counter].top && touchYValue <= lines[counter].bottom {
+                    if lines[counter].touched {
+                        stillTouched = true
+                    } else {
+                        var sfpath = NSBundle.mainBundle().resourcePath! + "/piano_1.sf2"
+                        PdBase.sendList([1, sfpath, lines[counter].note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                        lines[counter].touched = true
+                        stillTouched = true
+                        break
+                    }
+                }
             }
             
-            lines[counter].touched = false
-            
-            // 1, piano = 1 guitar = 2, midi num, velocity 0 or 1, a 600, d 1000, s .1, r 3000, 1
-            PdBase.sendList([1, 2, lines[counter].note, 0, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+            if !stillTouched && lines[counter].touched {
+                PdBase.sendList([1, 2, lines[counter].note, 0, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                lines[counter].touched = false
+            }
             
             counter++
         }
         
-        
-        var allTouches = event.allTouches()
-        
-        for singleTouch in allTouches! {
-            var touchYValue = (singleTouch as! UITouch).locationInView(self).y
-        
-            counter = 0
-            
-            for line in lines {
-                if touchYValue >= line.top && touchYValue <= line.bottom {
-                    lines[counter].touched = true
-                    
-                    // 1, piano = 1 guitar = 2, midi num, velocity 0 or 1, a 600, d 1000, s .1, r 3000, 1
-                    var sfpath = NSBundle.mainBundle().resourcePath! + "/muted_trombone.sf2"
-                    println(sfpath)
-                    PdBase.sendList([1, sfpath, lines[counter].note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
-                    
-                }
-                counter++
-            }
-        }
-        
-        if note != -1 {
+/*        if note != -1 {
 //            println("Touch moved at MIDI " + String(note))
 //            
 //            for line in lines {
 //                print(line.touched)
 //                print(" ")
 //            }
-        }
+        }*/
     }
     
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
@@ -242,7 +236,6 @@ class PlayArea: UIView {
                 
                 // 1, piano = 1 guitar = 2, midi num, velocity 0 or 1, a 600, d 1000, s .1, r 3000, 1
                 var sfpath = NSBundle.mainBundle().resourcePath! + "/piano_1.sf2"
-                println(sfpath)
                 PdBase.sendList([1, sfpath, lines[counter].note, 0, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
                 break
             }

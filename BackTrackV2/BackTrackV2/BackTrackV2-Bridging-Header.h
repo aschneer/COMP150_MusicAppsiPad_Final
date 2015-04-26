@@ -4,3 +4,4 @@
 
 #import "PdDispatcher.h"
 #import "PdExternals.h"
+#import "MIKMIDI.h"

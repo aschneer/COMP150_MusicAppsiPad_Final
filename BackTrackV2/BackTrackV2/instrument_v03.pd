@@ -45,7 +45,6 @@
 #X msg 382 189 set \$1;
 #X msg 540 44 /Users/comp150/Desktop/pd-for-libpd/Pd-for-LibPd/soundfonts/piano_1.sf2
 ;
-#X obj 492 583 print NOTE;
 #X connect 2 0 16 0;
 #X connect 2 0 17 0;
 #X connect 3 0 2 0;
@@ -66,7 +65,6 @@
 #X connect 18 0 3 0;
 #X connect 19 0 24 0;
 #X connect 20 0 24 0;
-#X connect 20 0 44 0;
 #X connect 21 0 20 0;
 #X connect 22 0 20 1;
 #X connect 24 0 0 0;
