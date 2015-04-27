@@ -17,7 +17,7 @@ class PlayArea: UIView {
     var spacing: CGFloat = 0
     var frequency: CGFloat = 0.02
     
-    var sfpath = NSBundle.mainBundle().resourcePath! + "/SC88Drumset.sf2"
+    var sfpath = NSBundle.mainBundle().resourcePath! + "/piano_1.sf2"
     
     struct Line {
         var note: Int
@@ -70,14 +70,16 @@ class PlayArea: UIView {
                 // Add a notification center to receive notes
                 var center = NSNotificationCenter.defaultCenter()
                 center.addObserver(self, selector: "receiveNotes:", name: "playableNotes", object: nil)
-                center.addObserver(self, selector: "setFreq:", name: "setFreq", object: nil)
+                //center.addObserver(self, selector: "setFreq:", name: "setFreq", object: nil)
                 
                 var timer = NSTimer.scheduledTimerWithTimeInterval(0.02, target: self, selector: "drawLines:", userInfo: nil, repeats: true)
                 
                 PdExternals.setup()
                 PdBase.addToSearchPath(NSBundle.mainBundle().resourcePath)
                 
-                var patch = PdBase.openFile("main.pd", path: (NSBundle.mainBundle().resourcePath!))
+                //var patch = PdBase.openFile("main.pd", path: (NSBundle.mainBundle().resourcePath!))
+                var patch = PdBase.openFile("main_v04.pd", path: (NSBundle.mainBundle().resourcePath!))
+                PdBase.sendList([1, sfpath], toReceiver: "sf_path")
                 
                 firstTimeThrough = false
             }

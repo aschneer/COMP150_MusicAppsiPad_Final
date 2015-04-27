@@ -46,7 +46,19 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
     }
     
 
-    var beats: [Beat] = []//16th notes in bars we're creating
+    var beats: [Beat] = [] //16th notes in bars we're creating
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        var center = NSNotificationCenter.defaultCenter()
+        center.addObserver(self, selector: "play:", name: "playBackingTrack", object: nil)
+        center.addObserver(self, selector: "pause:", name: "pauseBackingTrack", object: nil)
+        center.addObserver(self, selector: "stop:", name: "stopBackingTrack", object: nil)
+        center.addObserver(self, selector: "setBPM:", name: "setBPM", object: nil)
+        
+        var timer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(tempo), target: self, selector: "playBackingTrack:", userInfo: nil, repeats: true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,12 +73,8 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         ChordPicker.layer.cornerRadius = 15
         ChordPicker.layer.borderColor = UIColor.blackColor().CGColor
         ChordPicker.layer.borderWidth = 5
-        selectedChord.textAlignment = .Center
         
-        var center = NSNotificationCenter.defaultCenter()
-        center.addObserver(self, selector: "play:", name: "playBackingTrack", object: nil)
-        center.addObserver(self, selector: "pause:", name: "pauseBackingTrack", object: nil)
-        center.addObserver(self, selector: "stop:", name: "stopBackingTrack", object: nil)
+        selectedChord.textAlignment = .Center
     }
     
     
@@ -83,6 +91,19 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         playing = 0
     }
     
+    var tempo: CGFloat = 0.12
+    var beatsPerMeasure: CGFloat = 4.0
+    var divisionsPerBeat: CGFloat = 4.0
+    func setBPM(notification: NSNotification) {
+        if let info = notification.userInfo as? Dictionary<String, CGFloat> {
+            var bpm = (info["freq"]! * 150) + 50
+            var numer = CGFloat(60) / bpm
+            var denom = divisionsPerBeat
+            
+            tempo = numer / denom
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -91,32 +112,36 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    var iterator: Int = 0
-    var sfpath = NSBundle.mainBundle().resourcePath! + "/piano_1.sf2"
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var timer = NSTimer.scheduledTimerWithTimeInterval(0.125, target: self, selector: "playBackingTrack:", userInfo: nil, repeats: true)
+    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
+    }*/
     
+    var iterator: Int = 0
+    var piano_sfpath = NSBundle.mainBundle().resourcePath! + "/piano_1.sf2"
+    
+    var PIANOCHANNEL = 1
     func playBackingTrack(timer: NSTimer) {
         switch playing {
         case 0: iterator = 0
         case 1: return
         case 2: var index = iterator % beats.count
             for note in beats[index].piano {
-                PdBase.sendList([1, sfpath, note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                //PdBase.sendList([1, piano_sfpath, note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                PdBase.sendList([PIANOCHANNEL, "NONE", note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
             }
             iterator++
         
         default: var index = iterator % beats.count
             for note in beats[index].piano {
-                PdBase.sendList([1, sfpath, note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                //PdBase.sendList([1, piano_sfpath, note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                PdBase.sendList([PIANOCHANNEL, "NONE", note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
             }
             iterator++
         }
+        
+        timer.fireDate = timer.fireDate.dateByAddingTimeInterval(NSTimeInterval(tempo))
     }
-
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return pickerData.count
@@ -142,9 +167,6 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         var pickerLabel = view as! UILabel!
         if view == nil {
             pickerLabel = UILabel()
-            //let hue = CGFloat(row) / CGFloat(pickerData.count)
-            //pickerLabel.backgroundColor = UIColor(hue: hue, saturation: 1.0, brightness: 1.0, alpha: 1.0)
-
         }
         
         let titleData = pickerData[component][row]
@@ -209,6 +231,10 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
                 left += width
                 
                 chords.append(chordView)
+                
+                for j in 0...15 {
+                    beats.append(Beat(piano: [], drums: [], bass: 0))
+                }
             }
             
         } else {
@@ -216,26 +242,31 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
                 var lastBar = chords.removeLast()
                 lastBar.removeFromSuperview()
                 left -= width
+                
+                for j in 0...15 {
+                    beats.removeLast()
+                }
             }
         }
         
     }
     
-    /*
     @IBAction func ClearAll(sender: UIButton) {
-        for subview in ProgScrollView.subviews{
-            subview.removeFromSuperview()
+        for i in 0...(beats.count - 1) {
+            beats[i] = Beat(piano: [], drums: [], bass: 0)
         }
-        left = 0
+        
+        for j in 0...(chords.count - 1) {
+            chords[j].backgroundColor = UIColor.whiteColor()
+        }
     }
-    */
     
     var top = 0.0
     var left = 0.0
     var width = 100.0
     var height = 128.0
     
-    var chords: [UIButton] = []//what the user is creating
+    var chords: [UIButton] = [] //what the user is creating
     
     func initLoadBars() {
         for i in 0...11 {
@@ -250,58 +281,66 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
             left += width;
             
             chords.append(chordView)
-        }
-        
-        for i in 0...(12 * 16) {
-            beats.append(Beat(piano: [], drums: [], bass: 0))
+            
+            for j in 0...15 {
+                beats.append(Beat(piano: [], drums: [], bass: 0))
+            }
         }
     }
     
     func barPressed(sender: UIButton!) {
-        sender.backgroundColor = UIColor.greenColor()
-        var index = (find(chords, sender)! * 12)
-        
-        var root = 0
-        switch pickerData[2][ChordPicker.selectedRowInComponent(2)] {
-        case "A": root = 57
-        case "B": root = 59
-        case "C": root = 60
-        case "D": root = 62
-        case "E": root = 64
-        case "F": root = 65
-        case "G": root = 67
+        if sender.backgroundColor != UIColor.grayColor() {
+            sender.backgroundColor = UIColor.grayColor()
+            var index = (find(chords, sender)! * 16)
             
-        default: root = 0
-        }
-        
-        switch pickerData[3][ChordPicker.selectedRowInComponent(3)] {
-        case "♮": break
-        case "♯": root++
-        case "♭": root--
+            chords[index / 16].setTitle(selectedChord.text, forState: UIControlState.Normal)
             
-        default: break
+            beats[index].piano = []
+        
+            var root = 0
+            switch pickerData[2][ChordPicker.selectedRowInComponent(2)] {
+            case "A": root = 57
+            case "B": root = 59
+            case "C": root = 60
+            case "D": root = 62
+            case "E": root = 64
+            case "F": root = 65
+            case "G": root = 67
+            
+            default: root = 0
+            }
+        
+            switch pickerData[3][ChordPicker.selectedRowInComponent(3)] {
+            case "♮": break
+            case "♯": root++
+            case "♭": root--
+            
+            default: break
+            }
+        
+            var third = root + 4
+            var fifth = root + 7
+        
+            beats[index].piano.append(root)
+
+            var chordType = pickerData[4][ChordPicker.selectedRowInComponent(4)]
+        
+            if chordType == "Min" { third-- }
+            if chordType == "Aug" { fifth++ }
+            if chordType == "Dim" { third--; fifth-- }
+        
+            beats[index].piano.append(third)
+            beats[index].piano.append(fifth)
+        
+            var higherNotes = pickerData[5][ChordPicker.selectedRowInComponent(5)]
+
+            if higherNotes == "Triad" { return }
+            if higherNotes == "7" { beats[index].piano.append(root + 10) }
+            if higherNotes == "Maj7" { beats[index].piano.append(root + 11) }
+        } else {
+            var index = (find(chords, sender)! * 12)
+            beats[index] = Beat(piano: [], drums: [], bass: 0)
+            sender.backgroundColor = UIColor.whiteColor()
         }
-        
-        var third = root + 4
-        var fifth = root + 7
-        
-        beats[index].piano.append(root)
-
-        var chordType = pickerData[4][ChordPicker.selectedRowInComponent(4)]
-        
-        if chordType == "Min" { third-- }
-        if chordType == "Aug" { fifth++ }
-        if chordType == "Dim" { third--; fifth-- }
-        
-        beats[index].piano.append(third)
-        beats[index].piano.append(fifth)
-        
-        var higherNotes = pickerData[5][ChordPicker.selectedRowInComponent(5)]
-
-        if higherNotes == "Triad" { return }
-        if higherNotes == "7" { beats[index].piano.append(root + 10) }
-        if higherNotes == "Maj7" { beats[index].piano.append(root + 11) }
-        
     }
-
 }

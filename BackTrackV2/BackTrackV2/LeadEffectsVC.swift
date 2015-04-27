@@ -24,8 +24,8 @@ class LeadEffectsVC: UIViewController {
     }
     
     @IBAction func tremoloChanged(sender: UISlider) {
-        //var center = NSNotificationCenter.defaultCenter()
-        //center.postNotificationName("setFreq", object: nil, userInfo: ["freq": CGFloat(sender.value) / 50])
+        var center = NSNotificationCenter.defaultCenter()
+        center.postNotificationName("setFreq", object: nil, userInfo: ["freq": sender.value])
     }
 
     /*

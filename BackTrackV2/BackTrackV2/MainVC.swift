@@ -42,6 +42,10 @@ class MainVC: UIViewController {
         nextChord.text = chord2
     }
     
+    @IBAction func changeTempo(sender: UISlider) {
+        var center = NSNotificationCenter.defaultCenter()
+        center.postNotificationName("setBPM", object: nil, userInfo: ["freq": sender.value])
+    }
     @IBAction func playBackingTrack(sender: UIButton) {
         var center = NSNotificationCenter.defaultCenter()
         center.postNotificationName("playBackingTrack", object: nil, userInfo: nil)

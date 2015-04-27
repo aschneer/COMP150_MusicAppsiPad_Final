@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5EF4D6D8B18BEC8844A62B71 /* libPods-BackTrackV2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58AB865CA4295DC3D0FC6EDF /* libPods-BackTrackV2.a */; };
+		EC0220C71AEECC3500A649F8 /* instrument_v04.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC0220C41AEECC3500A649F8 /* instrument_v04.pd */; };
+		EC0220C81AEECC3500A649F8 /* mainController_v04.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC0220C51AEECC3500A649F8 /* mainController_v04.pd */; };
+		EC0220C91AEECC3500A649F8 /* main_v04.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC0220C61AEECC3500A649F8 /* main_v04.pd */; };
 		EC1E23FC1AED7A0000CE1669 /* main.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC1E23FB1AED7A0000CE1669 /* main.pd */; };
 		EC1E241C1AED7F2A00CE1669 /* analog_age.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E23FE1AED7F2A00CE1669 /* analog_age.sf2 */; };
 		EC1E241D1AED7F2A00CE1669 /* banjo_1.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E23FF1AED7F2A00CE1669 /* banjo_1.sf2 */; };
@@ -944,6 +947,9 @@
 		58AB865CA4295DC3D0FC6EDF /* libPods-BackTrackV2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BackTrackV2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D37BB7F1ADF8190009882B8 /* piano_1.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = piano_1.sf2; sourceTree = "<group>"; };
 		945879EFBE1A818F0699B8E7 /* Pods-BackTrackV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackTrackV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BackTrackV2/Pods-BackTrackV2.debug.xcconfig"; sourceTree = "<group>"; };
+		EC0220C41AEECC3500A649F8 /* instrument_v04.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = instrument_v04.pd; path = ../../../../instrument_v04.pd; sourceTree = "<group>"; };
+		EC0220C51AEECC3500A649F8 /* mainController_v04.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = mainController_v04.pd; path = ../../../../mainController_v04.pd; sourceTree = "<group>"; };
+		EC0220C61AEECC3500A649F8 /* main_v04.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = main_v04.pd; path = ../../../../main_v04.pd; sourceTree = "<group>"; };
 		EC1E23FB1AED7A0000CE1669 /* main.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.pd; sourceTree = "<group>"; };
 		EC1E23FE1AED7F2A00CE1669 /* analog_age.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = analog_age.sf2; sourceTree = "<group>"; };
 		EC1E23FF1AED7F2A00CE1669 /* banjo_1.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = banjo_1.sf2; sourceTree = "<group>"; };
@@ -2135,6 +2141,9 @@
 				EC7843031AE99EF1006614EE /* instrument_v03.pd */,
 				EC7843051AE99EF8006614EE /* mainController_v03.pd */,
 				EC1E23FB1AED7A0000CE1669 /* main.pd */,
+				EC0220C41AEECC3500A649F8 /* instrument_v04.pd */,
+				EC0220C51AEECC3500A649F8 /* mainController_v04.pd */,
+				EC0220C61AEECC3500A649F8 /* main_v04.pd */,
 				EC85AA111AC621FA008D1CD8 /* AppDelegate.h */,
 				EC85AA121AC621FA008D1CD8 /* AppDelegate.m */,
 				EC85AA141AC621FA008D1CD8 /* ViewController.h */,
@@ -3621,6 +3630,7 @@
 				ECD647501AE6FAE700D742AC /* gate19.pd in Resources */,
 				ECD647211AE6FAE700D742AC /* dictionary-help.pd in Resources */,
 				ECD64B841AE6FAFA00D742AC /* midiflush-help.pd in Resources */,
+				EC0220C91AEECC3500A649F8 /* main_v04.pd in Resources */,
 				ECD6474D1AE6FAE700D742AC /* gate18-help.pd in Resources */,
 				ECD64BB51AE6FAFA00D742AC /* sustain-help.pd in Resources */,
 				ECD647631AE6FAE700D742AC /* gate28-help.pd in Resources */,
@@ -3698,6 +3708,7 @@
 				ECD647F91AE6FAE700D742AC /* rev1-stage.pd in Resources */,
 				ECD646F41AE6FAE700D742AC /* channels~.pd in Resources */,
 				ECD64B8D1AE6FAFA00D742AC /* next-help.pd in Resources */,
+				EC0220C81AEECC3500A649F8 /* mainController_v04.pd in Resources */,
 				ECD64B481AE6FAFA00D742AC /* bitand~-help.pd in Resources */,
 				ECD647BF1AE6FAE700D742AC /* loadfloat.pd in Resources */,
 				ECD6473D1AE6FAE700D742AC /* gate10-help.pd in Resources */,
@@ -3885,6 +3896,7 @@
 				ECD647901AE6FAE700D742AC /* gswitch-help.pd in Resources */,
 				ECD64BBC1AE6FAFA00D742AC /* test.mid in Resources */,
 				ECD64B591AE6FAFA00D742AC /* Clip~-help.pd in Resources */,
+				EC0220C71AEECC3500A649F8 /* instrument_v04.pd in Resources */,
 				ECD647C71AE6FAE700D742AC /* lprint.pd in Resources */,
 				ECD646EA1AE6FAE700D742AC /* cdiv-help.pd in Resources */,
 				ECD6478B1AE6FAE700D742AC /* gatemaker~-help.pd in Resources */,
