@@ -37,15 +37,23 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
     
     @IBOutlet weak var ChordPicker: UIPickerView!
     let pickerData = [
+        ["12", "16"],
+        ["Swing", "Blues", "Latin", "Jazz", "Rock"],
         ["A", "B", "C", "D", "E", "F", "G"],
         ["♮", "♯", "♭"],
         ["Maj", "Min", "Aug", "Dim"],
         ["Triad", "7", "9"]
     ]
     
-    //var touch = 0
+    struct Beat {
+        var piano: [Int]
+        var drums: [Int]
+        var bass: Int
+    }
     
-    var chords: [UIView] = []
+
+    var beats: [Beat] = []//16th notes in bars we're creating
+
     override func viewDidLoad() {
         //println(view.backgroundColor)
         super.viewDidLoad()
@@ -57,7 +65,8 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
             label.font = UIFont(name: "KohinoorDevanagari-Light", size: 30)
         }*/
         
-        ProgScrollView.contentSize = CGSizeMake(3000, 128)
+        ProgScrollView.contentSize = CGSizeMake(1600, 128)
+        initLoadBars()
         
         ChordPicker.dataSource = self
         ChordPicker.delegate = self
@@ -101,7 +110,7 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
     }
     
     func pickerView(pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-        return 100
+        return 75
     }
     
     func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView!) -> UIView {
@@ -123,14 +132,17 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         updateLabel()
+        if pickerData[0][ChordPicker.selectedRowInComponent(0)] != String(chords.count) {
+            updateNumBars()
+        }
         
     }
     
     func updateLabel() -> String {
-        var root = pickerData[0][ChordPicker.selectedRowInComponent(0)]
-        var sharpOrFlat = pickerData[1][ChordPicker.selectedRowInComponent(1)]
-        var majOrMin = pickerData[2][ChordPicker.selectedRowInComponent(2)]
-        var chord = pickerData[3][ChordPicker.selectedRowInComponent(3)]
+        var root = pickerData[2][ChordPicker.selectedRowInComponent(2)]
+        var sharpOrFlat = pickerData[3][ChordPicker.selectedRowInComponent(3)]
+        var majOrMin = pickerData[4][ChordPicker.selectedRowInComponent(4)]
+        var chord = pickerData[5][ChordPicker.selectedRowInComponent(5)]
         
         var label = root
         
@@ -162,54 +174,58 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         return label
     }
     
-    //values for chord scroll bar view placement
-    var top = 0.0
-    var left = 0.0
-    var width = 100.0
-    var height = 128.0
-    
-    //Function to add chord to chord scrollview
-    @IBAction func AddChord(sender: UIButton) {
-        //ChordPicker information for label and width
-        var root = pickerData[0][ChordPicker.selectedRowInComponent(0)]
-        var sharpOrFlat = pickerData[1][ChordPicker.selectedRowInComponent(1)]
-        var majOrMin = pickerData[2][ChordPicker.selectedRowInComponent(2)]
-        var chord = pickerData[3][ChordPicker.selectedRowInComponent(3)]
-        
-        if (left <= 2900) {
-            //creating uiview for each chord added
-            var chordView = UIView(frame: CGRectMake(CGFloat(left),CGFloat(top),CGFloat(width),CGFloat(height)))
-            chordView.backgroundColor = UIColor.whiteColor()
-            chordView.layer.borderColor = UIColor.blackColor().CGColor
-            chordView.layer.borderWidth = 1
+    func updateNumBars() {
+        var numBars = pickerData[0][ChordPicker.selectedRowInComponent(0)]
+        if numBars == "16" {
+            for i in 0...3 {
+                var chordView = UIView(frame: CGRectMake(CGFloat(left),CGFloat(top),CGFloat(width),CGFloat(height)))
+                chordView.backgroundColor = UIColor.whiteColor()
+                chordView.layer.borderColor = UIColor.blackColor().CGColor
+                chordView.layer.borderWidth = 1
+                
+                ProgScrollView.addSubview(chordView)
+                left += width;
+                
+                chords.append(chordView)
+            }
             
-            //creating uitextfield for chord label in uiview
-            var txtField: UITextField = UITextField(frame: CGRect(x: 0, y: 0, width:95.00, height: 40.00));
-            var chordlabel = updateLabel()
-            txtField.text = chordlabel
-            txtField.font = UIFont(name: "KohinoorDevanagari-Light", size: 15)
-            chordView.addSubview(txtField)
-            
-            //add chordView to ProgScrollView
-            ProgScrollView.addSubview(chordView)
-            left += width;
-            width = 100.0
+        } else {
+            for i in 0...3 {
+                var lastBar = chords.removeLast()
+                lastBar.removeFromSuperview()
+            }
         }
-    }
-    
-    @IBAction func DeleteChord(sender: UIButton) {
-        //delete last touched chord and shift all views over
-        //for subview in view {}.. look at uitouch timestamp
         
     }
     
+    /*
     @IBAction func ClearAll(sender: UIButton) {
         for subview in ProgScrollView.subviews{
             subview.removeFromSuperview()
         }
         left = 0
     }
+*/
+    var top = 0.0
+    var left = 0.0
+    var width = 100.0
+    var height = 128.0
     
     
+    var chords: [UIView] = []//what the user is creating
+    
+    func initLoadBars() {
+        for i in 0...11 {
+            var chordView = UIView(frame: CGRectMake(CGFloat(left),CGFloat(top),CGFloat(width),CGFloat(height)))
+            chordView.backgroundColor = UIColor.whiteColor()
+            chordView.layer.borderColor = UIColor.blackColor().CGColor
+            chordView.layer.borderWidth = 1
+            
+            ProgScrollView.addSubview(chordView)
+            left += width;
+            
+            chords.append(chordView)
+        }
+    }
 
 }
