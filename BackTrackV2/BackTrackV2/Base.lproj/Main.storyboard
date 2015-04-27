@@ -848,6 +848,9 @@
                                     <color key="titleColor" red="0.97647058819999999" green="0.95686274510000002" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="playBackingTrack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j4e-HZ-AH5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCp-ED-FaR">
                                 <rect key="frame" x="491" y="706" width="43" height="30"/>
@@ -855,6 +858,9 @@
                                     <color key="titleColor" red="0.97647058819999999" green="0.95686274510000002" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pauseBackingTrack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lhT-d7-SvV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0GW-Vv-vy5">
                                 <rect key="frame" x="613" y="706" width="33" height="30"/>
@@ -862,6 +868,9 @@
                                     <color key="titleColor" red="0.97647058819999999" green="0.95686274510000002" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="stopBackingTrack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y3u-EA-lyr"/>
+                                </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qLS-aC-CUZ">
                                 <rect key="frame" x="692" y="143" width="332" height="530"/>

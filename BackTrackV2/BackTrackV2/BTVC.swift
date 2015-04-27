@@ -29,10 +29,6 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
     @IBOutlet weak var BassLabel: UILabel!
     @IBOutlet weak var DrumsLabel: UILabel!
     
-    //var LabelList: [UILabel]! {return [PianoLabel, GuitarLabel, BassLabel, DrumsLabel]}
-    //var ButtonList: [UIButton]! {return [AddChordButton, DeleteChordButton, ClearAllButton]}
-    //ChordLabel.font = UIFont(name: "KohinoorDevanagari-Light", size: 45)
-    
     @IBOutlet weak var ChordPicker: UIPickerView!
     let pickerData = [
         ["12", "16"],
@@ -40,7 +36,7 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         ["A", "B", "C", "D", "E", "F", "G"],
         ["♮", "♯", "♭"],
         ["Maj", "Min", "Aug", "Dim"],
-        ["Triad", "7", "9"]
+        ["Triad", "7", "Maj7"]
     ]
     
     struct Beat {
@@ -51,28 +47,9 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
     
 
     var beats: [Beat] = []//16th notes in bars we're creating
-    
-    private lazy var panGesture: UIPanGestureRecognizer = {
-        let gesture = UIPanGestureRecognizer(target: self, action: "handlePan:")
-        gesture.delegate = self
-        return gesture
-    }()
-    
-    private func addGestures() {
-        //self.view.addGestureRecognizer(self.tapGesture)
-        self.view.addGestureRecognizer(self.panGesture)
-    }
 
     override func viewDidLoad() {
-        //println(view.backgroundColor)
         super.viewDidLoad()
-        
-        /*for button in ButtonList {
-            button.titleLabel!.font = UIFont(name: "KohinoorDevanagari-Light", size: 30)
-        }
-        for label in LabelList {
-            label.font = UIFont(name: "KohinoorDevanagari-Light", size: 30)
-        }*/
         
         ProgScrollView.contentSize = CGSizeMake(1600, 128)
         ProgScrollView.userInteractionEnabled = true
@@ -86,16 +63,31 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         ChordPicker.layer.borderWidth = 5
         selectedChord.textAlignment = .Center
         
-        //self.addGestures()
+        var center = NSNotificationCenter.defaultCenter()
+        center.addObserver(self, selector: "play:", name: "playBackingTrack", object: nil)
+        center.addObserver(self, selector: "pause:", name: "pauseBackingTrack", object: nil)
+        center.addObserver(self, selector: "stop:", name: "stopBackingTrack", object: nil)
+    }
+    
+    
+    var playing: Int = 0
+    func play(notification: NSNotification) {
+        playing = 2
     }
 
+    func pause(notification: NSNotification) {
+        playing = 1
+    }
+    
+    func stop(notification: NSNotification) {
+        playing = 0
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-   
-
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -108,11 +100,21 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
     }
     
     func playBackingTrack(timer: NSTimer) {
-        var index = iterator % beats.count
-        for note in beats[index].piano {
-            PdBase.sendList([1, sfpath, note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+        switch playing {
+        case 0: iterator = 0
+        case 1: return
+        case 2: var index = iterator % beats.count
+            for note in beats[index].piano {
+                PdBase.sendList([1, sfpath, note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+            }
+            iterator++
+        
+        default: var index = iterator % beats.count
+            for note in beats[index].piano {
+                PdBase.sendList([1, sfpath, note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+            }
+            iterator++
         }
-        iterator++
     }
 
     
@@ -173,11 +175,6 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
             label += sharpOrFlat
         }
         
-        label += "-"
-        
-        if majOrMin == "Maj" {
-            label += "M"
-        }
         if majOrMin == "Min" {
             label += "m"
         }
@@ -263,38 +260,48 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
     func barPressed(sender: UIButton!) {
         sender.backgroundColor = UIColor.greenColor()
         var index = (find(chords, sender)! * 12)
-
-        beats[index].piano.append(57)
-        beats[index].piano.append(60)
-        beats[index].piano.append(64)
         
-        println(find(chords, sender))
-    }
-    
-    func handlePan(tap: UIPanGestureRecognizer) {
-        var center = NSNotificationCenter.defaultCenter()
-        
-        var pos: CGPoint = tap.locationInView(tap.view)
-        
-        if CGRectContainsPoint(selectedChord.frame, pos) {
-            println("pan")
+        var root = 0
+        switch pickerData[2][ChordPicker.selectedRowInComponent(2)] {
+        case "A": root = 57
+        case "B": root = 59
+        case "C": root = 60
+        case "D": root = 62
+        case "E": root = 64
+        case "F": root = 65
+        case "G": root = 67
+            
+        default: root = 0
         }
         
-        if tap.state == UIGestureRecognizerState.Ended {
-            println("ended")
-
-            //println(tap.view)
-            for var i = 0; i < chords.count; i++ {
-                if chords[i].pointInside(pos, withEvent: nil) {
-                    println(i)
-                }
-                //println(pos)
-                //println(chords[i].frame)
-                if CGRectContainsPoint(chords[i].frame, pos) {
-                    println(i)
-                }
-            }
+        switch pickerData[3][ChordPicker.selectedRowInComponent(3)] {
+        case "♮": break
+        case "♯": root++
+        case "♭": root--
+            
+        default: break
         }
+        
+        var third = root + 4
+        var fifth = root + 7
+        
+        beats[index].piano.append(root)
+
+        var chordType = pickerData[4][ChordPicker.selectedRowInComponent(4)]
+        
+        if chordType == "Min" { third-- }
+        if chordType == "Aug" { fifth++ }
+        if chordType == "Dim" { third--; fifth-- }
+        
+        beats[index].piano.append(third)
+        beats[index].piano.append(fifth)
+        
+        var higherNotes = pickerData[5][ChordPicker.selectedRowInComponent(5)]
+
+        if higherNotes == "Triad" { return }
+        if higherNotes == "7" { beats[index].piano.append(root + 10) }
+        if higherNotes == "Maj7" { beats[index].piano.append(root + 11) }
+        
     }
 
 }

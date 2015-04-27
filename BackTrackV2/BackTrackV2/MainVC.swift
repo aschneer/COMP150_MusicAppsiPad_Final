@@ -42,7 +42,21 @@ class MainVC: UIViewController {
         nextChord.text = chord2
     }
     
+    @IBAction func playBackingTrack(sender: UIButton) {
+        var center = NSNotificationCenter.defaultCenter()
+        center.postNotificationName("playBackingTrack", object: nil, userInfo: nil)
+    }
 
+    @IBAction func pauseBackingTrack(sender: UIButton) {
+        var center = NSNotificationCenter.defaultCenter()
+        center.postNotificationName("pauseBackingTrack", object: nil, userInfo: nil)
+    }
+    
+    @IBAction func stopBackingTrack(sender: UIButton) {
+        var center = NSNotificationCenter.defaultCenter()
+        center.postNotificationName("stopBackingTrack", object: nil, userInfo: nil)
+    }
+    
     // MARK: - Navigation
     @IBAction func displayNoteSelectionVC(sender: AnyObject) {
         self.presentViewController(NoteSelectionController, animated: true, completion: nil)
