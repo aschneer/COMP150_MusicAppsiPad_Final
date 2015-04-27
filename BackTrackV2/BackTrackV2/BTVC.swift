@@ -40,8 +40,7 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         ["A", "B", "C", "D", "E", "F", "G"],
         ["♮", "♯", "♭"],
         ["Maj", "Min", "Aug", "Dim"],
-        ["Triad", "7", "9"],
-        ["1 beat", "2 beats", "3 beats", "4 beats"]
+        ["Triad", "7", "9"]
     ]
     
     //var touch = 0
@@ -132,7 +131,6 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         var sharpOrFlat = pickerData[1][ChordPicker.selectedRowInComponent(1)]
         var majOrMin = pickerData[2][ChordPicker.selectedRowInComponent(2)]
         var chord = pickerData[3][ChordPicker.selectedRowInComponent(3)]
-        var beatlength = pickerData[4][ChordPicker.selectedRowInComponent(4)]
         
         var label = root
         
@@ -159,11 +157,6 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
             label += chord
         }
         
-        label += " " + "for " + beatlength
-        /*if beatlength == "1 beat" {
-            label += " " + "for " + beatlength
-        }*/
-        
         selectedChord.text = label
         selectedChord.textAlignment = .Center
         return label
@@ -182,17 +175,7 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         var sharpOrFlat = pickerData[1][ChordPicker.selectedRowInComponent(1)]
         var majOrMin = pickerData[2][ChordPicker.selectedRowInComponent(2)]
         var chord = pickerData[3][ChordPicker.selectedRowInComponent(3)]
-        var beat = pickerData[4][ChordPicker.selectedRowInComponent(4)]
         
-        if (beat == "2 beats") {
-            width *= 2
-        }
-        if (beat == "3 beats") {
-            width *= 3
-        }
-        if (beat == "4 beats") {
-            width *= 4
-        }
         if (left <= 2900) {
             //creating uiview for each chord added
             var chordView = UIView(frame: CGRectMake(CGFloat(left),CGFloat(top),CGFloat(width),CGFloat(height)))

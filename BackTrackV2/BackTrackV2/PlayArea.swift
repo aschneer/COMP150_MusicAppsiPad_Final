@@ -17,6 +17,8 @@ class PlayArea: UIView {
     var spacing: CGFloat = 0
     var frequency: CGFloat = 0.02
     
+    var sfpath = NSBundle.mainBundle().resourcePath! + "/SC88Drumset.sf2"
+    
     struct Line {
         var note: Int
         var top: CGFloat
@@ -156,7 +158,6 @@ class PlayArea: UIView {
                 lines[counter].touched = true
                 
                 // 1, piano = 1 guitar = 2, midi num, velocity 0 or 1, a 600, d 1000, s .1, r 3000, 1
-                var sfpath = NSBundle.mainBundle().resourcePath! + "/piano_1.sf2"
                 PdBase.sendList([1, sfpath, lines[counter].note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
                 
                 break
@@ -193,7 +194,6 @@ class PlayArea: UIView {
                     if lines[counter].touched {
                         stillTouched = true
                     } else {
-                        var sfpath = NSBundle.mainBundle().resourcePath! + "/piano_1.sf2"
                         PdBase.sendList([1, sfpath, lines[counter].note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
                         lines[counter].touched = true
                         stillTouched = true
@@ -235,7 +235,6 @@ class PlayArea: UIView {
                 lines[counter].touched = false
                 
                 // 1, piano = 1 guitar = 2, midi num, velocity 0 or 1, a 600, d 1000, s .1, r 3000, 1
-                var sfpath = NSBundle.mainBundle().resourcePath! + "/piano_1.sf2"
                 PdBase.sendList([1, sfpath, lines[counter].note, 0, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
                 break
             }
