@@ -54,6 +54,7 @@ class PlayArea: UIView {
                 label.textAlignment = .Center
                 self.addSubview(label)
                 
+                
                 var newLine = Line(note: note, top: startingPoint - (spacing / 2), middle: startingPoint, bottom: startingPoint + (spacing / 2), touched: false, label: label, sineCounter: 50.0)
                 lines.append(newLine)
             

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIScrollViewDelegate {
+class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIScrollViewDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet var ProgScrollView: UIScrollView!
     
@@ -22,8 +22,6 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
     @IBOutlet weak var AddChordButton: UIButton!
     @IBOutlet weak var DeleteChordButton: UIButton!
     @IBOutlet weak var ClearAllButton: UIButton!
-    
-    
     
     @IBOutlet weak var ChordLabel: UILabel!
     @IBOutlet weak var PianoLabel: UILabel!
@@ -53,6 +51,17 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
     
 
     var beats: [Beat] = []//16th notes in bars we're creating
+    
+    private lazy var panGesture: UIPanGestureRecognizer = {
+        let gesture = UIPanGestureRecognizer(target: self, action: "handlePan:")
+        gesture.delegate = self
+        return gesture
+    }()
+    
+    private func addGestures() {
+        //self.view.addGestureRecognizer(self.tapGesture)
+        self.view.addGestureRecognizer(self.panGesture)
+    }
 
     override func viewDidLoad() {
         //println(view.backgroundColor)
@@ -66,6 +75,7 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         }*/
         
         ProgScrollView.contentSize = CGSizeMake(1600, 128)
+        ProgScrollView.userInteractionEnabled = true
         initLoadBars()
         
         ChordPicker.dataSource = self
@@ -75,6 +85,8 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         ChordPicker.layer.borderColor = UIColor.blackColor().CGColor
         ChordPicker.layer.borderWidth = 5
         selectedChord.textAlignment = .Center
+        
+        //self.addGestures()
     }
 
     override func didReceiveMemoryWarning() {
@@ -83,15 +95,26 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
     }
     
    
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    var iterator: Int = 0
+    var sfpath = NSBundle.mainBundle().resourcePath! + "/piano_1.sf2"
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var timer = NSTimer.scheduledTimerWithTimeInterval(0.125, target: self, selector: "playBackingTrack:", userInfo: nil, repeats: true)
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
+    func playBackingTrack(timer: NSTimer) {
+        var index = iterator % beats.count
+        for note in beats[index].piano {
+            PdBase.sendList([1, sfpath, note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+        }
+        iterator++
+    }
+
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return pickerData.count
@@ -178,13 +201,15 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         var numBars = pickerData[0][ChordPicker.selectedRowInComponent(0)]
         if numBars == "16" {
             for i in 0...3 {
-                var chordView = UIView(frame: CGRectMake(CGFloat(left),CGFloat(top),CGFloat(width),CGFloat(height)))
+                var chordView = UIButton(frame: CGRectMake(CGFloat(left), CGFloat(top), CGFloat(width), CGFloat(height)))
                 chordView.backgroundColor = UIColor.whiteColor()
                 chordView.layer.borderColor = UIColor.blackColor().CGColor
                 chordView.layer.borderWidth = 1
                 
+                chordView.addTarget(self, action: "barPressed:", forControlEvents: .TouchUpInside)
+                
                 ProgScrollView.addSubview(chordView)
-                left += width;
+                left += width
                 
                 chords.append(chordView)
             }
@@ -193,6 +218,7 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
             for i in 0...3 {
                 var lastBar = chords.removeLast()
                 lastBar.removeFromSuperview()
+                left -= width
             }
         }
         
@@ -205,26 +231,69 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         }
         left = 0
     }
-*/
+    */
+    
     var top = 0.0
     var left = 0.0
     var width = 100.0
     var height = 128.0
     
-    
-    var chords: [UIView] = []//what the user is creating
+    var chords: [UIButton] = []//what the user is creating
     
     func initLoadBars() {
         for i in 0...11 {
-            var chordView = UIView(frame: CGRectMake(CGFloat(left),CGFloat(top),CGFloat(width),CGFloat(height)))
+            var chordView = UIButton(frame: CGRectMake(CGFloat(left), CGFloat(top), CGFloat(width), CGFloat(height)))
             chordView.backgroundColor = UIColor.whiteColor()
             chordView.layer.borderColor = UIColor.blackColor().CGColor
             chordView.layer.borderWidth = 1
+            
+            chordView.addTarget(self, action: "barPressed:", forControlEvents: .TouchUpInside)
             
             ProgScrollView.addSubview(chordView)
             left += width;
             
             chords.append(chordView)
+        }
+        
+        for i in 0...(12 * 16) {
+            beats.append(Beat(piano: [], drums: [], bass: 0))
+        }
+    }
+    
+    func barPressed(sender: UIButton!) {
+        sender.backgroundColor = UIColor.greenColor()
+        var index = (find(chords, sender)! * 12)
+
+        beats[index].piano.append(57)
+        beats[index].piano.append(60)
+        beats[index].piano.append(64)
+        
+        println(find(chords, sender))
+    }
+    
+    func handlePan(tap: UIPanGestureRecognizer) {
+        var center = NSNotificationCenter.defaultCenter()
+        
+        var pos: CGPoint = tap.locationInView(tap.view)
+        
+        if CGRectContainsPoint(selectedChord.frame, pos) {
+            println("pan")
+        }
+        
+        if tap.state == UIGestureRecognizerState.Ended {
+            println("ended")
+
+            //println(tap.view)
+            for var i = 0; i < chords.count; i++ {
+                if chords[i].pointInside(pos, withEvent: nil) {
+                    println(i)
+                }
+                //println(pos)
+                //println(chords[i].frame)
+                if CGRectContainsPoint(chords[i].frame, pos) {
+                    println(i)
+                }
+            }
         }
     }
 
