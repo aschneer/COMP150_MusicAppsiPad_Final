@@ -18,6 +18,7 @@ class PlayArea: UIView {
     var frequency: CGFloat = 0.02
     
     var sfpath = NSBundle.mainBundle().resourcePath! + "/piano_1.sf2"
+    var trombone = NSBundle.mainBundle().resourcePath! + "/muted_trombone.sf2"
     
     struct Line {
         var note: Int
@@ -72,7 +73,7 @@ class PlayArea: UIView {
                 center.addObserver(self, selector: "receiveNotes:", name: "playableNotes", object: nil)
                 //center.addObserver(self, selector: "setFreq:", name: "setFreq", object: nil)
                 
-                var timer = NSTimer.scheduledTimerWithTimeInterval(0.02, target: self, selector: "drawLines:", userInfo: nil, repeats: true)
+                var timer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: "drawLines:", userInfo: nil, repeats: true)
                 
                 PdExternals.setup()
                 PdBase.addToSearchPath(NSBundle.mainBundle().resourcePath)
@@ -80,6 +81,7 @@ class PlayArea: UIView {
                 //var patch = PdBase.openFile("main.pd", path: (NSBundle.mainBundle().resourcePath!))
                 var patch = PdBase.openFile("main_v04.pd", path: (NSBundle.mainBundle().resourcePath!))
                 PdBase.sendList([1, sfpath], toReceiver: "sf_path")
+                PdBase.sendList([2, trombone], toReceiver: "sf_path")
                 
                 firstTimeThrough = false
             }
@@ -88,7 +90,7 @@ class PlayArea: UIView {
             for var i = 0; i < numLines; i++ {
                 CGContextMoveToPoint(context, 50, lines[i].middle)
                 if lines[i].touched {
-                    for var j = 50; j < Int(windowWidth); j += 5 {
+                    for var j = 50; j < Int(windowWidth); j += 45 {
                         CGContextAddLineToPoint(context, CGFloat(j), CGFloat(10 * sin((CGFloat(j - 50) + lines[i].sineCounter) * frequency)) + lines[i].middle)
                         CGContextStrokePath(context)
                         CGContextMoveToPoint(context, CGFloat(j), CGFloat(10 * sin((CGFloat(j - 50) + lines[i].sineCounter) * frequency)) + lines[i].middle)
@@ -161,7 +163,7 @@ class PlayArea: UIView {
                 lines[counter].touched = true
                 
                 // 1, piano = 1 guitar = 2, midi num, velocity 0 or 1, a 600, d 1000, s .1, r 3000, 1
-                PdBase.sendList([1, sfpath, lines[counter].note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                PdBase.sendList([2, "NONE", lines[counter].note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
                 
                 break
             }
@@ -197,7 +199,7 @@ class PlayArea: UIView {
                     if lines[counter].touched {
                         stillTouched = true
                     } else {
-                        PdBase.sendList([1, sfpath, lines[counter].note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                        PdBase.sendList([2, "NONE", lines[counter].note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
                         lines[counter].touched = true
                         stillTouched = true
                         break
@@ -206,7 +208,8 @@ class PlayArea: UIView {
             }
             
             if !stillTouched && lines[counter].touched {
-                PdBase.sendList([1, 2, lines[counter].note, 0, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                // TODO "NONE" was 2
+                PdBase.sendList([2, "NONE", lines[counter].note, 0, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
                 lines[counter].touched = false
             }
             
@@ -238,7 +241,7 @@ class PlayArea: UIView {
                 lines[counter].touched = false
                 
                 // 1, piano = 1 guitar = 2, midi num, velocity 0 or 1, a 600, d 1000, s .1, r 3000, 1
-                PdBase.sendList([1, sfpath, lines[counter].note, 0, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                PdBase.sendList([2, "NONE", lines[counter].note, 0, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
                 break
             }
             counter++

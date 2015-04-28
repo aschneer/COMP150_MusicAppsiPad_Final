@@ -1,0 +1,36 @@
+#N canvas 1110 346 776 436 10;
+#X obj 565 371 dac~;
+#X obj 494 368 view~;
+#X msg 61 162 1 1 65 0 600 1000 0.1 3000 1;
+#X msg 40 104 1 1 69 127 600 1000 0.1 3000 0;
+#X msg 48 134 1 2 67 127 600 1000 0.1 3000 0;
+#X obj 49 299 list;
+#X msg 4 8 1 /Users/comp150/Desktop/pd-for-libpd/Pd-for-LibPd/soundfonts/piano_1.sf2
+65 127 600 1000 0.1 3000 0;
+#X obj 670 133 r note_msg;
+#X obj 49 378 s note_msg;
+#X text 669 113 Note messages.;
+#X text 564 61 Full paths of all soundfonts;
+#X text 564 75 to be loaded when PD loads.;
+#X obj 565 95 r sf_path;
+#X msg 101 242 1 /Users/comp150/Desktop/pd-for-libpd/Pd-for-LibPd/soundfonts/piano_1.sf2
+;
+#X obj 101 297 list;
+#X obj 101 325 s sf_path;
+#X obj 565 227 mainController_v04;
+#X msg 75 190 1 NONE 65 0 600 1000 0.1 3000 0;
+#X msg 25 65 1 NONE 65 127 600 1000 0.1 3000 0;
+#X connect 2 0 5 0;
+#X connect 3 0 5 0;
+#X connect 4 0 5 0;
+#X connect 5 0 8 0;
+#X connect 6 0 5 0;
+#X connect 7 0 16 1;
+#X connect 12 0 16 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 16 0 0 0;
+#X connect 16 0 1 0;
+#X connect 16 1 0 1;
+#X connect 17 0 5 0;
+#X connect 18 0 5 0;

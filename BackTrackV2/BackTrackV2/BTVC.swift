@@ -45,8 +45,8 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         var bass: Int
     }
     
-
-    var beats: [Beat] = [] //16th notes in bars we're creating
+    
+    var beats: [Beat] = [] // 16th notes in bars we're creating
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
