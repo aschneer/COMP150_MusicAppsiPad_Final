@@ -18,6 +18,7 @@ class PlayArea: UIView {
     var frequency: CGFloat = 0.02
     
     var sfpath = NSBundle.mainBundle().resourcePath! + "/piano_1.sf2"
+    var drums = NSBundle.mainBundle().resourcePath! + "/SC88Drumset.sf2"
     var trombone = NSBundle.mainBundle().resourcePath! + "/muted_trombone.sf2"
     
     struct Line {
@@ -81,6 +82,7 @@ class PlayArea: UIView {
                 var patch = PdBase.openFile("main_v04.pd", path: (NSBundle.mainBundle().resourcePath!))
                 PdBase.sendList([1, sfpath], toReceiver: "sf_path")
                 PdBase.sendList([2, trombone], toReceiver: "sf_path")
+                PdBase.sendList([3, drums], toReceiver: "sf_path")
                 
                 // Sampler Initializations
                 var piano_path = NSBundle.mainBundle().resourcePath! + "/piano_1"

@@ -111,12 +111,11 @@ class NoteSelectionVC: UIViewController, UIScrollViewDelegate {
         keyTouched(sender, index: find(allKeys, sender)!)
     }
     
-    
     @IBAction func ClearNotes(sender: UIButton) {
         var Wcount = WButtons.count
         var Bcount = BButtons.count
         var NoteCount = noteSelected.count
-        
+
         for var i = 0; i < Wcount; i++ {
             WButtons[i].backgroundColor = UIColor.whiteColor()
         }
@@ -135,8 +134,6 @@ class NoteSelectionVC: UIViewController, UIScrollViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
     
     // MARK: - Navigation
 
