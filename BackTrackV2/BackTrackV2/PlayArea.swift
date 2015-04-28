@@ -78,10 +78,13 @@ class PlayArea: UIView {
                 PdExternals.setup()
                 PdBase.addToSearchPath(NSBundle.mainBundle().resourcePath)
                 
-                //var patch = PdBase.openFile("main.pd", path: (NSBundle.mainBundle().resourcePath!))
                 var patch = PdBase.openFile("main_v04.pd", path: (NSBundle.mainBundle().resourcePath!))
                 PdBase.sendList([1, sfpath], toReceiver: "sf_path")
                 PdBase.sendList([2, trombone], toReceiver: "sf_path")
+                
+                // Sampler Initializations
+                var piano_path = NSBundle.mainBundle().resourcePath! + "/piano_1"
+                PdBase.sendList([1, piano_path], toReceiver: "samp_path")
                 
                 firstTimeThrough = false
             }
@@ -169,10 +172,6 @@ class PlayArea: UIView {
             }
             counter++
         }
-        
-        if note != -1 {
-            //println("Touch at MIDI " + String(note))
-        }
     }
     
     override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
@@ -215,15 +214,6 @@ class PlayArea: UIView {
             
             counter++
         }
-        
-/*        if note != -1 {
-//            println("Touch moved at MIDI " + String(note))
-//            
-//            for line in lines {
-//                print(line.touched)
-//                print(" ")
-//            }
-        }*/
     }
     
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
@@ -245,15 +235,6 @@ class PlayArea: UIView {
                 break
             }
             counter++
-        }
-        
-        if note != -1 {
-//            println("Touch ended at MIDI " + String(note))
-//            
-//            for line in lines {
-//                print(line.touched)
-//                print(" ")
-//            }
         }
     }
 }

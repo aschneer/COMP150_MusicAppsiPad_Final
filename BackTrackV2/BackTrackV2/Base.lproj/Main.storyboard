@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
         <!--BTVC-->
@@ -611,10 +611,10 @@
             </objects>
             <point key="canvasLocation" x="509" y="-694"/>
         </scene>
-        <!--View Controller-->
+        <!--HelpVC-->
         <scene sceneID="ysQ-pf-3CH">
             <objects>
-                <viewController storyboardIdentifier="HelpScreen" id="ORI-fa-wVs" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HelpScreen" id="ORI-fa-wVs" customClass="HelpVC" customModule="BackTrackV2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jln-3m-RKV"/>
                         <viewControllerLayoutGuide type="bottom" id="qHt-d0-7AX"/>
@@ -629,7 +629,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="wmW-97-xpZ"/>
+                                    <segue destination="tGQ-Nx-l6J" kind="unwind" unwindAction="unwindToMain:" id="tcz-6y-mFQ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HELP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Da1-T0-wIp">
@@ -714,8 +714,9 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5lk-eG-Jnq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tGQ-Nx-l6J" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2747" y="-404"/>
+            <point key="canvasLocation" x="2014" y="-454"/>
         </scene>
         <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
@@ -763,7 +764,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <segue destination="ORI-fa-wVs" kind="show" id="c9J-B0-fI8"/>
+                                    <action selector="displayHelpScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jjc-Sa-btr"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Next Chord:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYe-Ms-A51">

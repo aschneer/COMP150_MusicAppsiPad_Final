@@ -11,7 +11,10 @@
 		EC0220CB1AEF063D00A649F8 /* instrument_v04.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC0220CA1AEF063D00A649F8 /* instrument_v04.pd */; };
 		EC0220CE1AEF064A00A649F8 /* main_v04.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC0220CC1AEF064A00A649F8 /* main_v04.pd */; };
 		EC0220CF1AEF064A00A649F8 /* mainController_v04.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC0220CD1AEF064A00A649F8 /* mainController_v04.pd */; };
-		EC1E23FC1AED7A0000CE1669 /* main.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC1E23FB1AED7A0000CE1669 /* main.pd */; };
+		EC0F62E61AEF1BBD00C5B24F /* piano_1 in Resources */ = {isa = PBXBuildFile; fileRef = EC0F62E51AEF1BBD00C5B24F /* piano_1 */; };
+		EC0F62E81AEF1C3100C5B24F /* instrument_v05.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC0F62E71AEF1C3100C5B24F /* instrument_v05.pd */; };
+		EC0F62EA1AEF1E1A00C5B24F /* mainController_v05.pd in Resources */ = {isa = PBXBuildFile; fileRef = EC0F62E91AEF1E1A00C5B24F /* mainController_v05.pd */; };
+		EC0F62EE1AEF2FAB00C5B24F /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0F62ED1AEF2FAB00C5B24F /* HelpVC.swift */; };
 		EC1E241C1AED7F2A00CE1669 /* analog_age.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E23FE1AED7F2A00CE1669 /* analog_age.sf2 */; };
 		EC1E241D1AED7F2A00CE1669 /* banjo_1.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E23FF1AED7F2A00CE1669 /* banjo_1.sf2 */; };
 		EC1E241E1AED7F2A00CE1669 /* beautiful_pad.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EC1E24001AED7F2A00CE1669 /* beautiful_pad.sf2 */; };
@@ -55,7 +58,6 @@
 		EC85AA371AC624DB008D1CD8 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC85AA361AC624DB008D1CD8 /* MainVC.swift */; };
 		EC85AA391AC63794008D1CD8 /* BTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC85AA381AC63794008D1CD8 /* BTVC.swift */; };
 		EC85AA3B1AC63820008D1CD8 /* NoteSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC85AA3A1AC63820008D1CD8 /* NoteSelectionVC.swift */; };
-		EC85AA3D1AC63856008D1CD8 /* LeadSoundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC85AA3C1AC63856008D1CD8 /* LeadSoundVC.swift */; };
 		ECC15EFD1ACB504500FC3E01 /* LeadEffectsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC15EFC1ACB504500FC3E01 /* LeadEffectsVC.swift */; };
 		ECD646C21AE6FAE700D742AC /* !=~.pd in Resources */ = {isa = PBXBuildFile; fileRef = ECD645311AE6FAE500D742AC /* !=~.pd */; };
 		ECD646C31AE6FAE700D742AC /* &&~.pd in Resources */ = {isa = PBXBuildFile; fileRef = ECD645321AE6FAE500D742AC /* &&~.pd */; };
@@ -950,7 +952,10 @@
 		EC0220CA1AEF063D00A649F8 /* instrument_v04.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = instrument_v04.pd; sourceTree = "<group>"; };
 		EC0220CC1AEF064A00A649F8 /* main_v04.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main_v04.pd; sourceTree = "<group>"; };
 		EC0220CD1AEF064A00A649F8 /* mainController_v04.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mainController_v04.pd; sourceTree = "<group>"; };
-		EC1E23FB1AED7A0000CE1669 /* main.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.pd; sourceTree = "<group>"; };
+		EC0F62E51AEF1BBD00C5B24F /* piano_1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = piano_1; sourceTree = "<group>"; };
+		EC0F62E71AEF1C3100C5B24F /* instrument_v05.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = instrument_v05.pd; sourceTree = "<group>"; };
+		EC0F62E91AEF1E1A00C5B24F /* mainController_v05.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mainController_v05.pd; sourceTree = "<group>"; };
+		EC0F62ED1AEF2FAB00C5B24F /* HelpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
 		EC1E23FE1AED7F2A00CE1669 /* analog_age.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = analog_age.sf2; sourceTree = "<group>"; };
 		EC1E23FF1AED7F2A00CE1669 /* banjo_1.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = banjo_1.sf2; sourceTree = "<group>"; };
 		EC1E24001AED7F2A00CE1669 /* beautiful_pad.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = beautiful_pad.sf2; sourceTree = "<group>"; };
@@ -1001,7 +1006,6 @@
 		EC85AA361AC624DB008D1CD8 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		EC85AA381AC63794008D1CD8 /* BTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTVC.swift; sourceTree = "<group>"; };
 		EC85AA3A1AC63820008D1CD8 /* NoteSelectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteSelectionVC.swift; sourceTree = "<group>"; };
-		EC85AA3C1AC63856008D1CD8 /* LeadSoundVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeadSoundVC.swift; sourceTree = "<group>"; };
 		ECC15EFC1ACB504500FC3E01 /* LeadEffectsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeadEffectsVC.swift; sourceTree = "<group>"; };
 		ECD645311AE6FAE500D742AC /* !=~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "!=~.pd"; sourceTree = "<group>"; };
 		ECD645321AE6FAE500D742AC /* &&~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "&&~.pd"; sourceTree = "<group>"; };
@@ -2138,12 +2142,15 @@
 				ECD648531AE6FAF800D742AC /* use */,
 				ECD645301AE6FAE500D742AC /* pd-for-libpd */,
 				6D37BB7F1ADF8190009882B8 /* piano_1.sf2 */,
+				EC0F62E51AEF1BBD00C5B24F /* piano_1 */,
 				EC7843031AE99EF1006614EE /* instrument_v03.pd */,
 				EC7843051AE99EF8006614EE /* mainController_v03.pd */,
-				EC1E23FB1AED7A0000CE1669 /* main.pd */,
 				EC0220CA1AEF063D00A649F8 /* instrument_v04.pd */,
 				EC0220CC1AEF064A00A649F8 /* main_v04.pd */,
 				EC0220CD1AEF064A00A649F8 /* mainController_v04.pd */,
+				EC0F62E91AEF1E1A00C5B24F /* mainController_v05.pd */,
+				EC0F62ED1AEF2FAB00C5B24F /* HelpVC.swift */,
+				EC0F62E71AEF1C3100C5B24F /* instrument_v05.pd */,
 				EC85AA111AC621FA008D1CD8 /* AppDelegate.h */,
 				EC85AA121AC621FA008D1CD8 /* AppDelegate.m */,
 				EC85AA141AC621FA008D1CD8 /* ViewController.h */,
@@ -2153,7 +2160,6 @@
 				EC85AA361AC624DB008D1CD8 /* MainVC.swift */,
 				EC85AA171AC621FA008D1CD8 /* Main.storyboard */,
 				ECC15EFC1ACB504500FC3E01 /* LeadEffectsVC.swift */,
-				EC85AA3C1AC63856008D1CD8 /* LeadSoundVC.swift */,
 				EC85AA3A1AC63820008D1CD8 /* NoteSelectionVC.swift */,
 				EC85AA381AC63794008D1CD8 /* BTVC.swift */,
 				EC85AA1A1AC621FA008D1CD8 /* Images.xcassets */,
@@ -3544,6 +3550,7 @@
 				ECD6474F1AE6FAE700D742AC /* gate19-help.pd in Resources */,
 				ECD64B7D1AE6FAFA00D742AC /* lores~-help.pd in Resources */,
 				ECD64BAB1AE6FAFA00D742AC /* sinx~-help.pd in Resources */,
+				EC0F62E61AEF1BBD00C5B24F /* piano_1 in Resources */,
 				ECD64B781AE6FAFA00D742AC /* kink~-help.pd in Resources */,
 				ECD647551AE6FAE700D742AC /* gate21-help.pd in Resources */,
 				ECD6482C1AE6FAE700D742AC /* switch5~-help.pd in Resources */,
@@ -3949,6 +3956,7 @@
 				ECD647451AE6FAE700D742AC /* gate14-help.pd in Resources */,
 				ECD64B681AE6FAFA00D742AC /* deltaclip~-help.pd in Resources */,
 				ECD647A01AE6FAE700D742AC /* iterator.pd in Resources */,
+				EC0F62E81AEF1C3100C5B24F /* instrument_v05.pd in Resources */,
 				ECD64B7F1AE6FAFA00D742AC /* matrix~-help.pd in Resources */,
 				ECD64B551AE6FAFA00D742AC /* cartopol~-help.pd in Resources */,
 				ECD646F11AE6FAE700D742AC /* cexp~-help.pd in Resources */,
@@ -4056,6 +4064,7 @@
 				ECD648081AE6FAE700D742AC /* sec-help.pd in Resources */,
 				ECD64B391AE6FAFA00D742AC /* acosh~-help.pd in Resources */,
 				ECD648471AE6FAE700D742AC /* tone~.pd in Resources */,
+				EC0F62EA1AEF1E1A00C5B24F /* mainController_v05.pd in Resources */,
 				ECD6474E1AE6FAE700D742AC /* gate18.pd in Resources */,
 				ECD647371AE6FAE700D742AC /* filt-help.pd in Resources */,
 				ECD6478E1AE6FAE700D742AC /* ggate.pd in Resources */,
@@ -4076,7 +4085,6 @@
 				ECD647E31AE6FAE700D742AC /* noteflush.pd in Resources */,
 				ECD64BB01AE6FAFA00D742AC /* spike~-help.pd in Resources */,
 				EC1E241C1AED7F2A00CE1669 /* analog_age.sf2 in Resources */,
-				EC1E23FC1AED7A0000CE1669 /* main.pd in Resources */,
 				ECD648021AE6FAE700D742AC /* round-help.pd in Resources */,
 				ECD647131AE6FAE700D742AC /* counter2.pd in Resources */,
 				ECD64B881AE6FAFA00D742AC /* minimum~-help.pd in Resources */,
@@ -4316,7 +4324,6 @@
 				ECD64B091AE6FAFA00D742AC /* maximum.c in Sources */,
 				EC85AA391AC63794008D1CD8 /* BTVC.swift in Sources */,
 				ECD64C7C1AE6FAFA00D742AC /* fluid_settings.c in Sources */,
-				EC85AA3D1AC63856008D1CD8 /* LeadSoundVC.swift in Sources */,
 				ECD64C981AE6FAFA00D742AC /* glib-private.c in Sources */,
 				ECD64C841AE6FAFA00D742AC /* printf-parse.c in Sources */,
 				ECD64C6D1AE6FAFA00D742AC /* fluid_midi_router.c in Sources */,
@@ -4451,6 +4458,7 @@
 				ECD64C631AE6FAFA00D742AC /* fluid_event_queue.c in Sources */,
 				ECD64C7D1AE6FAFA00D742AC /* fluid_sndmgr.c in Sources */,
 				ECD64BF61AE6FAFA00D742AC /* acosh.c in Sources */,
+				EC0F62EE1AEF2FAB00C5B24F /* HelpVC.swift in Sources */,
 				ECD64C8E1AE6FAFA00D742AC /* gconvert.c in Sources */,
 				ECD64CA71AE6FAFA00D742AC /* gslice.c in Sources */,
 				ECD64BFE1AE6FAFA00D742AC /* average.c in Sources */,

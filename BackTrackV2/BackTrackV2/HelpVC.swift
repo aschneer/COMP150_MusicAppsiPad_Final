@@ -1,15 +1,14 @@
 //
-//  LeadSoundVC.swift
-//  BackTrackV2
+//  HelpVC.swift
+//  
 //
-//  Created by Jacob Apkon on 3/27/15.
-//  Copyright (c) 2015 COMP150. All rights reserved.
+//  Created by Jacob Apkon on 4/27/15.
+//
 //
 
 import UIKit
 
-class LeadSoundVC: UIViewController {
-
+class HelpVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +22,6 @@ class LeadSoundVC: UIViewController {
     }
     
 
-    
-    
     /*
     // MARK: - Navigation
 
@@ -34,6 +31,5 @@ class LeadSoundVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
 
 }

@@ -16,7 +16,7 @@ class MainVC: UIViewController {
     var initialized = false
     var NoteSelectionController: NoteSelectionVC!
     var BackTrackController: BTVC!
-    var LeadSoundController: LeadSoundVC!
+    var HelpController: HelpVC!
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -24,6 +24,7 @@ class MainVC: UIViewController {
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         NoteSelectionController = storyboard.instantiateViewControllerWithIdentifier("NoteSelection") as! NoteSelectionVC
         BackTrackController = storyboard.instantiateViewControllerWithIdentifier("BackingTrack") as! BTVC
+        HelpController = storyboard.instantiateViewControllerWithIdentifier("HelpScreen") as! HelpVC
     }
     
     override func viewDidLoad() {
@@ -70,6 +71,10 @@ class MainVC: UIViewController {
         self.presentViewController(BackTrackController, animated: true, completion: nil)
     }
 
+    @IBAction func displayHelpScreen(sender: UIButton) {
+        self.presentViewController(HelpController, animated: true, completion: nil)
+    }
+    
     @IBAction func unwindToMain(segue: UIStoryboardSegue) {
         // Do Nothing
     }

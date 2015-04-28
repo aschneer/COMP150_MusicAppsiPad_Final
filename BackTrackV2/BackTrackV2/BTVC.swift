@@ -118,24 +118,37 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
     }*/
     
     var iterator: Int = 0
-    var piano_sfpath = NSBundle.mainBundle().resourcePath! + "/piano_1.sf2"
+    //var noteArray
     
     var PIANOCHANNEL = 1
     func playBackingTrack(timer: NSTimer) {
         switch playing {
+            
         case 0: iterator = 0
+            
         case 1: return
+            
         case 2: var index = iterator % beats.count
+            if index == 0  && iterator != 0 {
+                for note in beats[beats.count - 1].piano {
+                    PdBase.sendList([PIANOCHANNEL, "NONE", note, 0, 600, 1000, 0.1, 3000, 0], toReceiver: "samp_note_msg")
+                }
+            } else if index != 0 {
+                for note in beats[index - 1].piano {
+                    PdBase.sendList([PIANOCHANNEL, "NONE", note, 0, 600, 1000, 0.1, 3000, 0], toReceiver: "samp_note_msg")
+                }
+            }
+        
             for note in beats[index].piano {
                 //PdBase.sendList([1, piano_sfpath, note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
-                PdBase.sendList([PIANOCHANNEL, "NONE", note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                PdBase.sendList([PIANOCHANNEL, "NONE", note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "samp_note_msg")
             }
             iterator++
         
         default: var index = iterator % beats.count
             for note in beats[index].piano {
                 //PdBase.sendList([1, piano_sfpath, note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
-                PdBase.sendList([PIANOCHANNEL, "NONE", note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                PdBase.sendList([PIANOCHANNEL, "NONE", note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "samp_note_msg")
             }
             iterator++
         }

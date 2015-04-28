@@ -1,4 +1,4 @@
-#N canvas 1110 346 776 436 10;
+#N canvas 414 454 1016 458 10;
 #X obj 565 371 dac~;
 #X obj 494 368 view~;
 #X msg 61 162 1 1 65 0 600 1000 0.1 3000 1;
@@ -20,6 +20,16 @@
 #X obj 565 227 mainController_v04;
 #X msg 75 190 1 NONE 65 0 600 1000 0.1 3000 0;
 #X msg 25 65 1 NONE 65 127 600 1000 0.1 3000 0;
+#X obj 801 377 dac~;
+#X obj 730 374 view~;
+#X text 905 119 Note messages.;
+#X text 800 67 Full paths of all soundfonts;
+#X text 800 81 to be loaded when PD loads.;
+#X obj 801 101 r samp_path;
+#X obj 906 139 r samp_note_msg;
+#X obj 801 233 mainController_v05;
+#X msg 230 343 hello;
+#X obj 236 379 s samp_path;
 #X connect 2 0 5 0;
 #X connect 3 0 5 0;
 #X connect 4 0 5 0;
@@ -34,3 +44,9 @@
 #X connect 16 1 0 1;
 #X connect 17 0 5 0;
 #X connect 18 0 5 0;
+#X connect 24 0 26 0;
+#X connect 25 0 26 1;
+#X connect 26 0 19 0;
+#X connect 26 0 20 0;
+#X connect 26 1 19 1;
+#X connect 27 0 28 0;
