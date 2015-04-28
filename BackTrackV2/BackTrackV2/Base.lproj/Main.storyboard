@@ -806,6 +806,9 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="XhT-uN-I7G">
                                 <rect key="frame" x="70" y="718" width="204" height="31"/>
                                 <color key="tintColor" red="0.92549026012420654" green="0.56078433990478516" blue="0.49411767721176147" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <action selector="changeVolume:" destination="BYZ-38-t0r" eventType="valueChanged" id="TZk-1R-YyY"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="j0y-mu-b94">
                                 <rect key="frame" x="758" y="718" width="204" height="31"/>
@@ -911,10 +914,16 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="53t-51-0by">
                                 <rect key="frame" x="20" y="222" width="118" height="31"/>
                                 <color key="tintColor" red="0.92549026012420654" green="0.56078433990478516" blue="0.49411767721176147" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <action selector="attackChanged:" destination="ee9-hC-EDC" eventType="valueChanged" id="Pxb-dz-Qlt"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kRK-kl-EZF">
                                 <rect key="frame" x="192" y="222" width="118" height="31"/>
                                 <color key="tintColor" red="0.92549026012420654" green="0.56078433990478516" blue="0.49411767721176147" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <action selector="decayChanged:" destination="ee9-hC-EDC" eventType="valueChanged" id="mCA-JW-7T9"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Decay" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjJ-bR-O4g">
                                 <rect key="frame" x="227" y="186" width="49" height="21"/>
@@ -922,8 +931,8 @@
                                 <color key="textColor" red="1" green="0.98039215690000003" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tremolo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRL-im-8sY">
-                                <rect key="frame" x="136" y="390" width="61" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vibrato" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRL-im-8sY">
+                                <rect key="frame" x="139" y="390" width="55" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.98039215690000003" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -931,10 +940,16 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="XLW-tR-qvK">
                                 <rect key="frame" x="20" y="299" width="118" height="31"/>
                                 <color key="tintColor" red="0.92549026012420654" green="0.56078433990478516" blue="0.49411767721176147" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <action selector="sustainChanged:" destination="ee9-hC-EDC" eventType="valueChanged" id="fm4-XS-KZ0"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Xu3-jC-G3b">
                                 <rect key="frame" x="192" y="299" width="118" height="31"/>
                                 <color key="tintColor" red="0.92549026012420654" green="0.56078433990478516" blue="0.49411767721176147" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <action selector="releaseChanged:" destination="ee9-hC-EDC" eventType="valueChanged" id="qGZ-65-Nsw"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sustain" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="id4-RK-N51">
                                 <rect key="frame" x="50" y="270" width="58" height="21"/>
@@ -961,12 +976,29 @@
                                 <color key="textColor" red="1" green="0.98039215690000003" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reverb Dry/Wet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZP-Hu-Aba">
+                                <rect key="frame" x="106" y="68" width="121" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Khq-At-bqU">
+                                <rect key="frame" x="72" y="106" width="189" height="31"/>
+                                <color key="tintColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="reverbChanged:" destination="ee9-hC-EDC" eventType="valueChanged" id="TN0-wT-GOy"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="0.50196081399917603" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.0" green="0.73333334922790527" blue="0.73725491762161255" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <toolbarItems/>
                     <connections>
+                        <outlet property="ASlider" destination="53t-51-0by" id="fyd-iP-PAA"/>
+                        <outlet property="DSlider" destination="kRK-kl-EZF" id="8xV-Eg-gNA"/>
+                        <outlet property="RSlider" destination="Xu3-jC-G3b" id="Kt4-NK-uW8"/>
+                        <outlet property="SSlider" destination="XLW-tR-qvK" id="nNh-m1-3mJ"/>
                         <outlet property="tremoloSlider" destination="t5W-1A-Qfr" id="Utr-xq-IcJ"/>
                     </connections>
                 </viewController>

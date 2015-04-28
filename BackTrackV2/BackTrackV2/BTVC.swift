@@ -47,15 +47,6 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
     
     
     var noteOnArray: [Beat] = [] // 16th notes in bars we're creating
-    
-    struct subdiv {
-        var one = 0;
-        var e = 0;
-        var and = 0;
-        var a = 0;
-    }
-    var beats = [subdiv]();
-    var seq = [Beat]();
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -68,7 +59,25 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         
         var timer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(tempo), target: self, selector: "playBackingTrack:", userInfo: nil, repeats: true)
         
+    }
+    
+    
+    // Create array to define drum sequence.
+    // Returns an array, 4/4 time, of one
+    // measure, broken into 4 subdivisions per beat.
+    func makeDrumSeq () -> [Beat] {
         
+        struct subdiv {
+            var one = 0;
+            var e = 0;
+            var and = 0;
+            var a = 0;
+        }
+        
+        var beats: [subdiv] = []
+        var seq: [Beat] = []
+        
+        // This stuff runs for ALL INSTRUMENT SEQUENCES.
         for i in 0...15 {
             seq.append(Beat(piano: [], drums: [], bass: 0));
         }
@@ -89,34 +98,38 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
             beats[i].and = ((i * 4) + 2);
             beats[i].a = ((i * 4) + 3);
         }
+        
         // This loop goes through ONE
         // MEASURE in subdivisions of
         // 16th notes (4 divisions per beat).
         for i in 0...beats.count-1 {
             
-            // Hight hat.
-            // drums[0]
-            noteOnArray[beats[i].one].drums[0] = 1;
+            // High hat.
+            seq[beats[i].one].drums.append(42);
             if(i != (beats.count-1)) {
-                noteOnArray[beats[i].and].drums_hatClosed = 1;
+                // Open high hat.
+                seq[beats[i].and].drums.append(42);
             }
             else {
-                noteOnArray[beats[i].and].drums_hatOpen = 1;
+                // Closed high hat.
+                seq[beats[i].and].drums.append(46);
             }
             
             // Kick drum.
-            noteOnArray[beats[i].one].drums_kick = 1;
-            
-            // Snare drum.
-            noteOnArray[beats[1].one].drums_snare = 1;
-            noteOnArray[beats[3].one].drums_snare = 1;
+            seq[beats[i].one].drums.append(48)
         }
+        
+        // Snare drum.
+        seq[beats[1].one].drums.append(40);
+        seq[beats[3].one].drums.append(40);
 
+        
+        // SEND SEQ ARRAY TO OTHER FUNCTION
+        // TO ADD IT TO NOTE ON ARRAY.
 
-        
-        
-        
+        return seq
     }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -179,6 +192,7 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
     var noteOffArray: [Beat] = []
     
     var PIANOCHANNEL = 1
+    var DRUMCHANNEL = 3
     func playBackingTrack(timer: NSTimer) {
         switch playing {
             
@@ -189,12 +203,22 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         case 2: var index = iterator % noteOnArray.count
         
             for note in noteOffArray[index].piano {
-                PdBase.sendList([PIANOCHANNEL, "NONE", note, 0, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                PdBase.sendList([PIANOCHANNEL, "NONE", note, 0, 600, 1000, 0.1, 3000, 0.01, 0, 0], toReceiver: "note_msg")
+            }
+        
+            for note in noteOffArray[index].drums {
+                PdBase.sendList([DRUMCHANNEL, "NONE", note, 0, 600, 1000, 0.1, 3000, 0.01, 0, 0], toReceiver: "note_msg")
+            }
+        
+            for note in noteOnArray[index].drums {
+                //PdBase.sendList([1, piano_sfpath, note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                PdBase.sendList([DRUMCHANNEL, "NONE", note, 127, 600, 1000, 0.1, 3000, 0.01, 0, 0], toReceiver: "note_msg")
+                noteOffArray[(index + 15) % noteOffArray.count] = noteOnArray[index]
             }
         
             for note in noteOnArray[index].piano {
                 //PdBase.sendList([1, piano_sfpath, note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
-                PdBase.sendList([PIANOCHANNEL, "NONE", note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                PdBase.sendList([PIANOCHANNEL, "NONE", note, 127, 600, 1000, 0.1, 3000, 0.01, 0, 0], toReceiver: "note_msg")
                 noteOffArray[(index + 15) % noteOffArray.count] = noteOnArray[index]
             }
             iterator++
@@ -202,7 +226,7 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         default: var index = iterator % noteOnArray.count
             for note in noteOnArray[index].piano {
                 //PdBase.sendList([1, piano_sfpath, note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
-                PdBase.sendList([PIANOCHANNEL, "NONE", note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                PdBase.sendList([PIANOCHANNEL, "NONE", note, 127, 600, 1000, 0.1, 3000, 0.01, 0, 0], toReceiver: "note_msg")
             }
             iterator++
         }
@@ -408,23 +432,16 @@ class BTVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UISc
         
             var higherNotes = pickerData[5][ChordPicker.selectedRowInComponent(5)]
 
-            if higherNotes == "Triad" { return }
             if higherNotes == "7" { noteOnArray[index].piano.append(root + 10) }
             if higherNotes == "Maj7" { noteOnArray[index].piano.append(root + 11) }
             
                                 // --------------DRUMS------------
-            
-            switch pickerData[1][ChordPicker.selectedRowInComponent(1)] {
-            case "A": root = 57
-            case "B": root = 59
-            case "C": root = 60
-            case "D": root = 62
-            case "E": root = 64
-            case "F": root = 65
-            case "G": root = 67
-                
-            default: root = 0
+            var drumSeqOneMeas = makeDrumSeq();
+            for drum in drumSeqOneMeas {
+                noteOnArray[index].drums = drum.drums
+                index++
             }
+
         } else {
             var index = (find(chords, sender)! * 12)
             noteOnArray[index] = Beat(piano: [], drums: [], bass: 0)

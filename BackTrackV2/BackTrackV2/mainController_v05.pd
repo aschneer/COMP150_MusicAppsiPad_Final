@@ -27,8 +27,8 @@
 #X obj 20 297 s \$0-chanIn;
 #X text 41 237 Create channel.;
 #X text 2 327 Load soundfont.;
-#X obj -7 347 list append 65 0 600 1000 0.1 3000 1;
 #X msg 20 260 init \$1 stereo instrument_v05;
+#X obj -7 347 list append 65 0 600 1000 0.1 3000 1;
 #X connect 0 0 11 0;
 #X connect 1 0 3 0;
 #X connect 2 0 3 0;
@@ -38,9 +38,9 @@
 #X connect 10 0 3 0;
 #X connect 15 0 20 0;
 #X connect 19 0 24 0;
-#X connect 20 0 28 0;
-#X connect 20 1 29 0;
+#X connect 20 0 29 0;
+#X connect 20 1 28 0;
 #X connect 21 0 20 0;
 #X connect 22 0 21 0;
-#X connect 28 0 19 0;
-#X connect 29 0 25 0;
+#X connect 28 0 25 0;
+#X connect 29 0 19 0;

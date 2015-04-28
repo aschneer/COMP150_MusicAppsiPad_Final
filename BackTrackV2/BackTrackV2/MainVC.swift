@@ -47,6 +47,11 @@ class MainVC: UIViewController {
         var center = NSNotificationCenter.defaultCenter()
         center.postNotificationName("setBPM", object: nil, userInfo: ["freq": sender.value])
     }
+    
+    @IBAction func changeVolume(sender: UISlider) {
+        PdBase.sendFloat(sender.value, toReceiver: "volume")
+    }
+    
     @IBAction func playBackingTrack(sender: UIButton) {
         var center = NSNotificationCenter.defaultCenter()
         center.postNotificationName("playBackingTrack", object: nil, userInfo: nil)

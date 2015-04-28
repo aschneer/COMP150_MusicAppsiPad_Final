@@ -956,6 +956,7 @@
 		EC0F62E71AEF1C3100C5B24F /* instrument_v05.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = instrument_v05.pd; sourceTree = "<group>"; };
 		EC0F62E91AEF1E1A00C5B24F /* mainController_v05.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mainController_v05.pd; sourceTree = "<group>"; };
 		EC0F62ED1AEF2FAB00C5B24F /* HelpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
+		EC0F62EF1AEF75A200C5B24F /* IbanezHollowbody.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = IbanezHollowbody.sf2; sourceTree = "<group>"; };
 		EC1E23FE1AED7F2A00CE1669 /* analog_age.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = analog_age.sf2; sourceTree = "<group>"; };
 		EC1E23FF1AED7F2A00CE1669 /* banjo_1.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = banjo_1.sf2; sourceTree = "<group>"; };
 		EC1E24001AED7F2A00CE1669 /* beautiful_pad.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = beautiful_pad.sf2; sourceTree = "<group>"; };
@@ -2074,6 +2075,7 @@
 		EC1E23FD1AED7F2A00CE1669 /* soundfonts */ = {
 			isa = PBXGroup;
 			children = (
+				EC0F62EF1AEF75A200C5B24F /* IbanezHollowbody.sf2 */,
 				EC1E23FE1AED7F2A00CE1669 /* analog_age.sf2 */,
 				EC1E23FF1AED7F2A00CE1669 /* banjo_1.sf2 */,
 				EC1E24001AED7F2A00CE1669 /* beautiful_pad.sf2 */,

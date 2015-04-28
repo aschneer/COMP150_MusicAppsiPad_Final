@@ -19,7 +19,7 @@ class PlayArea: UIView {
     
     var sfpath = NSBundle.mainBundle().resourcePath! + "/piano_1.sf2"
     var drums = NSBundle.mainBundle().resourcePath! + "/SC88Drumset.sf2"
-    var trombone = NSBundle.mainBundle().resourcePath! + "/muted_trombone.sf2"
+    var trombone = NSBundle.mainBundle().resourcePath! + "/banjo_1.sf2"
     
     struct Line {
         var note: Int
@@ -35,7 +35,6 @@ class PlayArea: UIView {
     var linesInitialized: Bool = false
     
     override func drawRect(rect: CGRect) {
-        
         let context = UIGraphicsGetCurrentContext()
         CGContextSetLineWidth(context, 2.0)
         let colorSpace = CGColorSpaceCreateDeviceRGB()
@@ -72,7 +71,14 @@ class PlayArea: UIView {
                 // Add a notification center to receive notes
                 var center = NSNotificationCenter.defaultCenter()
                 center.addObserver(self, selector: "receiveNotes:", name: "playableNotes", object: nil)
-                //center.addObserver(self, selector: "setFreq:", name: "setFreq", object: nil)
+                center.addObserver(self, selector: "setFreq:", name: "setFreq", object: nil)
+                
+                center.addObserver(self, selector: "setReverb:", name: "setReverb", object: nil)
+                
+                center.addObserver(self, selector: "setAttack:", name: "setAttack", object: nil)
+                center.addObserver(self, selector: "setDecay:", name: "setDecay", object: nil)
+                center.addObserver(self, selector: "setRelease:", name: "setRelease", object: nil)
+                center.addObserver(self, selector: "setSustain:", name: "setSustain", object: nil)
                 
                 var timer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: "drawLines:", userInfo: nil, repeats: true)
                 
@@ -87,6 +93,8 @@ class PlayArea: UIView {
                 // Sampler Initializations
                 var piano_path = NSBundle.mainBundle().resourcePath! + "/piano_1"
                 PdBase.sendList([1, piano_path], toReceiver: "samp_path")
+                
+                PdBase.sendFloat(0.5, toReceiver: "volume")
                 
                 firstTimeThrough = false
             }
@@ -146,12 +154,49 @@ class PlayArea: UIView {
         }
     }
     
-    func setFreq(notification: NSNotification) {
+    var rev: CGFloat = 63.5
+    func setReverb(notification: NSNotification) {
         if let info = notification.userInfo as? Dictionary<String, CGFloat> {
-            frequency = info["freq"]! + 0.01
+            rev = info["freq"]!
         }
     }
     
+    var vibrato: CGFloat = 0.01
+    func setFreq(notification: NSNotification) {
+        if let info = notification.userInfo as? Dictionary<String, CGFloat> {
+            vibrato = info["freq"]!
+            //println(vibrato)
+        }
+    }
+    
+    var att: CGFloat = 500.01
+    var dec: CGFloat = 500.01
+    var sus: CGFloat = 0.51
+    var rel: CGFloat = 500.01
+
+    func setAttack(notification: NSNotification) {
+        if let info = notification.userInfo as? Dictionary<String, CGFloat> {
+            att = info["freq"]!
+        }
+    }
+    
+    func setDecay(notification: NSNotification) {
+        if let info = notification.userInfo as? Dictionary<String, CGFloat> {
+            dec = info["freq"]!
+        }
+    }
+    
+    func setSustain(notification: NSNotification) {
+        if let info = notification.userInfo as? Dictionary<String, CGFloat> {
+            sus = info["freq"]!
+        }
+    }
+    
+    func setRelease(notification: NSNotification) {
+        if let info = notification.userInfo as? Dictionary<String, CGFloat> {
+            rel = info["freq"]!
+        }
+    }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         let touchCount = touches.count
@@ -168,7 +213,8 @@ class PlayArea: UIView {
                 lines[counter].touched = true
                 
                 // 1, piano = 1 guitar = 2, midi num, velocity 0 or 1, a 600, d 1000, s .1, r 3000, 1
-                PdBase.sendList([2, "NONE", lines[counter].note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                
+                PdBase.sendList([2, "NONE", lines[counter].note, 127, att, dec, sus, rel, vibrato, rev, 0], toReceiver: "note_msg")
                 
                 break
             }
@@ -200,7 +246,7 @@ class PlayArea: UIView {
                     if lines[counter].touched {
                         stillTouched = true
                     } else {
-                        PdBase.sendList([2, "NONE", lines[counter].note, 127, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                        PdBase.sendList([2, "NONE", lines[counter].note, 127, att, dec, sus, rel, vibrato, rev, 0], toReceiver: "note_msg")
                         lines[counter].touched = true
                         stillTouched = true
                         break
@@ -210,7 +256,7 @@ class PlayArea: UIView {
             
             if !stillTouched && lines[counter].touched {
                 // TODO "NONE" was 2
-                PdBase.sendList([2, "NONE", lines[counter].note, 0, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                PdBase.sendList([2, "NONE", lines[counter].note, 0, att, dec, sus, rel, vibrato, rev, 0], toReceiver: "note_msg")
                 lines[counter].touched = false
             }
             
@@ -233,7 +279,7 @@ class PlayArea: UIView {
                 lines[counter].touched = false
                 
                 // 1, piano = 1 guitar = 2, midi num, velocity 0 or 1, a 600, d 1000, s .1, r 3000, 1
-                PdBase.sendList([2, "NONE", lines[counter].note, 0, 600, 1000, 0.1, 3000, 0], toReceiver: "note_msg")
+                PdBase.sendList([2, "NONE", lines[counter].note, 0, att, dec, sus, rel, vibrato, rev, 0], toReceiver: "note_msg")
                 break
             }
             counter++
