@@ -10,6 +10,7 @@ import UIKit
 
 class LeadSoundVC: UIViewController {
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +23,8 @@ class LeadSoundVC: UIViewController {
     }
     
 
+    
+    
     /*
     // MARK: - Navigation
 
@@ -31,5 +34,6 @@ class LeadSoundVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
 
 }
